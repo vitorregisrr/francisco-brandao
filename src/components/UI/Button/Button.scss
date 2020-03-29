@@ -1,0 +1,24 @@
+@import 'assets/scss/util/__animations.scss';
+@import 'assets/scss/variables/__all.scss';
+
+.btn{
+    font-family: inherit;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 25px;
+    border-radius: 6px;        
+    box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.183);
+    border: none;
+    @include transition();
+}
+
+.btn-primary{
+    min-height: 40px;
+    background-color: $color-primary;
+    border: 1px solid $color-primary;
+
+    &:hover{
+        background-color: darken($color-primary, 10);
+    }
+}

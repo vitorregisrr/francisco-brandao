@@ -1,0 +1,139 @@
+@import 'assets/scss/variables/__all.scss';
+@import 'assets/scss/util/__animations.scss';
+
+.form-control {
+    font-family: inherit;
+    font-weight: lighter;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.637);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.041);
+    color: rgb(172, 172, 172);
+    letter-spacing: 0.4px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    height: 44px;
+    padding: 0 13px;
+    border: 1.4px solid transparent;
+    @include transition();
+
+    &::placeholder {
+        color: rgb(214, 214, 214);
+    }
+    &:focus {
+        border-color: transparentize($color-dark, 0.6);
+
+        & + label {
+            color: $color-primary;
+        }
+    }
+}
+
+.form-group {
+    margin-bottom: 15px;
+
+    label {
+        font-size: 15px;
+        display: block;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+        color: rgb(146, 146, 146);
+        font-weight: lighter;
+        @media screen and (max-width: $bp-MD) {
+            font-size: 13px;
+        }
+    }
+
+    &.is-valid {
+        label {
+            color: $color-success;
+        }
+
+        .form-control, .custom-select__control {
+            border-color: $color-success  !important;
+            background-color: transparentize($color-success, 0.92)  !important;
+        }
+        
+    }
+
+    &.has-error {
+        .form-control {
+            border-color: $color-primary;
+            background-color: transparentize($color-primary, 0.92);
+        }
+
+        label {
+            color: $color-primary;
+        }
+    }
+    .form-error {
+        margin-top: 4px;
+        display: block;
+        color: $color-primary;
+        font-size: 12px;
+        font-weight: lighter;
+        line-height: 1.2;
+        @media screen and (max-width: $bp-MD) {
+            font-size: 10px;
+        }
+    }
+}
+
+.custom-select {
+
+    &__placeholder {
+        color: rgb(214, 214, 214) !important;
+    }
+
+    &__single-value{
+        color: rgb(172, 172, 172) !important;
+    }
+
+    &__control {
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: lighter;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.637) !important;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.041);
+        color: rgb(172, 172, 172) !important;
+        letter-spacing: 0.4px;
+        outline: none !important;
+        border-radius: 5px;
+        height: 44px;
+        padding: 0 13px;
+        border: 1.4px solid transparent !important;
+        @include transition();
+        
+        &--is-focused {
+            border-color: transparentize($color-dark, 0.6) !important;
+            box-shadow: none !important;
+            
+            & + label {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &__option{
+        font-weight: lighter;
+        @include transition();
+        
+        &--is-selected{
+            background-color: transparentize($color-dark, .5) !important;
+        }
+    }
+    
+    &__menu{
+        font-size: 14px !important;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.041);
+    }
+
+    &__value-container{
+        padding-left: 0 !important;
+    }
+
+    &__item{
+        cursor: pointer;
+    }
+}

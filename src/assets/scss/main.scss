@@ -1,0 +1,35 @@
+//Import Variables //
+@import './variables/__all';
+
+//Import Components //
+@import './components/__all';
+
+//Import Mixins //
+@import './mixins/__all';
+
+// Import Utils //
+@import  './util/__all';
+
+
+body {
+    position: relative;
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+    font-family: 'Poppins', sans-serif;
+    max-width: 100vw;
+    overflow-x: hidden;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: $color-dark;
+    padding-top: 130px;
+
+    @media screen and (max-width: $bp-MD){
+        padding-top: 110px;
+    }
+}
+
+html{
+    max-width: 100vw;
+    overflow-x: hidden;
+}

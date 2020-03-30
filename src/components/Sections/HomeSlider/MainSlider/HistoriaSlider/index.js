@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const HistoriaSlider = () => {
     const {historiaIndex, sethistoriaIndex} = useState(0);
@@ -9,19 +9,19 @@ const HistoriaSlider = () => {
         switch(index){
             case 0:
                 sethistoriaIndex(0);
-                setHistoriaBg('/img/home/slider-0');
+                setHistoriaBg('/img/home/slider-0.png');
                 setHistoriaName('Francisco');
             break;
 
             case 1:
                 sethistoriaIndex(1);
-                setHistoriaBg('/img/home/slider-1');
+                setHistoriaBg('/img/home/slider-1.png');
                 setHistoriaName('Chico');
             break;
 
             case 2:
                 sethistoriaIndex(2);
-                setHistoriaBg('/img/home/slider-2');
+                setHistoriaBg('/img/home/slider-2.png');
                 setHistoriaName('Chiquinho');
             break
         }
@@ -39,7 +39,7 @@ const HistoriaSlider = () => {
                         Histórias de uma vida
                     </h2>
                     <h1 className="d-flex">
-                        <div>{historiaName}</div>
+                        <div class="fadeIn">{historiaName}</div>
                         <div>Brandão</div>
                     </h1>
                     <p className="FullSlider__item-desc">

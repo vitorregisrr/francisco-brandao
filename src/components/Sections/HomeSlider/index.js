@@ -8,10 +8,11 @@ import './styles.scss';
 
 const HomeSlider = (props) => {
     const slickRef = useRef(null);
+    const currentIndex = useRef(0);
 
     return (
         <section className="HomeSlider">
-            <HomeMenu isFirst={slickRef.getCurrent}></HomeMenu>
+            <HomeMenu moveSlider={(i) => slickRef.current.slickGoTo(i)} isFirst={currentIndex == 0}></HomeMenu>
 
             <main class="HomeSlider__content">
                 <MainSlider slickRef={slickRef} />

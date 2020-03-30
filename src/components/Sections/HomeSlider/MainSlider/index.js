@@ -55,7 +55,7 @@ const MainSlider = ({slickRef}) => {
             {/* Outros items */}
             {items.map((i) => (
                  <section
-                 key={key}
+                 key={i.key}
                  class="FullSlider__item"
                  style={{
                  backgroundImage: i.background}}>

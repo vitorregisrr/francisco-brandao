@@ -2,7 +2,7 @@ import React from 'react';
 
 import './styles.scss';
 
-const HomeMenu = (moveSlider, isFirst) => {
+const HomeMenu = ({moveSlider, isFirst}) => {
     const menuItems = [
         {
             key: 'historia',
@@ -24,15 +24,16 @@ const HomeMenu = (moveSlider, isFirst) => {
             key: 'Meio Ambiente',
             label: 'meio-ambiente'
         }
-    ]
+    ];
+
     return (
         <nav class={`HomeMenu ${isFirst && 'expanded'}`}>
-            <button class="HomeMenu__item" onClick={moveSlider(0)}>
+            <button class="HomeMenu__item" onClick={() => moveSlider(0)}>
                 Chico Brandão
             </button>
 
             {menuItems.map((i, index) => (
-                <button class="HomeMenu__item" key={i.key} onClick={moveSlider(index + 1)}>
+                <button class="HomeMenu__item" key={i.key} onClick={() => moveSlider(index + 1)}>
                     {i.label}
                 </button>
             ))};

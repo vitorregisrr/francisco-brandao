@@ -1,10 +1,8 @@
 import React, {useRef} from 'react'
-import MainSlider from 'react-slick'
-import {Link} from 'react-router-dom'
 
-import SliderMenu from './SliderMenu'
+import SliderMenu from '../HomeMenu'
 import ScrollDown from './ScrollDown'
-import SubSlider from './SubSlider'
+import MainSlider from './MainSlider'
 
 import './styles.scss';
 
@@ -18,7 +16,7 @@ const FullSlider = (props) => {
             <main class="FullSlider__content">
                 <MainSlider slickRef={slickRef} />
                 
-                <ScrollDown onClick={slickRef.current.slickNext}></ScrollDown>
+                <ScrollDown onClick={() => slickRef.current.slickNext}></ScrollDown>
             </main>
         </section>
     )

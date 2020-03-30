@@ -1,12 +1,10 @@
 import React from 'react';
 
-import {FullSlider} from '../../components/Sections'
+import {HomeSlider} from '../../components/Sections'
 
 const Home = (props) => {
     return (
-        <FullSlider>
-
-        </FullSlider>
+        <HomeSlider></HomeSlider>
     )
 }
 

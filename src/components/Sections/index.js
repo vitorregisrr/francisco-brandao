@@ -1,6 +1,6 @@
 import Navbar from './Navbar';
 import Footer from './Footer';
 
-import FullSlider from './FullSlider';
+import HomeSlider from './HomeSlider'
 
-export {Navbar, Footer, FullSlider}
+export {Navbar, Footer, HomeSlider}

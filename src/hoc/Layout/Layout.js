@@ -8,7 +8,7 @@ import ScrollTop from 'components/UI/ScrollTop/ScrollTop';
 
 const Layout = props => {
     return (
-        <ReactWOW animation='fadeIn'>
+        <ReactWOW>
             <Navbar />
             <main>
                     {props.children}

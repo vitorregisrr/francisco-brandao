@@ -62,25 +62,23 @@ const App = () => {
 
     return (
         <BrowserRouter basename="/">
-            <Layout>
-                {routes.map(({path, Component, name, exact}) => (
-                    <Route key={name} exact={exact} path={path}>
-                        {({match}) => (
-                            <CSSTransition
-                                in={match != null}
-                                timeout={300}
-                                classNames="CSSTransition--fade"
-                                unmountOnExit>
-                                <div className="page">
-                                    <Suspense fallback={< Spinner fullscreen/>}>
-                                        <Component/>
-                                    </Suspense>
-                                </div>
-                            </CSSTransition>
-                        )}
-                    </Route>
-                ))}
-            </Layout>
+            {routes.map(({path, Component, name, exact}) => (
+                <Route key={name} exact={exact} path={path}>
+                    {({match}) => (
+                        <CSSTransition
+                            in={match != null}
+                            timeout={300}
+                            classNames="CSSTransition--fade"
+                            unmountOnExit>
+                            <div className="page">
+                                <Suspense fallback={< Spinner fullscreen/>}>
+                                    {path !== '/' ? <Component/> : <Layout><Component /></Layout>}
+                                </Suspense>
+                            </div>
+                        </CSSTransition>
+                    )}
+                </Route>
+            ))}
         </BrowserRouter>
     );
 }

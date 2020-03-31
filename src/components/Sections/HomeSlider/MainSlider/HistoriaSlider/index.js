@@ -2,53 +2,53 @@ import React, {useState} from 'react'
 
 const HistoriaSlider = () => {
     const {historiaIndex, sethistoriaIndex} = useState(0);
-    const {historiaBg, setHistoriaBg} = useState('/img/home/slider-0.png');
+    const {historiaBg, setHistoriaBg} = useState('assets/images/home/slider-0.png');
     const {historiaName, setHistoriaName} = useState('Francisco');
 
     const updateState = index => {
-        switch(index){
+        switch (index) {
             case 0:
                 sethistoriaIndex(0);
-                setHistoriaBg('/img/home/slider-0.png');
+                setHistoriaBg('assets/images/home/slider-0.png');
                 setHistoriaName('Francisco');
-            break;
+                break;
 
             case 1:
                 sethistoriaIndex(1);
-                setHistoriaBg('/img/home/slider-1.png');
+                setHistoriaBg('assets/images/home/slider-1.png');
                 setHistoriaName('Chico');
-            break;
+                break;
 
             case 2:
                 sethistoriaIndex(2);
-                setHistoriaBg('/img/home/slider-2.png');
+                setHistoriaBg('assets/images/home/slider-2.png');
                 setHistoriaName('Chiquinho');
-            break
+                break
         }
     }
-    
-    return (
-        <section
-            class="FullSlider__item"
-            style={{
-            backgroundImage: historiaBg }}>
 
-            <div className="FullSlider__subslider">
-                <div className="FullSlider__subslider-caption">
-                    <h2 className="FullSlider__subslider">
+    return (
+        <section className="MainSlider__item" key="historia-slider">
+            <div
+                className={`MainSlider__item-bg ${'historia-slider'}`}
+                // style={{backgroundImage: `url${historiaBg}`}}
+                ></div>
+            <div className="HistoriaSlider">
+                <div className="HistoriaSlider__caption">
+                    <h2 className="HistoriaSlider__caption-subtitle">
                         Histórias de uma vida
                     </h2>
-                    <h1 className="d-flex">
+                    <h1 className="d-flex HistoriaSlider__caption-title">
                         <div class="fadeIn">{historiaName}</div>
                         <div>Brandão</div>
                     </h1>
-                    <p className="FullSlider__item-desc">
+                    <p className="HistoriaSlider__caption-desc">
                         Conheça a trajetória de Francisco Soares Brandão, sócio-fundador da FSB, maior
                         empresa de comunicação corporativa da América Latina.
                     </p>
                 </div>
 
-                <div className="FullSlider__subslider-nav">
+                <div className="HistoriaSlider-nav">
                     <button onClick={() => updateState(0)}></button>
                     <button onClick={() => updateState(1)}></button>
                     <button onClick={() => updateState(2)}></button>

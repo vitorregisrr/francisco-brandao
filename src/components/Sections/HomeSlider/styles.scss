@@ -1,1 +1,25 @@
 @import 'assets/scss/variables/__all.scss';
+
+.HomeSlider{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    &__content{
+        width: 100%;
+        height: 100%;
+        
+        .slick-slide{
+            margin-top: -3.4px;
+        }
+
+        .slick-slider{
+            width: 100%;
+            height: 100%;
+
+            section{
+                display: block;
+            }
+        }
+    }
+}

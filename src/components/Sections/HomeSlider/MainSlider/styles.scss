@@ -1,0 +1,54 @@
+.MainSlider{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    
+
+    &__item{
+        position: relative;
+        height: calc(100vh);
+        overflow: hidden;
+        width: 100vw;
+        
+        &-bg{
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            width: 100vw;
+            height: 100vh;
+            background-position: center center;
+            background-size: cover;
+            
+            &.historia-slider{
+                background-image: url('../../../../assets/images/home/slider-0.png');
+            }
+
+            &.historia{
+                background-image: url('../../../../assets/images/home/historia.png');
+            }
+
+            &.empreendedorismo{
+                background-image: url('../../../../assets/images/home/empreendedorismo.png');
+            }
+
+            &.hipismo{
+                background-image: url('../../../../assets/images/home/hipismo.png');
+            }
+
+            &.colecao{
+                background-image: url('../../../../assets/images/home/colecao.png');
+            }
+
+            &.meio-ambiente{
+                background-image: url('../../../../assets/images/home/meio-ambiente.png');
+            }
+        }
+
+        &-caption{
+            position: relative;
+            z-index: 2;
+            padding-left: 500px;
+        }
+    }
+}

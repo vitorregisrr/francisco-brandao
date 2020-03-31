@@ -72,7 +72,7 @@ const App = () => {
                             unmountOnExit>
                             <div className="page">
                                 <Suspense fallback={< Spinner fullscreen/>}>
-                                    {path !== '/' ? <Component/> : <Layout><Component /></Layout>}
+                                    {path === '/' ? <Component/> : <Layout><Component /></Layout>}
                                 </Suspense>
                             </div>
                         </CSSTransition>

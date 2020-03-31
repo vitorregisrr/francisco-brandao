@@ -1,0 +1,85 @@
+@import 'assets/scss/variables/__all.scss';
+$transition: all 1.4s cubic-bezier(.81,.42,.33,1);
+
+.HomeMenu{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 240px;
+    height: 100vh;
+    background-color: #831313ab;
+    z-index: 4;
+
+    @media screen and (max-width: $bp-LG){
+        width: 100vw;
+    }
+
+    &__content{
+        position: relative;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: $transition;
+    }
+
+    &__underline{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.712);    
+        border: none;
+        transition: $transition;
+    }
+
+    &__item{
+        background-color: none;
+        border: none;
+        background: none;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 400;
+        transition: $transition;
+
+        &:not(:last-child){
+            margin-bottom: 75px;
+        }
+
+        &.home{
+           position: absolute;
+           top: 160px;
+           left: 50%;
+           transform: translateX(-50%);
+           opacity: 0;
+           height: 0;
+           pointer-events: none;
+           transition: $transition;
+
+           @media screen and (max-height: 730px){
+               top: 100px;
+           }
+        }
+    }
+
+    &.expanded{
+
+        .HomeMenu__content{
+            padding-top: 40px;
+        }
+
+        .home{
+            pointer-events: all;
+            opacity: 1;
+        }
+
+        .HomeMenu__item{
+            &:not(:last-child){
+                margin-bottom: 35px;
+            }
+        }
+    }
+}

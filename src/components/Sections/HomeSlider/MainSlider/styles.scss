@@ -7,7 +7,6 @@
     &__item{
         position: relative;
         height: calc(100vh);
-        overflow: hidden;
         width: 100vw;
         
         &-bg{
@@ -21,7 +20,22 @@
             background-size: cover;
             
             &.historia-slider{
-                background-image: url('../../../../assets/images/home/slider-0.png');
+                opacity: 0;
+                transition: all 1s;
+
+                &.active{
+                    opacity: 1;
+                }
+
+                &.item-0{
+                    background-image: url('../../../../assets/images/home/slider-0.png');
+                }
+                &.item-1{
+                    background-image: url('../../../../assets/images/home/slider-1.png');
+                }
+                &.item-2{
+                    background-image: url('../../../../assets/images/home/slider-2.png');
+                }
             }
 
             &.historia{

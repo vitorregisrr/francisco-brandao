@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import Slick from 'react-slick'
 
-import HistoriaSlider from './HistoriaSlider'
+import HistoriaSlider from '../HistoriaSlider'
 
 import './styles.scss'
 
@@ -17,6 +17,7 @@ const MainSlider = ({slickRef, setCurrentIndex}) => {
         centerPadding: 0,
         waitForAnimate: false,
         vertical: true,
+        draggable: false,
         beforeChange: (old, curr) => setCurrentIndex(curr)
     }
 
@@ -58,7 +59,7 @@ const MainSlider = ({slickRef, setCurrentIndex}) => {
         <Slick ref={slickRef} {...slickSettings}>
 
             {/* Primeiro item */}
-            <HistoriaSlider/>
+            <HistoriaSlider goFirst={true}/>
             
             {/* Outros items */}
             {items.map((i) => (

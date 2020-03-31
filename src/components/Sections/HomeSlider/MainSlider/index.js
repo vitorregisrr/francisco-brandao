@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Link} from 'react-router-dom'
 import Slick from 'react-slick'
 
@@ -7,6 +7,9 @@ import HistoriaSlider from '../HistoriaSlider'
 import './styles.scss'
 
 const MainSlider = ({slickRef, setCurrentIndex}) => {
+    // Varíavel de controle se a ultima mudança foi pra frente ou pra trás
+    const [isNext, setIsNext] = useState(false);
+
     const slickSettings = {
         arrows: false,
         slidesToShow: 1,
@@ -18,7 +21,10 @@ const MainSlider = ({slickRef, setCurrentIndex}) => {
         waitForAnimate: false,
         vertical: true,
         draggable: false,
-        beforeChange: (old, curr) => setCurrentIndex(curr)
+        beforeChange: (old, curr) => {
+            setCurrentIndex(curr);
+            setIsNext(curr > old);
+        }
     }
 
     const items = [
@@ -73,9 +79,9 @@ const MainSlider = ({slickRef, setCurrentIndex}) => {
                             <span>.  </span>
                             <span>{i.title}</span>
                         </h1>
-                        <hr className="MainSlider__item-divisor"/>
+                        <hr className={`MainSlider__item-divisor ${isNext ? 'isNext' : ''}`}/>
                         <h2 className="MainSlider__item-subtitle">
-                            <i className="subtitle"></i>
+                            {i.subtitle}
                         </h2>
                         <Link className="MainSlider__item-arrow" to={i.link}/>
                     </div>

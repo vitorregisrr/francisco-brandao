@@ -37,7 +37,8 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
             letter-spacing: -1px;
             margin: 0;
             opacity: 0;
-            transition: all .7s ease;
+            transform: translate(0, 800px);
+            transition: all 2s ease;
 
             div {
                 display: block;
@@ -71,7 +72,8 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
         bottom: -160px;
         left: 0;
         opacity: 0;
-        transition: all .7s ease;
+        transform: translate(0, 800px);
+        transition: all 2s ease;
 
         button {
             display: block;
@@ -97,6 +99,7 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
     .HistoriaSlider__caption-title {
         transform: translate(0,0);
         opacity: 1;
+        transition: none;
     }
 
     .HistoriaSlider__caption-desc {
@@ -111,6 +114,7 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
 
     .HistoriaSlider__nav {
         transform: translate(0,0);
+        transition: none;
         opacity: 1;
     }
 }

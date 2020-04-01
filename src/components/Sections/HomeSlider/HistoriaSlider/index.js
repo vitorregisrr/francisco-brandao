@@ -36,13 +36,14 @@ const HistoriaSlider = (goFirst) => {
             <div className="HistoriaSlider">
                 <div className="HistoriaSlider__caption wow fadeInUp">
                     <h2 className="HistoriaSlider__caption-subtitle">
-                        Histórias de uma vida
+                        Histórias<br className="d-block d-lg-none" /> de uma vida
                     </h2>
                     <h1 className="HistoriaSlider__caption-title d-flex">
                     <ReactTextTransition
                         text={['Francisco', 'Chico', 'Chiquinho'][currIndex]}
                         style={{ margin: "0 20px 0 0" }}
                         noOverflow={true}
+                        springConfig={{ mass: 1, tension: 90, friction: 26 }}
                         className="fadeIn"
                         inline />
                         <div> Brandão</div>
@@ -54,7 +55,7 @@ const HistoriaSlider = (goFirst) => {
 
                     <div className="HistoriaSlider__nav">
                         {[0,1,2].map(i => (
-                            <button className={currIndex === i ? 'active' : ''} onClick={() => updateState(i)}></button>
+                            <button key={i} className={currIndex === i ? 'active' : ''} onClick={() => updateState(i)}></button>
                         ))}
                     </div>
                 </div>

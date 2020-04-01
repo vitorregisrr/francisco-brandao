@@ -6,21 +6,24 @@ import HistoriaSlider from '../HistoriaSlider'
 
 import './styles.scss'
 
-const MainSlider = ({slickRef, setCurrentIndex}) => {
+const MainSlider = ({slickRef, setCurrentIndex, currIndex, hasOverlay, isFirst}) => {
+    const [isDesactived, setIsDesactived] = useState(false);
+    const [isLGScreen, setIsLGScreen] = useState(window.innerWidth < 992);
     // Varíavel de controle se a ultima mudança foi pra frente ou pra trás
     const [isNext, setIsNext] = useState(false);
 
     const slickSettings = {
         arrows: false,
         slidesToShow: 1,
+        loop: true,
         slidesToScroll: 1,
         centerMode: true,
         cssEase: 'cubic-bezier(.8,.42,.33,1)',
         speed: 1400,
         centerPadding: 0,
         waitForAnimate: false,
-        vertical: true,
-        draggable: false,
+        vertical: !isLGScreen,
+        draggable: isLGScreen,
         beforeChange: (old, curr) => {
             setCurrentIndex(curr);
             setIsNext(curr > old);
@@ -61,34 +64,52 @@ const MainSlider = ({slickRef, setCurrentIndex}) => {
         }
     ]
 
+    const desactiveDots = () => {
+        // Desactived delay
+        setIsDesactived(true);
+        setTimeout(() => {
+            setIsDesactived(false);
+        }, 1600);
+    }
+
     return (
-        <Slick ref={slickRef} {...slickSettings}>
+       <React.Fragment>
+           <div className={`overlay ${hasOverlay && isLGScreen ? 'show' : ''}`}></div>
+           <h1 className={`MainSlider__mobile-title ${!isFirst ? 'isFirst' : ''}`}>Chiquinho <span>Brandão</span></h1>
+            <Slick ref={slickRef} {...slickSettings}>
+                {/* Primeiro item */}
+                <HistoriaSlider goFirst={true}/>
 
-            {/* Primeiro item */}
-            <HistoriaSlider goFirst={true}/>
-            
-            {/* Outros items */}
-            {items.map((i) => (
-                <section key={i.key} className="MainSlider__item">
-                    <div
-                        className={`MainSlider__item-bg ${i.key}`}
-                        // style={{backgroundImage: `url(${i.background}})`}}
-                        ></div>
-                    <div className="MainSlider__item-caption">
-                        <h1 className="MainSlider__item-title">
-                            <span>.  </span>
-                            <span>{i.title}</span>
-                        </h1>
-                        <hr className={`MainSlider__item-divisor ${isNext ? 'isNext' : ''}`}/>
-                        <h2 className="MainSlider__item-subtitle">
-                            {i.subtitle}
-                        </h2>
-                        <Link className="MainSlider__item-arrow" to={i.link}/>
-                    </div>
-                </section>
-            ))}
+                {/* Outros items */}
+                {items.map((i) => (
+                    <section key={i.key} className="MainSlider__item">
+                        <div
+                            className={`MainSlider__item-bg ${i.key}`}
+                            // style={{backgroundImage: `url(${i.background}})`}}
+                            ></div>
+                        <div className="MainSlider__item-caption">
+                            <h1 className="MainSlider__item-title">
+                                <span>.  </span>
+                                <span>{i.title}</span>
+                            </h1>
+                            <hr className={`MainSlider__item-divisor ${isNext ? 'isNext' : ''}`}/>
+                            <h2 className="MainSlider__item-subtitle">
+                                {i.subtitle}
+                            </h2>
+                            <Link className="MainSlider__item-arrow" to={i.link}/>
+                        </div>
+                    </section>
+                ))}
+                </Slick>
+                {/* Mobile DSo */}
+                <div className={`MainSlider__dots ${isDesactived ? 'desactived' : ''}`} onClick={desactiveDots}>
+                    {[0,1,2,3,4,5,].map(i => (
+                        <button title={`Ir para item ${i}`} key={i} className={currIndex === i ? 'active' : ''} onClick={() => slickRef.current.slickGoTo(i)}></button>
+                    ))}
 
-        </Slick>
+                     <button title={`Proximo item`} key={6} className='arrow' onClick={() => slickRef.current.slickNext()}></button>
+                </div>
+       </React.Fragment>
     )
 }
 

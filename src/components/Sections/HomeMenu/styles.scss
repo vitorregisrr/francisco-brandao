@@ -59,6 +59,11 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
             transform: translateX(-240%);
             transition: $transition;
 
+            @supports (-webkit-touch-callout: none) {
+                margin-left: 20px;
+              }
+              
+
             // Click overlay
             &:after{
                 content: '';

@@ -1,6 +1,7 @@
 import React, {Suspense} from 'react';
 import {BrowserRouter, Route} from 'react-router-dom';
 import {CSSTransition} from 'react-transition-group';
+import {Helmet} from "react-helmet";
 
 import './App.scss';
 import 'assets/scss/util/__CSSTransitions.scss';
@@ -27,15 +28,13 @@ const App = () => {
             Component: Home,
             exact: true
 
-        },
-        {
+        }, {
             path: '/historia',
             name: 'História',
             Component: Historia,
             exact: true
 
-        },
-        {
+        }, {
             path: '/empreendedorismo',
             name: 'empreendedorismo',
             Component: Empreendedorismo,
@@ -62,6 +61,11 @@ const App = () => {
 
     return (
         <BrowserRouter basename="/">
+            <Helmet>
+                <title>Chico Brandão</title>
+                <meta name="description" content="Conheça a trajetória de Francisco Soares Brandão, sócio-fundador da FSB, maior empresa de comunicação corporativa da América Latina."/>
+            </Helmet>
+
             {routes.map(({path, Component, name, exact}) => (
                 <Route key={name} exact={exact} path={path}>
                     {({match}) => (
@@ -71,8 +75,15 @@ const App = () => {
                             classNames="CSSTransition--fade"
                             unmountOnExit>
                             <div className="page">
-                                <Suspense fallback={< Spinner fullscreen/>}>
-                                    {path === '/' ? <Component/> : <Layout><Component /></Layout>}
+                                <Suspense fallback={< Spinner fullscreen />}>
+                                    <React.Fragment>
+                                        <Helmet>
+                                        <title>Chico Brandão • {name}</title>
+                                        </Helmet>
+                                        {path === '/'
+                                            ? <Component/>
+                                            : <Layout><Component/></Layout>}
+                                    </React.Fragment>
                                 </Suspense>
                             </div>
                         </CSSTransition>

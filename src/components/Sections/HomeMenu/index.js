@@ -13,6 +13,7 @@ const HomeMenu = ({moveSlider, isFirst, setHasOverlay, slickRef}) => {
         setIsDesactived] = useState(false);
     const [isToggled,
         setIsToggled] = useState(false);
+    const IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
     const toggleMenu = () => {
         setIsToggled(!isToggled);
@@ -100,9 +101,10 @@ const HomeMenu = ({moveSlider, isFirst, setHasOverlay, slickRef}) => {
                         ? 'toggled'
                         : ''}`}>
                 <div
-                    className={`HomeMenu__content ${isToggled
-                    ? 'toggled'
-                    : ''}`}>
+                    className={`HomeMenu__content 
+                    ${isToggled ? 'toggled' : ''}}
+                    ${IOS ? 'ios' : ''}`}>
+
                     <hr className="HomeMenu__underline" style={underlineStyling}/>
                     <button className="HomeMenu__item home" onClick={(e) => moveMenu(-1)}>
                         Chico Brandão

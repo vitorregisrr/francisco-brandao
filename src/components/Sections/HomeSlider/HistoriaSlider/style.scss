@@ -39,6 +39,7 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
             @media screen and (max-width: $bp-LG){
                 transform: none !important;
                 font-size: 23px;
+                font-weight: 300;
                 color: #fff;
             }
 

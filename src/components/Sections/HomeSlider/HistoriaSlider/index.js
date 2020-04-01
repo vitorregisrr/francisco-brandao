@@ -7,6 +7,9 @@ const HistoriaSlider = (goFirst) => {
     const [currIndex, setCurrIndex] = useState(0);
     const [historiaBg, setHistoriaBg] = useState('assets/images/home/slider-0.png');
 
+    // Fixa um bug do nome inciar muito separado
+    const [nameMargin, setNameMargin] = useState(-10);
+
     const updateState = index => {
         switch (index) {
             case 0:
@@ -23,6 +26,10 @@ const HistoriaSlider = (goFirst) => {
                 setCurrIndex(2);
                 setHistoriaBg('assets/images/home/slider-2.png');
             break
+        }
+
+        if(nameMargin === -10){
+            setNameMargin(20);
         }
     }
 
@@ -41,7 +48,7 @@ const HistoriaSlider = (goFirst) => {
                     <h1 className="HistoriaSlider__caption-title d-flex">
                     <ReactTextTransition
                         text={['Francisco', 'Chico', 'Chiquinho'][currIndex]}
-                        style={{ margin: "0 20px 0 0" }}
+                        style={{ margin: `0 ${nameMargin}px 0 0` }}
                         noOverflow={true}
                         springConfig={{ mass: 1, tension: 90, friction: 26 }}
                         className="fadeIn"

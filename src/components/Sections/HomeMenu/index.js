@@ -102,7 +102,7 @@ const HomeMenu = ({moveSlider, isFirst, setHasOverlay, slickRef}) => {
                         : ''}`}>
                 <div
                     className={`HomeMenu__content 
-                    ${isToggled ? 'toggled' : ''}}
+                    ${isToggled ? 'toggled' : ''}
                     ${IOS ? 'ios' : ''}`}>
 
                     <hr className="HomeMenu__underline" style={underlineStyling}/>

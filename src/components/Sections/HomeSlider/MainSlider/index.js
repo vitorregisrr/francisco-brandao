@@ -75,7 +75,7 @@ const MainSlider = ({slickRef, setCurrentIndex, currIndex, hasOverlay, isFirst})
     return (
        <React.Fragment>
            <div className={`overlay ${hasOverlay && isLGScreen ? 'show' : ''}`}></div>
-           <h1 className={`MainSlider__mobile-title ${!isFirst ? 'isFirst' : ''}`}>Chiquinho <span>Brandão</span></h1>
+           <h1 className={`MainSlider__mobile-title ${!isFirst ? 'isFirst' : ''}`} onClick={() => slickRef.current.slickGoTo(0)}>Chiquinho <span>Brandão</span></h1>
             <Slick ref={slickRef} {...slickSettings}>
                 {/* Primeiro item */}
                 <HistoriaSlider goFirst={true}/>

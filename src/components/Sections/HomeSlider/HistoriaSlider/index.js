@@ -1,14 +1,11 @@
 import React, {useState} from 'react'
-import ReactTextTransition from "react-text-transition";
+import ReactTextTransition from "react-text-transition"
 
 import './style.scss'
 
 const HistoriaSlider = (goFirst) => {
     const [currIndex, setCurrIndex] = useState(0);
     const [historiaBg, setHistoriaBg] = useState('assets/images/home/slider-0.png');
-
-    // Fixa um bug do nome inciar muito separado
-    const [nameMargin, setNameMargin] = useState(-10);
 
     const updateState = index => {
         switch (index) {
@@ -27,10 +24,6 @@ const HistoriaSlider = (goFirst) => {
                 setHistoriaBg('assets/images/home/slider-2.png');
             break
         }
-
-        if(nameMargin === -10){
-            setNameMargin(20);
-        }
     }
 
     return (
@@ -48,7 +41,7 @@ const HistoriaSlider = (goFirst) => {
                     <h1 className="HistoriaSlider__caption-title d-flex">
                     <ReactTextTransition
                         text={['Francisco', 'Chico', 'Chiquinho'][currIndex]}
-                        style={{ margin: `0 ${nameMargin}px 0 0` }}
+                        style={{ margin: `0 20px 0 0`, maxWidth: '255px' }}
                         noOverflow={true}
                         springConfig={{ mass: 1, tension: 90, friction: 26 }}
                         className="fadeIn"

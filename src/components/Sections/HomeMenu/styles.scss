@@ -171,13 +171,13 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
         }
 
         &:not(:last-child){
-            margin-bottom: 75px;
+            margin-bottom: 68px;
         }
 
         &.home{
            font-family: 'Geo Sans';
            color: rgba(255, 255, 255, 0.915);
-           font-size: 32px;
+           font-size: 35px;
            letter-spacing: 1px;
            position: absolute;
            top: 143px;
@@ -201,8 +201,13 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
     &.expanded{
 
         .HomeMenu__content{
-            padding-top: 40px;
+            padding-top: 60px;
+            
+            @media screen and (max-height: 680px) and (min-width: 992px){
+                padding-top: 80px;
+            }
         }
+
 
         .home{
             pointer-events: all;

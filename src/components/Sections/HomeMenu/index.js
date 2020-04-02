@@ -58,7 +58,7 @@ const HomeMenu = ({moveSlider, isFirst, setHasOverlay, slickRef}) => {
             setUnderlineStyling({opacity: 0, top: 205}// Se estiver saindo do primeiro
             )
         } else if (oldIndex === -1 && index > -1) {
-            const offsets = [102, 60, 22, -20, -53];
+            const offsets = [97, 63, 27, -3, -35];
             setUnderlineStyling({
                 opacity: 1,
                 width: item.offsetWidth - 7,

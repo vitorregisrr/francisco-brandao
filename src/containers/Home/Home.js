@@ -19,21 +19,21 @@ const Home = (props) => {
     }
 
     useEffect( () =>{
-        setLoadingPercentage(30)
         axios.get('', config)
         .then(response => {
             setHomeData(response.data)
+            console.log(response.data)
         })
         .catch(err => console.log(err))
         .finally(() => {
-            setTimeout( () => setIsFetching(false), 900)
+            setIsFetching(false);
         })
     } ,[])
 
     return (
         <React.Fragment>
             <Preloader loadProgress={loadingPercentage} show={isFetching}/>
-            <HomeSlider></HomeSlider>
+            <HomeSlider data={homeData}></HomeSlider>
         </React.Fragment>
     )
 }

@@ -6,12 +6,15 @@ import HistoriaSlider from '../HistoriaSlider'
 
 import './styles.scss'
 
-const MainSlider = ({slickRef, setCurrentIndex, currIndex, hasOverlay, isFirst}) => {
+const MainSlider = ({slickRef, setCurrentIndex, currIndex, hasOverlay, isFirst, data}) => {
+    // Estado para desativar temporariamente o navbar enquanto realiza animação
     const [isDesactived, setIsDesactived] = useState(false);
+    // Variavel para testar breakpoint menor que 992px
     const [isLGScreen, setIsLGScreen] = useState(window.innerWidth < 992);
     // Varíavel de controle se a ultima mudança foi pra frente ou pra trás
     const [isNext, setIsNext] = useState(false);
 
+    // Configuração do slider
     const slickSettings = {
         arrows: false,
         slidesToShow: 1,
@@ -30,40 +33,50 @@ const MainSlider = ({slickRef, setCurrentIndex, currIndex, hasOverlay, isFirst})
         }
     }
 
-    const items = [
+    // Rearquiteturando os dados para os itens secundários do slider
+    const itemsData = [
         {
             key: 'historia',
-            background: 'static/images/home/historia.png',
-            title: 'História',
-            subtitle: 'Conheça a história de Chiquinho Brandão',
+            background: `data:image/png;base64,${data.nav_foto1}`,
+            title: data.nav_pagina1,
+            subtitle: data.nav_resumo1,
             link: '/historia'
         }, {
             key: 'empreendedorismo',
-            background: '/src/assets/images/home/empreendedorismo.png',
-            title: 'Empreendedorismo',
-            subtitle: 'Desde início até a FSB',
+            background: `data:image/png;base64,${data.nav_foto2}`,
+            title: data.nav_pagina2,
+            subtitle: data.nav_resumo2,
             link: '/empreendedorismo'
         }, {
             key: 'hipismo',
-            background: '/assets/images/home/hipismo.png',
-            title: 'Hipismo',
-            subtitle: 'A relação com os cavalos dede a infância',
+            background: `data:image/png;base64,${data.nav_foto3}`,
+            title: data.nav_pagina3,
+            subtitle: data.nav_resumo3,
             link: '/hipismo'
         }, {
             key: 'colecao',
-            background: '/assets/images/home/colecao.png',
-            title: 'Coleção de arte',
-            subtitle: 'Veja mais de 300 obras no acervo',
+            background: `data:image/png;base64,${data.nav_foto4}`,
+            title: data.nav_pagina4,
+            subtitle: data.nav_resumo4,
             link: '/colecao'
         }, {
             key: 'meio-ambiente',
-            background: '/assets/images/home/meio-ambiente.png',
-            title: 'Meio Ambiente',
-            subtitle: 'O Sítio Santo Antônio e a Natureza',
+            background: `data:image/png;base64,${data.nav_foto5}`,
+            title: data.nav_pagina5,
+            subtitle: data.nav_resumo5,
             link: '/meio-ambiente'
         }
     ]
 
+    // Rearquiteturando os dados para o componente história
+    const historiaData = {
+        nomes: [data.titulo, data.titulo2, data.titulo3],
+        backgrounds: [`data:image/png;base64,${data.foto1}`, `data:image/png;base64,${data.foto2}`, `data:image/png;base64,${data.foto3}`],
+        sobrenome: data.titulo4,
+        descricao: data.chamada,
+    }
+
+    // Desativa temporariamente a navegação mobile
     const desactiveDots = () => {
         // Desactived delay
         setIsDesactived(true);
@@ -74,19 +87,21 @@ const MainSlider = ({slickRef, setCurrentIndex, currIndex, hasOverlay, isFirst})
 
     return (
        <React.Fragment>
+           {/* Overlay branco usado no mobile */}
            <div className={`overlay ${hasOverlay && isLGScreen ? 'show' : ''}`}></div>
+           {/* Título animado do mobile */}
            <h1 className={`MainSlider__mobile-title ${!isFirst ? 'isFirst' : ''}`} onClick={() => slickRef.current.slickGoTo(0)}>Chiquinho <span>Brandão</span></h1>
+           {/* Slider */}
             <Slick ref={slickRef} {...slickSettings}>
-                {/* Primeiro item */}
-                <HistoriaSlider goFirst={true}/>
+                {/* Primeiro item (história) */}
+                <HistoriaSlider data={historiaData} goFirst={true}/>
 
                 {/* Outros items */}
-                {items.map((i) => (
+                {itemsData.map((i) => (
                     <section key={i.key} className="MainSlider__item">
                         <div
                             className={`MainSlider__item-bg ${i.key}`}
-                            // style={{backgroundImage: `url(${i.background}})`}}
-                            ></div>
+                            style={{backgroundImage: `url('${i.background}')`}}></div>
                         <div className="MainSlider__item-caption">
                             <h1 className="MainSlider__item-title">
                                 <span>.  </span>
@@ -101,7 +116,8 @@ const MainSlider = ({slickRef, setCurrentIndex, currIndex, hasOverlay, isFirst})
                     </section>
                 ))}
                 </Slick>
-                {/* Mobile DSo */}
+
+                {/* Navegação Mobile */}
                 <div className={`MainSlider__dots ${isDesactived ? 'desactived' : ''}`} onClick={desactiveDots}>
                     {[0,1,2,3,4,5,].map(i => (
                         <button title={`Ir para item ${i}`} key={i} className={currIndex === i ? 'active' : ''} onClick={() => slickRef.current.slickGoTo(i)}></button>

@@ -6,7 +6,7 @@ import Preloader from 'components/UI/Preloader';
 
 const Home = (props) => {
     const [isFetching, setIsFetching] = useState(true);
-    const [homeData, setHomeData] = useState();
+    const [homeData, setHomeData] = useState(false);
     const [loadingPercentage, setLoadingPercentage] = useState();
 
     const config = {
@@ -21,8 +21,8 @@ const Home = (props) => {
     useEffect( () =>{
         axios.get('', config)
         .then(response => {
+            console.log(response.data.page)
             setHomeData(response.data)
-            console.log(response.data)
         })
         .catch(err => console.log(err))
         .finally(() => {
@@ -33,7 +33,7 @@ const Home = (props) => {
     return (
         <React.Fragment>
             <Preloader loadProgress={loadingPercentage} show={isFetching}/>
-            <HomeSlider data={homeData}></HomeSlider>
+            {homeData.page ? <HomeSlider data={homeData.page}></HomeSlider> : null}
         </React.Fragment>
     )
 }

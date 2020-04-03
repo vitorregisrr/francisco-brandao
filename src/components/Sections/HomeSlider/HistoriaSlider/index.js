@@ -3,7 +3,7 @@ import ReactTextTransition from "react-text-transition"
 
 import './style.scss'
 
-const HistoriaSlider = (goFirst) => {
+const HistoriaSlider = ({data}) => {
     const [currIndex, setCurrIndex] = useState(0);
     const [historiaBg, setHistoriaBg] = useState('assets/images/home/slider-0.png');
 
@@ -29,28 +29,32 @@ const HistoriaSlider = (goFirst) => {
     return (
         <section className="MainSlider__item" key="historia-slider">
             
-            <div className={`MainSlider__item-bg historia-slider item-0 ${currIndex === 0 ? 'active' : ''}`}></div>
-            <div className={`MainSlider__item-bg historia-slider item-1 ${currIndex === 1 ? 'active' : ''}`}></div>
-            <div className={`MainSlider__item-bg historia-slider item-2 ${currIndex === 2 ? 'active' : ''}`}></div>
+            <div className={`MainSlider__item-bg historia-slider item-0 ${currIndex === 0 ? 'active' : ''}`}  style={{backgroundImage: `url(${data.backgrounds[0]})`}}></div>
+            <div className={`MainSlider__item-bg historia-slider item-1 ${currIndex === 1 ? 'active' : ''}`}  style={{backgroundImage: `url(${data.backgrounds[1]})`}}></div>
+            <div className={`MainSlider__item-bg historia-slider item-2 ${currIndex === 2 ? 'active' : ''}`}  style={{backgroundImage: `url(${data.backgrounds[2]})`}}></div>
 
             <div className="HistoriaSlider">
                 <div className="HistoriaSlider__caption wow fadeInUp">
-                    <h2 className="HistoriaSlider__caption-subtitle">
+                    {/* Título desktop */}
+                    <h2 className="HistoriaSlider__caption-subtitle d-none d-lg-block">
+                       {data.titulo}
+                    </h2>
+                    {/* Titulo mobile */}
+                    <h2 className="HistoriaSlider__caption-subtitle d-block d-lg-none">
                         Histórias<br className="d-block d-lg-none" /> de uma vida
                     </h2>
                     <h1 className="HistoriaSlider__caption-title d-flex">
                     <ReactTextTransition
-                        text={['Francisco', 'Chico', 'Chiquinho'][currIndex]}
+                        text={data.nomes[currIndex]}
                         style={{ margin: `0 20px 0 0`, maxWidth: '255px' }}
                         noOverflow={true}
                         springConfig={{ mass: 1, tension: 90, friction: 26 }}
                         className="fadeIn"
                         inline />
-                        <div> Brandão</div>
+                        <div> {data.sobrenome} </div>
                     </h1>
                     <p className="HistoriaSlider__caption-desc">
-                        Conheça a trajetória de Francisco Soares Brandão, sócio-fundador da FSB, maior
-                        empresa de comunicação corporativa da América Latina.
+                        {data.descricao}
                     </p>
 
                     <div className="HistoriaSlider__nav">

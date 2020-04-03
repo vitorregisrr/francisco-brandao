@@ -82,36 +82,6 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
                 &.active{
                     opacity: 1;
                 }
-
-                &.item-0{
-                    background-image: url('../../../../assets/images/home/slider-0.png');
-                }
-                &.item-1{
-                    background-image: url('../../../../assets/images/home/slider-1.png');
-                }
-                &.item-2{
-                    background-image: url('../../../../assets/images/home/slider-2.png');
-                }
-            }
-
-            &.historia{
-                background-image: url('../../../../assets/images/home/historia.png');
-            }
-
-            &.empreendedorismo{
-                background-image: url('../../../../assets/images/home/empreendedorismo.png');
-            }
-
-            &.hipismo{
-                background-image: url('../../../../assets/images/home/hipismo.png');
-            }
-
-            &.colecao{
-                background-image: url('../../../../assets/images/home/colecao.png');
-            }
-
-            &.meio-ambiente{
-                background-image: url('../../../../assets/images/home/meio-ambiente.png');
             }
         }
 

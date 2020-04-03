@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { LoadBar } from 'react-loadbar'
 
 import './styles.scss'
+import brandGIF from '../../../assets/images/ico/loader.gif';
 
 const Preloader = ({show, loadProgress}) => {
     const [currName, setCurrName] = useState(0);
@@ -20,8 +21,7 @@ const Preloader = ({show, loadProgress}) => {
         <aside className="Preloader" data-show={show}>
             <div className="Preloader__content">
                 <div className="Preloader__brand">
-                    <span>Francisco</span>
-                    Brandão
+                    <img src={brandGIF} alt="Logo animado" width={200}/>
                 </div>
 
                <div className="Preloader__bar">

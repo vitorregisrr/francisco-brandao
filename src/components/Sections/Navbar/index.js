@@ -1,96 +1,104 @@
-import React, {useState} from 'react';
-import ReactWOW from 'react-wow';
-import {Link, withRouter} from 'react-router-dom';
+import React, {useState, useEffect} from 'react'
+import {NavLink, withRouter} from 'react-router-dom'
 
 import './styles.scss';
-import NavbarItem from './NavbarItem';
 
-const Navbar = (props) => {
-    const [isSticky,
-        setSticky] = useState(false);
-    const [isNavToggled,
-        toggleNav] = useState(false);
+const Navbar = ({location}) => {
+    const [underlineStyling,
+        setUnderlineStyling] = useState({opacity: 0, width: 0, top: 100});
+    const [currIndex,
+        setCurrIndex] = useState(location.pathname.split('/').pop());
+    const [isToggled,
+        setIsToggled] = useState(false);
 
-    const watchSticky = () => {
-        function handleScroll() {
-            if (window.scrollY > 60) {
-                if (isSticky === false) {
-                    setSticky(true);
-                }
+    const IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
-            } else {
-                if (isSticky === true) {
-                    setSticky(false);
-                }
-            }
-        }
+    const toggleMenu = () => {
+        setIsToggled(!isToggled);
+    }
 
-        window.addEventListener('scroll', handleScroll);
-    };
-    watchSticky();
-
-    const navItems = [
+    const menuItems = [
         {
             key: 'historia',
-            label: 'História',
-            routeTo: '/historia',
-        },
-        {
+            label: 'História'
+        }, {
             key: 'empreendedorismo',
-            label: 'Empreendedorismo',
-            routeTo: '/empreendedorismo',
-        },
-        {
+            label: 'Empreendedorismo'
+        }, {
             key: 'hipismo',
-            label: 'Hipismo',
-            routeTo: '/hipismo',
-        },
-        {
-            key: 'colecao',
-            label: 'Coleção de Arte',
-            routeTo: '/colecao',
-        },
-        {
-            key: 'meio-ambiente',
+            label: 'Hipismo'
+        }, {
+            label: 'Coleção de arte',
+            key: 'colecao'
+        }, {
             label: 'Meio Ambiente',
-            routeTo: '/meio-ambiente',
-        },
+            key: 'meio-ambiente'
+        }
+    ];
 
-    ]
+    const moveMenu = (index) => {
+        const item = document.querySelector(`.Navbar__item[data-key="${index}"]`);
+        toggleMenu(false);
+        setCurrIndex(index);
+
+        // Animações do traço underline: Se for p/ o primeiro, esconder
+        setUnderlineStyling({
+            opacity: 1,
+            left: item.offsetLeft - 4,
+            top: item.offsetTop + 20,
+            width: item.offsetWidth + 6
+        })
+    }
+
+    useEffect(() => {
+      moveMenu(currIndex);
+    }, []);
+
     return (
-        <nav className={`Navbar ${isSticky
-            ? 'sticky'
-            : ''}`}>
-            <ReactWOW animation='fadeInDown'>
-                <div className="Navbar__content container">
-                    <Link to="/">
-                        <img src='' className="Navbar__brand" alt="Logo SACI 2019"/>
-                    </Link>
+        <React.Fragment>
+            <div
+                className={`Navbar__toggler ${isToggled
+                ? 'toggled'
+                : ''}`}>
+                <button
+                    className={isToggled
+                    ? 'active'
+                    : ''}
+                    onClick={() => toggleMenu(!isToggled)}>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </button>
+            </div>
+            <nav
+                className={`Navbar ${isToggled
+                    ? 'toggled'
+                    : ''}`}>
+                <div className="container">
+                    <div
+                        className={`Navbar__content ${isToggled
+                        ? 'toggled'
+                        : ''} ${IOS
+                            ? 'ios'
+                            : ''}`}>
 
-                    <button
-                        className="btn-transparent Navbar__toggler"
-                        aria-expanded={isNavToggled}
-                        onClick={() => toggleNav(!isNavToggled)}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-
-                    <ul
-                        className={`Navbar__links ${isNavToggled
-                        ? 'active'
-                        : ''}`}
-                        aria-hidden={!isNavToggled}
-                        onMouseDown={() => setTimeout(() => toggleNav(false),100)}>
-                            { navItems.map( item => 
-                                <NavbarItem 
-                                    path={props.location.pathname}
-                                    {...item}/>
-                            )}
-                    </ul>
+                        <div>
+                            <NavLink to="/" className="Navbar__brand">
+                                Chico Brandão
+                            </NavLink>
+                        </div>
+                        <div>
+                            <hr className="Navbar__underline" style={underlineStyling}/> 
+                            {menuItems.map((i, index) => (
+                                <NavLink data-key={i.key} className={`Navbar__item`} key={i.key} to={i.key} onClick={(e) => moveMenu(i.key)}>
+                                    {i.label}
+                                </NavLink>
+                            ))}
+                        </div>
+                    </div>
                 </div>
-            </ReactWOW>
-        </nav>
+            </nav>
+        </React.Fragment>
     )
 }
 

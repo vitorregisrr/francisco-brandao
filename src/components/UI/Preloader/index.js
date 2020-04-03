@@ -25,7 +25,7 @@ const Preloader = ({show, loadProgress}) => {
                 </div>
 
                <div className="Preloader__bar">
-                    <LoadBar percent={20}/>
+                    <LoadBar percent={loadProgress}/>
                </div>
             </div>
         </aside>

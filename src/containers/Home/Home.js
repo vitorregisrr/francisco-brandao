@@ -7,30 +7,32 @@ import Preloader from 'components/UI/Preloader';
 const Home = (props) => {
     const [isFetching, setIsFetching] = useState(true);
     const [homeData, setHomeData] = useState();
+    const [loadingPercentage, setLoadingPercentage] = useState();
 
     const config = {
-        onUploadProgress: progressEvent => console.log(progressEvent)
+        onDownloadProgress: progressEvent => {
+            const total = progressEvent.srcElement.getResponseHeader('Real-Content-Length')
+            let percentCompleted = Math.round((progressEvent.loaded * 100) / total)
+            percentCompleted = percentCompleted === 100 ? 99 : percentCompleted;
+            setLoadingPercentage(percentCompleted)
+        }
     }
 
-    const data = {
-        
-    }
+    useEffect( () =>{
+        setLoadingPercentage(30)
+        axios.get('', config)
+        .then(response => {
+            setHomeData(response.data)
+        })
+        .catch(err => console.log(err))
+        .finally(() => {
+            setTimeout( () => setIsFetching(false), 900)
+        })
+    } ,[])
 
-    axios.get('',data , config)
-    .then(response => {
-        setHomeData(response.data)
-        alert(response.data)
-    })
-    .catch( (error) => {
-        console.log(error)
-    }).finally(() => {
-        setIsFetching(false);
-    },)
-
-    // useEffect( () => setTimeout( () => setIsFetching(false),2000),[]);
     return (
         <React.Fragment>
-            <Preloader show={isFetching}/>
+            <Preloader loadProgress={loadingPercentage} show={isFetching}/>
             <HomeSlider></HomeSlider>
         </React.Fragment>
     )

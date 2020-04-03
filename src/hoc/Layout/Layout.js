@@ -1,6 +1,5 @@
-import React from 'react';
-
-import ReactWOW from 'react-wow';
+import React from 'react'
+import {withRouter} from 'react-router-dom'
 
 import Navbar from '../../components/Sections/Navbar';
 import Footer from '../../components/Sections/Footer';
@@ -8,16 +7,16 @@ import ScrollTop from 'components/UI/ScrollTop/ScrollTop';
 
 const Layout = props => {
     return (
-        <ReactWOW>
-            <Navbar />
+        <React.Fragment>
+            {props.location.pathname !== '/' && <Navbar/>}
             <main>
-                    {props.children}
+                {props.children}
             </main>
-             <Footer />
-             <ScrollTop></ScrollTop>
-        </ReactWOW>
+            {props.location.pathname !== '/' &&  <Footer/>}
+            {props.location.pathname !== '/' &&  <ScrollTop/>}
+        </React.Fragment>
     )
 
 }
 
-export default Layout;
+export default withRouter(Layout);

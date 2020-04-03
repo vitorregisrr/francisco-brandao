@@ -6,39 +6,20 @@
         }
         &-enter-active {
             opacity: 1;
-            transition: opacity 200ms;
+            transition: opacity 300ms;
         }
         &-exit {
             pointer-events: none;
-            opacity: 0;
+            opacity: 1;
         }
         &-exit-active {
             opacity: 0;
-            transition: opacity 200ms;
+            transition: opacity 300ms;
         }
     }
 }
 
 .CSSTransition {
-
-    &--fade {
-        &-enter {
-            opacity: 0;
-        }
-        &-enter-active {
-            opacity: 1;
-            transition: opacity 200ms;
-        }
-        &-exit {
-            position: absolute;
-            opacity: 0;
-        }
-        &-exit-active {
-            opacity: 0;
-            transition: opacity 200ms;
-        }
-    }
-
     &--modal {
         &-enter {
             top: -50vh;

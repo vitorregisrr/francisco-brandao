@@ -1,162 +1,212 @@
-@import 'assets/scss/util/__animations.scss';
 @import 'assets/scss/variables/__all.scss';
+$transition: all 1.4s cubic-bezier(.81,.42,.33,1);
 
-@keyframes setSticky {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-.Navbar {
-    position: fixed;
-    top: 0;
+.Navbar{
+    position: absolute;
     left: 0;
+    top: 0;
     width: 100vw;
-    padding: 0;
-    z-index: 9;
-    background-color: transparent;
-    @include transition();
-
-    @media screen and (min-width: 1150px) {
-        padding: 5px 80px;
-    }
-
-    &__content {
+    height: 130px;
+    background-color: #831313c0;
+    z-index: 7;
+    
+    @media screen and (max-width: $bp-LG){
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        justify-content: center;
+        background-color: transparent;
+        height: 100%;
+        width: 100vw;
+        z-index: unset;
     }
 
-    &__toggler {
+    .container{
+        height: 100%;
+
+        @media screen and (min-width: $bp-XL){
+            max-width: 1300px;
+        }
+    }
+    
+    &__toggler{
         display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #831313ab;
+        width: 125px;
+        height: 80px;
+        transition: $transition;
+        
+        @media screen and (max-width: $bp-LG){
+            z-index: 5;
+            display: block;
+        }
+
+        &.toggled{
+            background-color: #831313;
+            width: 100vw;
+            height: 100vh;
+
+            .Navbar__content{
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+        
+        &.ios{
+            button{
+                margin-left: 20px;
+            }
+        }
+
+        button{
+            position: relative;
+            left: 74px;
+            top: 16px;
+            background: none;
+            border: none;
+            transform: translateX(-240%);
+            transition: $transition;
+
+            // Click overlay
+            &:after{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 40px;
+                height: 40px;
+            }
+
+            div{
+                position: absolute;
+                height: 1px;
+                width: 24px;
+                background-color: rgba(255, 255, 255, 0.905);
+                transition: $transition;
+
+                &:nth-child(1){
+                    top: 1px;
+                    transform: rotate(0);
+                }
+
+                &:nth-child(2){
+                    top: 11px;
+                }
+
+                &:nth-child(3){
+                    top: 21px;
+                    transform: rotate(0);
+                }
+            }
+
+            &.active{
+                left: 50%;
+                top: 7%;
+
+                div{
+                    &:nth-child(1){
+                        transform: rotate(40deg) translateX(62%);
+                    }
+
+                    &:nth-child(3){
+                        transform: rotate(-40deg) translateX(62%);
+                    }
+
+                    &:nth-child(2){
+                        opacity: 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    &__brand{
+        font-family: 'Geo Sans';
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 26px;
+    }
+    &__content{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        height: 100%;
+        transition: $transition;
 
         @media screen and (max-width: $bp-LG){
-            display: block;
-        }
-
-        span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            border-radius: 1px;
-            background: #fff;
-        }
-
-        span+span {
-            margin-top: 4px;
-            width: 18px;
-        }
-    }
-
-    &__brand {
-        width: 120px;
-        object-fit: contain;
-        @include transition();
-
-        @media screen and (max-width: $bp-MD){
-            width: 90px;
-        }
-    }
-
-    &__links {
-        display: flex;
-        align-items: center;
-        @include transition();
-
-
-        @media screen and (max-width: $bp-LG) {
-            position: absolute;
-            bottom: 5px;
-            left: 0;
-            flex-direction: column;
-            width: 100vw;
-            max-height: 0;
-            overflow: hidden;
+            height: auto;
             opacity: 0;
-            transform: translateY(100%);
-            background-color: $color-dark;
-            padding-bottom: 60px;
-            margin-top: -5px;
             pointer-events: none;
-            
-            &.active{
-                pointer-events: all;
-                max-height: 200vh;
+            background-color: transparent;
+            z-index: 5;
+
+            &.toggled{
                 opacity: 1;
+                pointer-events: all;
             }
         }
-
-        &__item {
-            text-align: center;
-            color: #fff;
-            text-transform: uppercase;
-            font-weight: lighter;
-            padding: 10px 20px;
-            display: inline-block;
-            text-decoration: none;
-            cursor: pointer;
-            @include transition();
-
-            &.active:not(.inscricoes),
-            &:hover {
-                text-shadow: 1px 0 0 #fff;
-            }
-
-            &.inscricoes {
-                font-size: 15px;
-                padding: 8px 29px;
-                background-color: #fff;
-                color: black;
-                margin-left: 10px;
-                box-shadow: 3px 2px 20px rgba(0, 0, 0, 0.13);
-
-                &.active,
-                &:hover {
-                    background-color: $color-primary;
-                    color: #fff;
-                    transform: scale(1.02);
-                }
-
-                span {
-                    margin-left: 10px;
-                    letter-spacing: -2px;
-                    font-size: 14px;
-                }
-            }
-        }
+    
     }
 
-    &.sticky {
-        padding: 2px 0;
-        background-color: $color-dark;
-        opacity: 0.9;
-        box-shadow: 3px 2px 5px rgba(0, 0, 0, 0.08);
-        animation-name: setSticky;
-        animation-duration: 0.6s;
-
-        @media screen and (max-width: $bp-MD){
-            padding: 0;
-        }
-
-        .Navbar__brand {
-            width: 70px;
-        }
-
-        .Navbar__links {
-
-            &__item {
-                font-size: 15px;
-
-                &.inscricoes {
-                    font-size: 14px;
-                    padding: 7px 20px;
-                }
-            }
-        }
+    &__underline{
+        position: absolute;
+        top: 8%;
+        left: 40%;
+        width: 100px;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.666);    
+        border: none;
+        transition: $transition;
     }
 
+    &__item{
+        background-color: none;
+        border: none;
+        background: none;
+        color: rgba(255, 255, 255, 1);
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 300;
+        letter-spacing: 0.5px;
+
+        @media screen and (max-width: $bp-LG){
+            margin: 25px 0 !important;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+        }
+
+        &.active{
+            font-weight: bold;
+        }
+
+        &:not(:last-child){
+            margin-right: 35px;
+        }
+
+        &.home{
+           font-family: 'Geo Sans';
+           color: rgba(255, 255, 255, 0.915);
+           font-size: 35px;
+           letter-spacing: 1px;
+           position: absolute;
+           top: 143px;
+           left: 50%;
+           transform: translateX(-50%);
+           opacity: 0;
+           height: 0;
+           pointer-events: none;
+           transition: $transition;
+
+           @media screen and (max-height: 730px){
+               top: 100px;
+           }
+
+           @media screen and (max-width: $bp-LG){
+                display: none;
+           }
+        }
+    }
 }

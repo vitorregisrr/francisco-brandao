@@ -2,8 +2,27 @@
 
 .Footer{
     position: relative;
-    padding: 28px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 48px 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.363);
+    background-color: #831313;
+    color: #fff;
 
+    &__brand{
+        font-family: 'Geo Sans';
+        margin: 0 0 15px 0;
+        font-weight: 300;
+        text-transform: uppercase;
+        font-size: 27px;
+        letter-spacing: 0.3;
+        color: #fff;
+    }
+
+    &__copy{
+        font-size: 14px;
+        margin: 0;
+    }
 }

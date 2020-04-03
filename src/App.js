@@ -99,7 +99,7 @@ const App = () => {
                         {({match}) => (
                             <CSSTransition
                                 in={match != null}
-                                timeout={{ enter: 400, exit: 400 }}
+                                timeout={500}
                                 classNames="CSSTransition--fade"
                                 unmountOnExit>
                                 <div className="page">

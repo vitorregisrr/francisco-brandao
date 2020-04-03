@@ -17,7 +17,7 @@ const Preloader = ({show, loadProgress}) => {
     }
 
     return(
-        <aside class="Preloader" data-show={show}>
+        <aside className="Preloader" data-show={show}>
             <div className="Preloader__content">
                 <div className="Preloader__brand">
                     <span>Francisco</span>

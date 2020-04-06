@@ -41,8 +41,10 @@ const HomeMenu = ({moveSlider, isFirst, setHasOverlay, slickRef}) => {
 
     const moveMenu = (index) => {
         const item = document.querySelectorAll('.HomeMenu__item')[index + 1];
-        if(item){
-            const oldIndex = currIndex;
+        if (!item) {
+            return false;
+        }
+        const oldIndex = currIndex;
         toggleMenu(false);
         moveSlider(index + 1);
         setCurrIndex(index);
@@ -55,16 +57,17 @@ const HomeMenu = ({moveSlider, isFirst, setHasOverlay, slickRef}) => {
 
         // Animações do traço underline: Se for p/ o primeiro, esconder
         if (index === -1) {
-            setUnderlineStyling({opacity: 0, top: 205}// Se estiver saindo do primeiro
-            )
+            setUnderlineStyling({opacity: 0, top: 205})
+
+            // Se estiver saindo do primeiro
         } else if (oldIndex === -1 && index > -1) {
             const offsets = [97, 63, 27, -3, -35];
             setUnderlineStyling({
                 opacity: 1,
                 width: item.offsetWidth - 7,
                 top: item.offsetTop + 21 + (offsets[index])
-            }// Se for p/ outros, seguir o item selecionado
-            )
+            })
+            // Se for p/ outros, seguir o item selecionado
         } else {
             setUnderlineStyling({
                 opacity: 1,
@@ -72,12 +75,15 @@ const HomeMenu = ({moveSlider, isFirst, setHasOverlay, slickRef}) => {
                 width: item.offsetWidth - 7
             })
         }
-        }
     }
 
     return (
         <React.Fragment>
-            <Scroller isLast={currIndex === 4} moveSlider={() => moveMenu(currIndex !== 4 ? currIndex + 1 : -1)}></Scroller>
+            <Scroller
+                isLast={currIndex === 4}
+                moveSlider={() => moveMenu(currIndex !== 4
+                ? currIndex + 1
+                : -1)}></Scroller>
             <div
                 className={`HomeMenu__toggler ${isToggled
                 ? 'toggled'
@@ -101,9 +107,11 @@ const HomeMenu = ({moveSlider, isFirst, setHasOverlay, slickRef}) => {
                         ? 'toggled'
                         : ''}`}>
                 <div
-                    className={`HomeMenu__content 
-                    ${isToggled ? 'toggled' : ''}
-                    ${IOS ? 'ios' : ''}`}>
+                    className={`HomeMenu__content ${isToggled
+                    ? 'toggled'
+                    : ''} ${IOS
+                        ? 'ios'
+                        : ''}`}>
 
                     <hr className="HomeMenu__underline" style={underlineStyling}/>
                     <button className="HomeMenu__item home" onClick={(e) => moveMenu(-1)}>

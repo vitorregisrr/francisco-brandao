@@ -2,10 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 312px;
+    height: 280px;
     width: 100%;
     background-size: cover;
     background-color:gray;
+    background-image: url('../../../assets/images/backgrounds/colecao-arte.png');
     
     &__title{
         font-weight: 200;

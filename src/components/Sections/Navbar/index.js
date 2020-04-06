@@ -41,13 +41,15 @@ const Navbar = ({location}) => {
         toggleMenu(false);
         setCurrIndex(index);
 
-        // Animações do traço underline: Se for p/ o primeiro, esconder
+        setTimeout(() =>{
+            // Animações do traço underline: Se for p/ o primeiro, esconder
         setUnderlineStyling({
             opacity: 1,
-            left: item.offsetLeft - 4,
+            left: item.offsetLeft,
             top: item.offsetTop + 20,
-            width: item.offsetWidth + 6
+            width: item.offsetWidth
         })
+        }, 100)
     }
 
     useEffect(() => {

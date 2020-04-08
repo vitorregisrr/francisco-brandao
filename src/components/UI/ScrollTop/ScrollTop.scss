@@ -2,49 +2,21 @@
 @import 'assets/scss/variables/__all.scss';
 
 .ScrollTop{
-    position: fixed;
+    position: absolute;
     right: 150px;
-    width: 42px;
+    width: 80px;
     height: 34px;
-    bottom: -10px;
-    background-color: $color-primary;
-    opacity: 0;
-    border: none;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.297);
+    bottom: 240px;
     z-index: 6;
+    background: none;
+    border: none;
+    background-image: url('../../../assets/images/ico/scroll-top.png');
+    background-size: contain;
+    background-repeat: no-repeat;
     @include transition();
 
-    @media screen and (max-width: $bp-XL){
+    @media screen and (max-width: $bp-LG){
         right: 130px;
     }
-
-    @media screen and (max-width: $bp-MD){
-        right: 70px;
-    }
-
-    @media screen and (max-width: $bp-SM){
-        width: 30px;
-        height: 26px;
-        right: 30px;
-    }
     
-    .ico{
-        display: block;
-        margin: auto;
-        width: 50%;
-        height: 50%;
-        background-image: url(../../../assets/images/ico/chevron-top.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center center;
-    }
-    
-    &[data-visible="true"]{
-        opacity: 1;
-        bottom: 70px;
-
-        @media screen and (max-width: $bp-SM){
-            bottom: 50px;
-        }
-    }
 }

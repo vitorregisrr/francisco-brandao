@@ -4,6 +4,7 @@ import {NavLink, withRouter} from 'react-router-dom'
 import './styles.scss';
 
 const Navbar = ({location}) => {
+    const [shouldTransition, setShouldTransition] = useState(false)
     const [underlineStyling,
         setUnderlineStyling] = useState({opacity: 0, width: 0, top: 100});
     const [currIndex,
@@ -54,6 +55,8 @@ const Navbar = ({location}) => {
 
     useEffect(() => {
       moveMenu(currIndex);
+
+      setTimeout(() => setShouldTransition(true),400)
     }, []);
 
     return (
@@ -90,7 +93,7 @@ const Navbar = ({location}) => {
                             </NavLink>
                         </div>
                         <div>
-                            <hr className="Navbar__underline" style={underlineStyling}/> 
+                            <hr className="Navbar__underline" style={underlineStyling} data-shouldTransition={shouldTransition}/> 
                             {menuItems.map((i, index) => (
                                 <NavLink data-key={i.key} className={`Navbar__item`} key={i.key} to={i.key} onClick={(e) => moveMenu(i.key)}>
                                     {i.label}

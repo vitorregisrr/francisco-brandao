@@ -159,7 +159,10 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
         height: 1px;
         background-color: rgba(255, 255, 255, 0.666);    
         border: none;
-        transition: $transition;
+        
+        &[data-shouldTransition="true"]{
+            transition: $transition;
+        }
     }
 
     &__item{

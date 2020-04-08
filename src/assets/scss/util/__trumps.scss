@@ -56,3 +56,127 @@ button{
 .text-uppercase{
     text-transform: uppercase !important;
 }
+
+.container-interna{
+    max-width: 630px;
+    margin: 0 auto;
+}
+
+.citacao-red{
+    font-style: italic; 
+    border-left: 40px solid #831313;
+    padding-left: 32px;
+    font-weight: 500;
+    color: #831313;
+    letter-spacing: .7;
+}
+
+.page-interna{
+    font-size: 19px;
+
+    img{
+        width: 100%;
+    }
+
+    figure{
+        padding: 0;
+        margin: 0;
+
+        img{
+            object-fit: cover !important;
+        }
+    }
+
+    figcaption{
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 12px;
+
+        &.arte{
+            font-size: 17px;
+            color: #484848;
+
+            span{
+                display: block;
+                font-size: 13px;
+                font-weight: 300;
+            }
+        }
+    }
+}
+
+.img-brush{
+    position: relative;
+    width: 100%;
+
+    img{
+        width: 100%;
+    }
+    
+    &.brush-yellow{
+        &:after{
+            content: '';
+            position: absolute;
+            left: 14%;
+            top: -25%;
+            background-image: url('../../images/shapes/brush-yellow.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 130%;
+            height: 130%;
+            z-index: -1;
+        }
+    }
+}
+
+.title-brush-red{
+    position: relative;
+    color: #fff;
+    font-size: 27px;
+    margin-bottom: 60px;
+
+    &:after{
+        content: '';
+        position: absolute;
+        left: -12%;
+        top: -150%;
+        z-index: -1;
+        background-image: url('../../images/shapes/brush-red.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 130%;
+        height: 130px;
+    }
+}
+
+.container{
+    @media screen and (min-width: $bp-XL){
+        max-width: 950px;
+    }
+}
+
+.container-large{
+    @media screen and (min-width: $bp-XL){
+        max-width: 1300px;
+    }
+}
+
+.text-right{
+    text-align: right;
+}
+
+.btn-outline-white{
+    width: 100%;
+    border: 1px solid #fff;
+    padding: 4px 0 !important;
+    background: transparent;
+    color: #fff;
+    transition: all 0.4s ease;
+    text-transform: uppercase;
+    font-size: 16px;
+
+    &:hover{
+        background-color: #fff;
+        color: #2c2c2c;
+    }
+}

@@ -1,0 +1,35 @@
+.LinhaBottom{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    button {
+        position: relative;
+        font-size: 22px;
+        color: #484848;
+        background: none;
+        border: none;
+        text-align: center;
+        padding-top: 36px;
+        letter-spacing: 0.4px;
+        transition: all 0.8s;
+        font-weight: 300;
+        text-transform: uppercase;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25px;
+            height: 25px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            border: 1px solid rgb(255, 255, 255);
+            transition-delay: 0.5s;
+            transition: all 0.4s;
+            border: 1px solid #484848;
+        }
+    }
+}

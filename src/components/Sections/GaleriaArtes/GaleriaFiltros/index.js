@@ -11,7 +11,7 @@ const GaleriaFiltros = () => {
                 </h1>
 
                 <div className="row">
-                    <div className="col-2 pr-lg-0">
+                    <div className="col-lg-2 mb-3 mb-lg-0 col-12 pr-lg-0">
                         <div className="form-control">
                             <label htmlFor="nome-artista">Nome do Artista</label>
                             <select name="nome-artista" id="nome-artista">
@@ -19,7 +19,7 @@ const GaleriaFiltros = () => {
                             </select>
                         </div>
                     </div>
-                    <div className="col-2 pr-lg-0">
+                    <div className="col-lg-2 mb-3 mb-lg-0 col-6 pr-lg-0">
                         <div className="form-control">
                             <label htmlFor="nome-obra">Nome da Obra</label>
                             <select name="nome-obra" id="nome-obra">
@@ -27,7 +27,7 @@ const GaleriaFiltros = () => {
                             </select>
                         </div>
                     </div>
-                    <div className="col-2 pr-lg-0">
+                    <div className="col-lg-2 mb-3 mb-lg-0 col-6 pr-lg-0">
                         <div className="form-control">
                             <label htmlFor="tipo-obra">Tipo da Obra</label>
                             <select name="tipo-obra" id="tipo-obra">
@@ -35,9 +35,9 @@ const GaleriaFiltros = () => {
                             </select>
                         </div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-lg-2 mb-3 mb-lg-0 col-6">
                         <div className="form-control">
-                            <label htmlFor="data-obra" className="pl-3">
+                            <label htmlFor="data-obra" className="pl-0 pl-lg-3">
                                 Data da obra
                             </label>
                             <div className="d-flex align-items-center">
@@ -46,7 +46,7 @@ const GaleriaFiltros = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-2 pl-lg-0">
+                    <div className="col-lg-2 mb-3 mb-lg-0 col-6 pl-lg-0">
                         <div className="form-control">
                             <label
                                 htmlFor=""
@@ -59,7 +59,7 @@ const GaleriaFiltros = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-2">
+                    <div className="col-lg-2 mb-3 mb-lg-0 col-12">
                         <div className="form-control">
                             <label
                                 htmlFor=""

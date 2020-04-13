@@ -2,20 +2,25 @@
 .CSSTransition {
     &--fade {
         &-enter {
+            position: absolute;
             opacity: 1;
             z-index: 3;
         }
         &-enter-active {
+            position: absolute;
             opacity: 1;
             z-index: 3;
         }
 
         &-exit {
+            position: absolute;
             pointer-events: none;
             opacity: 1;
             z-index: 6;
         }
+
         &-exit-active {
+            position: absolute;
             opacity: 0;
             transition: opacity 500ms;
             z-index: 6;

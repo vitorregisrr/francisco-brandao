@@ -1,34 +1,43 @@
 @import 'assets/scss/variables/__all.scss';
 $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
 
-.Navbar{
+.Navbar {
     position: absolute;
     left: 0;
     top: 0;
     width: 100vw;
     height: 110px;
     background-color: #831313c0;
-    z-index: 7;
-    
-    @media screen and (max-width: $bp-LG){
+    z-index: 11;
+    @media screen and (max-width: $bp-LG) {
         display: flex;
         align-items: center;
         justify-content: center;
         background-color: transparent;
-        height: 100%;
+        height: 100vh;
         width: 100vw;
         z-index: unset;
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            padding: 0 !important;
+            margin: 0 !important;
+            max-width: unset !important;
+            height: 100%;
+        }
     }
 
-    .container{
+    .container {
         height: 100%;
-
-        @media screen and (min-width: $bp-XL){
+        @media screen and (min-width: $bp-XL) {
             max-width: 1300px;
         }
     }
-    
-    &__toggler{
+
+    &__toggler {
         display: none;
         position: absolute;
         top: 0;
@@ -38,29 +47,57 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
         height: 80px;
         transition: $transition;
         
-        @media screen and (max-width: $bp-LG){
-            z-index: 5;
+        @media screen and (max-width: $bp-LG) {
+            z-index: 8;
             display: block;
         }
 
-        &.toggled{
+        &-home {
+            display: block;
+            position: absolute;
+            left: 140px;
+            top: 16px;
+            z-index: 4;
+            color: #fff;
+            font-family: 'Geo Sans';
+            font-size: 24px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: bold;
+            z-index: -2;
+            transition: all 1s;
+            transition-delay: .5s;
+
+            span {
+                display: block;
+                margin-left: 5px;
+            }
+        }
+
+        &.toggled {
+            position: fixed;
             background-color: #831313;
             width: 100vw;
             height: 100vh;
 
-            .Navbar__content{
+            .Navbar__content {
                 opacity: 1;
                 pointer-events: all;
             }
-        }
         
-        &.ios{
-            button{
+            .Navbar__toggler-home{
+                opacity: 0;
+                transition-delay: 0s;
+            }
+        }
+
+        &.ios {
+            button {
                 margin-left: 20px;
             }
         }
 
-        button{
+        button {
             position: relative;
             left: 74px;
             top: 16px;
@@ -70,7 +107,7 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
             transition: $transition;
 
             // Click overlay
-            &:after{
+            &:after {
                 content: '';
                 position: absolute;
                 left: 0;
@@ -79,93 +116,97 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
                 height: 40px;
             }
 
-            div{
+            div {
                 position: absolute;
                 height: 1px;
                 width: 24px;
                 background-color: rgba(255, 255, 255, 0.905);
                 transition: $transition;
-
-                &:nth-child(1){
+                &:nth-child(1) {
                     top: 1px;
                     transform: rotate(0);
                 }
-
-                &:nth-child(2){
+                &:nth-child(2) {
                     top: 11px;
                 }
-
-                &:nth-child(3){
+                &:nth-child(3) {
                     top: 21px;
                     transform: rotate(0);
                 }
             }
 
-            &.active{
+            &.active {
                 left: 50%;
-                top: 7%;
+                top: 6%;
 
-                div{
-                    &:nth-child(1){
+                div {
+                    &:nth-child(1) {
                         transform: rotate(40deg) translateX(62%);
                     }
-
-                    &:nth-child(3){
+                    &:nth-child(3) {
                         transform: rotate(-40deg) translateX(62%);
                     }
-
-                    &:nth-child(2){
+                    &:nth-child(2) {
                         opacity: 0;
                     }
                 }
             }
         }
     }
-    
-    &__brand{
-        font-family: 'Geo Sans';
-        color: #fff;
-        text-transform: uppercase;
-        font-size: 26px;
+
+    &__brand {
+        @media screen and (max-width: $bp-LG) {
+            display: none;
+        }
+
+        a {
+            font-family: 'Geo Sans';
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 26px;
+        }
     }
-    &__content{
+
+    &__content {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        position: relative;
         height: 100%;
         transition: $transition;
-
-        @media screen and (max-width: $bp-LG){
+        @media screen and (max-width: $bp-LG) {
+            justify-content: center;
             height: auto;
+            width: 100vw;
             opacity: 0;
             pointer-events: none;
             background-color: transparent;
             z-index: 5;
 
-            &.toggled{
+            &.toggled {
                 opacity: 1;
                 pointer-events: all;
+                z-index: 12;
             }
         }
-    
+
     }
 
-    &__underline{
+    &__underline {
         position: absolute;
         top: 8%;
         left: 40%;
         width: 100px;
         height: 1px;
-        background-color: rgba(255, 255, 255, 0.666);    
+        background-color: rgba(255, 255, 255, 0.666);
         border: none;
-        
-        &[data-shouldTransition="true"]{
+
+        &[data-shouldTransition="true"] {
             transition: $transition;
         }
     }
 
-    &__item{
+    &__item {
         background-color: none;
         border: none;
         background: none;
@@ -174,42 +215,29 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
         font-size: 16px;
         font-weight: 300;
         letter-spacing: 0.5px;
-
-        @media screen and (max-width: $bp-LG){
+        @media screen and (max-width: $bp-LG) {
             margin: 25px 0 !important;
             font-weight: 400;
             letter-spacing: -0.5px;
         }
 
-        &.active{
+        &.active {
             font-weight: bold;
         }
-
-        &:not(:last-child){
+        &:not(:last-child) {
             margin-right: 35px;
         }
+    }
 
-        &.home{
-           font-family: 'Geo Sans';
-           color: rgba(255, 255, 255, 0.915);
-           font-size: 35px;
-           letter-spacing: 1px;
-           position: absolute;
-           top: 143px;
-           left: 50%;
-           transform: translateX(-50%);
-           opacity: 0;
-           height: 0;
-           pointer-events: none;
-           transition: $transition;
-
-           @media screen and (max-height: 730px){
-               top: 100px;
-           }
-
-           @media screen and (max-width: $bp-LG){
-                display: none;
-           }
+    &__links {
+        @media screen and (max-width: $bp-LG) {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            z-index: 12;
         }
     }
 }

@@ -1,6 +1,12 @@
+@import 'assets/scss/variables/__all.scss';
+
 .GaleriaFiltros{
     background-color: #00354D;
     padding: 50px 0;
+
+    @media screen and (max-width: $bp-LG){
+        padding: 20px 0;
+    }
 
     &__title{
         text-transform: uppercase;

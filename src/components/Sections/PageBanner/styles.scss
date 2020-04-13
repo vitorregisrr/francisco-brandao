@@ -1,13 +1,23 @@
+@import 'assets/scss/variables/__all.scss';
+
 .PageBanner{
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    height: 280px;
+    height: 290px;
     width: 100%;
     background-size: cover;
     background-color:gray;
     background-image: url('../../../assets/images/backgrounds/colecao-arte.png');
     overflow: hidden;
+
+    @media screen and (max-width: $bp-LG){
+        height: 270px;
+    }
+
+    @media screen and (max-width: $bp-MD){
+        height: 190px;
+    }
     
     &__title{
         font-weight: 200;
@@ -18,5 +28,15 @@
         margin: 0;
         text-transform: uppercase;
         margin-bottom: -34px;
+
+        @media screen and (max-width: $bp-LG){
+            font-size: 80px;
+            margin-bottom: -26px;
+        }
+
+        @media screen and (max-width: $bp-MD){
+            font-size: 38px;
+            margin-bottom: -12px;
+        }
     }
 }

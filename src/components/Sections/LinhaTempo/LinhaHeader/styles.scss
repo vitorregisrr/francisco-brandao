@@ -1,0 +1,115 @@
+@import 'assets/scss/variables/__all.scss';
+
+.LinhaHeader {
+    background: #00354D;
+    padding: 50px 0 30px;
+
+    &__title {
+        font-size: 35px;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.907);
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    &__list {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border-top: 1px solid rgba(255, 255, 255, 0.589);
+
+        .overlay-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(-50%);
+            height: 2px;
+            background-color: #fff;
+            transition: all 1s cubic-bezier(.81,.42,.33,1);
+        }
+
+        &[data-current="0"] {
+            .overlay-line {
+                width: 0%;
+
+                @media screen and (max-width: $bp-LG){
+                    width: 5%;
+                }
+            }
+        }
+
+        &[data-current="1"] {
+            .overlay-line {
+                width: 33%;
+
+                @media screen and (max-width: $bp-LG){
+                    width: 30%;
+                }
+            }
+        }
+        
+        &[data-current="2"] {
+            .overlay-line {
+                width: 66%;
+
+                @media screen and (max-width: $bp-LG){
+                    width: 63%;
+                }
+            }
+        }
+
+        &[data-current="3"] {
+            .overlay-line {
+                width: 100%;
+            }
+        }
+
+        button {
+            position: relative;
+            font-size: 19px;
+            color: #fff;
+            background: none;
+            border: none;
+            text-align: center;
+            padding-top: 44px;
+            margin-top: -13px;
+            letter-spacing: 0.4px;
+            transition: all 0.8s;
+            
+            &:nth-child(2) {
+                margin-left: -3% !important;
+            }
+
+            &:nth-child(5) {
+                margin-right: -5% !important;
+            }
+
+            &[data-active="true"] {
+                font-weight: bold;
+                
+                &:after {
+                    background-color: #831313;
+                    border-width: 2px;
+                }
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 25px;
+                height: 25px;
+                background-color: #00354D;
+                border-radius: 50%;
+                border: 1px solid rgb(255, 255, 255);
+                transition-delay: 0.5s;
+                transition: all 0.4s;
+            }
+        }
+    }
+
+}

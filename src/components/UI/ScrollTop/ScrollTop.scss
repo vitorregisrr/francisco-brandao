@@ -6,7 +6,7 @@
     right: 150px;
     width: 80px;
     height: 34px;
-    bottom: 240px;
+    bottom: 220px;
     z-index: 6;
     background: none;
     border: none;
@@ -16,7 +16,10 @@
     @include transition();
 
     @media screen and (max-width: $bp-LG){
-        right: 130px;
+        right: 20px;
+        bottom: 170px;
+        width: 70px;
     }
+    
     
 }

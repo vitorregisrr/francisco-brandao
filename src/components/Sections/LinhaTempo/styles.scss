@@ -1,0 +1,21 @@
+.LinhaTempo{
+    padding: 110px 0;
+
+    .container-interna{
+        position: relative;
+    }
+    
+    &__content{
+        padding: 50px 0 40px 0;
+        min-height: 700px;
+        max-width: 100%;
+    }
+
+    &__title{
+        font-size: 35px;
+        color: #00354D;
+        text-transform: uppercase;
+        font-weight: 400;
+        margin-bottom: 40px;
+    }
+}

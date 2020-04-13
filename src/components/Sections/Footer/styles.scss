@@ -19,10 +19,18 @@
         font-size: 27px;
         letter-spacing: 0.3;
         color: #fff;
+
+        @media screen and (max-width: $bp-MD){
+            font-size: 24px;
+        }
     }
 
     &__copy{
         font-size: 14px;
         margin: 0;
+
+        @media screen and (max-width: $bp-MD){
+            font-size: 12px;
+        }
     }
 }

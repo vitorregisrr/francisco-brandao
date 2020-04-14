@@ -23,7 +23,7 @@ const LinhaHeader = ({current, setCurrent}) => {
                     </button>
                     <button onClick={() => setCurrent(2)} data-active={current > 1}>
                         <span>
-                            Infância
+                            Juventude
                         </span>
                     </button>
                     <button onClick={() => setCurrent(3)} data-active={current > 2}>

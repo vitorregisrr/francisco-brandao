@@ -17,6 +17,186 @@ const LinhaTempo = () => {
                 Origens
             </h3>
             <div className="markup">
+                <h4>De Francisco a Chiquinho</h4>
+                <p>
+                    No último ano do Clássico, no Andrews, Chiquinho ficou de segunda época e sua
+                    mãe resolveu que ele teria que trabalhar para pagar as aulas particulares. Ela
+                    arranjou um estágio para ele durante o verão na Carioca Engenharia, cujo
+                    escritório ficava na rua Senador Dantas, no Centro.
+                </p>
+                <p>Uma das funções do estagiário era ficar de apontador no Cais do Porto, onde
+                    estavam fazendo um aterro. O trabalho era contar os caminhões e controlar
+                    quantos metros cúbicos de areia entravam ali diariamente. Depois de passar o dia
+                    conferindo aquela terra, ele saía com os donos da construtora, Ricardo
+                    Backheuser e Carlinhos Gebara, para acompanhar as obras que eles tocavam pelo
+                    subúrbio. Ainda dava para fazer um lanche nos botequins mais distantes, antes de
+                    voltar para casa. O maior luxo nessa atividade era quando paravam para comer no
+                    Bob’s da Avenida Brasil.
+                </p>
+                <p>Cumprido o estágio e formado no colégio, veio o vestibular. Chiquinho tentou
+                    o curso de Economia, mas não passou, e acabou ingressando na faculdade de
+                    Direito na PUC.</p>
+
+                <figure>
+                    <div className="img-brush brush-line-top-left">
+                        <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                    </div>
+                    <figcaption>
+                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
+                        bastidores do turismo”, 26/8/1971.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <div className="img-brush brush-line-bottom-right-sm">
+                        <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                    </div>
+                    <figcaption>
+                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
+                        bastidores do turismo”, 26/8/1971.
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    )
+
+    const Content1 = () => (
+        <div>
+            <h3 className="LinhaTempo__title">
+                Infância
+            </h3>
+            <div className="markup">
+                <h4>Título Introdução</h4>
+                <p>
+                    No último ano do Clássico, no Andrews, Chiquinho ficou de segunda época e sua
+                    mãe resolveu que ele teria que trabalhar para pagar as aulas particulares. Ela
+                    arranjou um estágio para ele durante o verão na Carioca Engenharia, cujo
+                    escritório ficava na rua Senador Dantas, no Centro.
+                </p>
+                <p>Uma das funções do estagiário era ficar de apontador no Cais do Porto, onde
+                    estavam fazendo um aterro. O trabalho era contar os caminhões e controlar
+                    quantos metros cúbicos de areia entravam ali diariamente. Depois de passar o dia
+                    conferindo aquela terra, ele saía com os donos da construtora, Ricardo
+                    Backheuser e Carlinhos Gebara, para acompanhar as obras que eles tocavam pelo
+                    subúrbio. Ainda dava para fazer um lanche nos botequins mais distantes, antes de
+                    voltar para casa. O maior luxo nessa atividade era quando paravam para comer no
+                    Bob’s da Avenida Brasil.
+                </p>
+                <p>Cumprido o estágio e formado no colégio, veio o vestibular. Chiquinho tentou
+                    o curso de Economia, mas não passou, e acabou ingressando na faculdade de
+                    Direito na PUC.</p>
+
+                <figure>
+                    <div className="img-brush brush-line-top-left">
+                        <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                    </div>
+                    <figcaption>
+                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
+                        bastidores do turismo”, 26/8/1971.
+                    </figcaption>
+                </figure>
+
+                <figure>
+                    <div className="img-brush brush-line-bottom-right-sm">
+                        <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                    </div>
+                    <figcaption>
+                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
+                        bastidores do turismo”, 26/8/1971.
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui nobis ducimus
+                    libero, magnam sed perferendis quibusdam odit voluptate, alias cumque quos
+                    consequatur mollitia veniam. Quo impedit blanditiis odit aperiam alias cum
+                    aliquid corrupti, laudantium molestias placeat iste facilis soluta et repellat
+                    atque praesentium consectetur voluptatibus, est iusto possimus? Maiores atque
+                    natus rem, id tempore odit. Voluptate ullam quasi minus ducimus!
+                </p>
+
+                <blockquote>
+                    “Meu tio José Bento de Carvalho Dias era um homem com muita visão de futuro,
+                    tinha o empreendedorismo no sangue: sempre otimista, sempre olhando para a
+                    frente e sempre querendo progredir. Foi uma das maiores influências positivas
+                    que pude trazer para o trabalho e para a vida.”
+                </blockquote>
+
+                <p>
+                    Os almoços de domingo no Rio eram sempre na casa da tia Zizita, na Rua Gomes
+                    Carneiro, em Ipanema, onde moravam os tios mais novos, Lindolpho e Gabriel.
+                    Depois ia visitar a avó Sophia e as tias paternas em Botafogo. Nesses passeios
+                    de carro pela cidade com seus pais, Chiquinho achava que nunca seria capaz de
+                    andar sozinho e encontrar o caminho de casa. Não sabia diferenciar direita e
+                    esquerda, norte e sul, não tinha nenhum senso de orientação. Na escola sempre
+                    foi um dos piores alunos. Depois de terminar o primário no Colégio Souza Leão,
+                    entrou para o Santo Inácio, uma das escolas mais tradicionais do Rio de Janeiro
+                    – que na época era exclusivamente masculino. Ali fez muitas amizades que ficaram
+                    pela vida toda, mas o desempenho nos estudos não foi dos melhores e ele acabou
+                    seguindo para terminar o ginásio no internato marista Nossa Senhora Auxiliadora,
+                    em Campinas, onde também estudavam seus primos Marcos, Guilherme e Maurício.
+                </p>
+
+                <figure>
+                    <div className="img-brush brush-line-bottom-right-sm-2">
+                        <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                    </div>
+                    <figcaption>
+                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
+                        bastidores do turismo”, 26/8/1971.
+                    </figcaption>
+                </figure>
+
+                <p>
+                    De volta ao Rio para cursar o equivalente ao ensino médio de hoje, foi para o
+                    colégio Andrews, em Botafogo. Na época havia duas opções para os alunos,
+                    dependendo da área acadêmica preferida: o clássico e o científico. Como era
+                    muito fraco nas ciências exatas, em química e matemática, e não pretendia cursar
+                    engenharia ou medicina, Chiquinho optou pelo clássico e depois prestou
+                    vestibular para Direito.
+                </p>
+
+                <h4>
+                    Hípica
+                </h4>
+
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat temporibus
+                    deleniti corporis numquam quae atque distinctio dolor! Quidem animi accusamus
+                    earum culpa quod quisquam odio error sint fugit amet ipsum dolorem, adipisci
+                    labore nostrum maiores voluptatem architecto totam ea numquam?
+                </p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia laboriosam
+                    doloribus rerum qui voluptas. Ipsa doloremque excepturi itaque quae! Corporis
+                    molestiae necessitatibus ex dicta, impedit suscipit cumque. Rem culpa at magnam
+                    nemo numquam, neque, a consequatur modi, obcaecati eos velit?</p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo itaque
+                    laboriosam ipsa. Sunt, maiores debitis ipsum similique officia quia dolorum
+                    laboriosam quasi harum, tempore eveniet quis itaque dolores hic voluptatum.</p>
+
+                <figure>
+                    <div className="img-brush brush-line-bottom-right-sm">
+                        <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                    </div>
+                    <figcaption>
+                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
+                        bastidores do turismo”, 26/8/1971.
+                    </figcaption>
+                </figure>
+
+            </div>
+        </div>
+
+    )
+
+    const Content2 = () => (
+        <div>
+            <h3 className="LinhaTempo__title">
+                Juventude
+            </h3>
+            <div className="markup">
                 <h4>
                     Primeiro emprego
                 </h4>
@@ -104,9 +284,12 @@ const LinhaTempo = () => {
                 </p>
 
                 <figure>
-                    <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                    <div className="img-brush brush-line-bottom-right-md">
+                        <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                    </div>
                     <figcaption>
-                        Com o amigo Carlos Borges na viagem pela Europa, em 1972.
+                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
+                        bastidores do turismo”, 26/8/1971.
                     </figcaption>
                 </figure>
 
@@ -156,81 +339,30 @@ const LinhaTempo = () => {
                     com um grupo de amigos. Luís Oswaldo Pastore, Fernão Lara Mesquita e Rosa May
                     Sampaio, além da uruguaia Laila Amorim e do argentino Manuel Lamarca, eram
                     companheiros constantes nessas viagens.</p>
+
+                <figure>
+                    <div className="img-brush brush-line-bottom-right-lg">
+                        <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                    </div>
+                    <figcaption>
+                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
+                        bastidores do turismo”, 26/8/1971.
+                    </figcaption>
+                </figure>
             </div>
-        </div>
-    )
 
-    const Content1 = () => (
-        <div>
-             <h3 className="LinhaTempo__title">
-                Infância
-            </h3>
-            <div className="markup">
-
-                <p>
-                    No último ano do Clássico, no Andrews, Chiquinho ficou de segunda época e sua
-                    mãe resolveu que ele teria que trabalhar para pagar as aulas particulares. Ela
-                    arranjou um estágio para ele durante o verão na Carioca Engenharia, cujo
-                    escritório ficava na rua Senador Dantas, no Centro.
-                </p>
-                <p>Uma das funções do estagiário era ficar de apontador no Cais do Porto, onde
-                    estavam fazendo um aterro. O trabalho era contar os caminhões e controlar
-                    quantos metros cúbicos de areia entravam ali diariamente. Depois de passar o dia
-                    conferindo aquela terra, ele saía com os donos da construtora, Ricardo
-                    Backheuser e Carlinhos Gebara, para acompanhar as obras que eles tocavam pelo
-                    subúrbio. Ainda dava para fazer um lanche nos botequins mais distantes, antes de
-                    voltar para casa. O maior luxo nessa atividade era quando paravam para comer no
-                    Bob’s da Avenida Brasil.
-                </p>
-                <p>Cumprido o estágio e formado no colégio, veio o vestibular. Chiquinho tentou
-                    o curso de Economia, mas não passou, e acabou ingressando na faculdade de
-                    Direito na PUC.</p>
-            </div>
-        </div>
-
-    )
-
-    const Content2 = () => (
-        <div>
-             <h3 className="LinhaTempo__title">
-                Juventude
-            </h3>
-            <div className="markup">
-                <h3>
-                     Juventude
-                </h3>
-
-                <p>
-                    No último ano do Clássico, no Andrews, Chiquinho ficou de segunda época e sua
-                    mãe resolveu que ele teria que trabalhar para pagar as aulas particulares. Ela
-                    arranjou um estágio para ele durante o verão na Carioca Engenharia, cujo
-                    escritório ficava na rua Senador Dantas, no Centro.
-                </p>
-                <p>Uma das funções do estagiário era ficar de apontador no Cais do Porto, onde
-                    estavam fazendo um aterro. O trabalho era contar os caminhões e controlar
-                    quantos metros cúbicos de areia entravam ali diariamente. Depois de passar o dia
-                    conferindo aquela terra, ele saía com os donos da construtora, Ricardo
-                    Backheuser e Carlinhos Gebara, para acompanhar as obras que eles tocavam pelo
-                    subúrbio. Ainda dava para fazer um lanche nos botequins mais distantes, antes de
-                    voltar para casa. O maior luxo nessa atividade era quando paravam para comer no
-                    Bob’s da Avenida Brasil.
-                </p>
-                <p>Cumprido o estágio e formado no colégio, veio o vestibular. Chiquinho tentou
-                    o curso de Economia, mas não passou, e acabou ingressando na faculdade de
-                    Direito na PUC.</p>
-            </div>
         </div>
     )
 
     const Content3 = () => (
         <div>
-             <h3 className="LinhaTempo__title">
+            <h3 className="LinhaTempo__title">
                 Vida Adulta
             </h3>
             <div className="markup">
-                <h3>
-                     Vida Adulta
-                </h3>
+                <h4>
+                    Inventando Moedas
+                </h4>
 
                 <p>
                     No último ano do Clássico, no Andrews, Chiquinho ficou de segunda época e sua
@@ -247,9 +379,132 @@ const LinhaTempo = () => {
                     voltar para casa. O maior luxo nessa atividade era quando paravam para comer no
                     Bob’s da Avenida Brasil.
                 </p>
-                <p>Cumprido o estágio e formado no colégio, veio o vestibular. Chiquinho tentou
-                    o curso de Economia, mas não passou, e acabou ingressando na faculdade de
-                    Direito na PUC.</p>
+                <div className="row">
+                    <div className="col-lg-6">
+                        <figure>
+                            <div className="img-brush brush-line-bottom-left">
+                                <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                            </div>
+                            <figcaption class="text-lg-right">
+                                No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
+                                bastidores do turismo”, 26/8/1971.
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div className="col-lg-6">
+                        <figure>
+                            <div className="img-brush">
+                                <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                            </div>
+                            <figcaption>
+                                No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
+                                bastidores do turismo”, 26/8/1971.
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <blockquote>
+                    “Eu não sabia ainda, mas na verdade já estava começando a mexer com o que seria
+                    a principal vertente da minha vida profissional, buscando soluções na área de
+                    comunicação para a promoção dos eventos da grife.”
+                </blockquote>
+                <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quas iure voluptas
+                    unde natus quos fugiat inventore nesciunt. Maiores ratione cumque, atque alias
+                    unde natus quos fugiat inventore nesciunt. Maiores ratione cumque, atque alias
+                    unde natus quos fugiat inventore nesciunt. Maiores ratione cumque, atque alias
+                    unde natus quos fugiat inventore nesciunt. Maiores ratione cumque, atque alias
+                    unde natus quos fugiat inventore nesciunt. Maiores ratione cumque, atque alias
+                    unde natus quos fugiat inventore nesciunt. Maiores ratione cumque, atque alias
+                    quae perspiciatis optio quisquam repellendus, laborum eos consequuntur.
+                </p>
+
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ducimus vero
+                    ratione tenetur. Veritatis omnis voluptate possimus? Sit architecto velit
+                    placeat pariatur tenetur rerum similique qui eligendi, illum laborum. Maiores.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ipsum
+                    recusandae animi consequuntur porro, similique labore tempora ullam quae
+                    laborum?</p>
+                    
+                <h4>Promoshow</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iste alias
+                    facere dicta aperiam temporibus quia, molestias, fugiat eius reprehenderit,
+                    dolorum expedita debitis saepe voluptas fugit est fuga ea eligendi?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+                    perferendis, nulla enim optio illo nam dolorum itaque laudantium necessitatibus
+                    eius?</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore expedita
+                    minima ex dolorum illo alias maxime suscipit, consequuntur quam ut quas esse
+                    voluptates, consectetur, nemo incidunt doloremque dicta accusantium ipsam?</p>
+                <figure>
+                    <div className="img-brush">
+                        <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                    </div>
+                    <figcaption class="text-lg-right">
+                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
+                        bastidores do turismo”, 26/8/1971.
+                    </figcaption>
+                </figure>
+
+                <h4>Porto Seguro</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, rem
+                    numquam voluptatum enim veniam fugit porro quibusdam magnam, necessitatibus
+                    provident nulla optio quis dolores quisquam ad a sed illo? Magni.</p>
+                <figure>
+                    <div className="img-brush brush-line-bottom-right-tall">
+                        <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                    </div>
+                    <figcaption class="text-lg-right">
+                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
+                        bastidores do turismo”, 26/8/1971.
+                    </figcaption>
+                </figure>
+
+                <p>Passaram bastante tempo juntos nessa viagem, e logo começaram um namoro que
+                    dura até hoje. Com a entrada de Fernanda na sua vida, com a empresa crescendo e
+                    também voltando a praticar o hipismo, Chiquinho deixou de lado de vez a vida
+                    noturna e a boemia dos tempos de juventude para se dedicar com ainda mais ímpeto
+                    ao trabalho, e logo começaria também um novo projeto de vida, mais ligado à sua
+                    paixão pela natureza e pelos animais.</p>
+
+                <h4>O sítio Santo Antônio</h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae molestias
+                    reprehenderit ex delectus sunt veniam dolore earum, atque aspernatur veritatis
+                    natus mollitia esse ducimus deserunt sequi sint, laboriosam voluptates et.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur aliquid aut
+                    minima dolore distinctio ab? Atque iste optio unde architecto! Quaerat veritatis
+                    libero suscipit expedita atque repellendus nam iure eius.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, laborum!
+                    Repellendus, porro. Perspiciatis debitis officia placeat distinctio corrupti
+                    natus accusamus ut at? Accusantium, distinctio itaque.
+                </p>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta mollitia
+                    delectus quidem modi voluptas, adipisci, inventore repellat, distinctio quisquam
+                    eos totam temporibus dolore? Amet velit dolorem eaque molestiae libero repellat?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque eveniet,
+                    quam rem distinctio fuga consequatur. Illo deleniti labore libero sequi
+                    temporibus repellendus dolor veritatis saepe laborum ipsam eum soluta fuga ab
+                    officia magnam, cupiditate voluptatem.
+                </p>
+
+                <figure>
+                    <div className="img-brush brush-line-bottom-right-tall">
+                        <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                    </div>
+                    <figcaption>
+                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
+                        bastidores do turismo”, 26/8/1971.
+                    </figcaption>
+                </figure>
             </div>
         </div>
     )

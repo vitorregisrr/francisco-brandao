@@ -8,22 +8,37 @@ const Historia = (props) => {
     return (
         <section className="Historia page-interna">
             <PageBanner title={`História`} background={false}/>
-            <main class="py-5 my-3 my-lg-5">
+            <main class="pt-3 pb-5 pt-lg-5 my-3 my-lg-5">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-6">
-                            <div className="img-brush brush-blue">
-                                <img src="../../assets/images/thumbs/historia-1.png" alt=""/>
-                            </div>
+                        <div className="col-lg-6 d-flex justify-content-between flex-column pb-lg-4">
+                            <figure>
+                                <div className="img-brush brush-blue">
+                                    <img src={require('../../assets/images/thumbs/historia-1.png')} alt=""/>
+                                </div>
+                                <figcaption className="text-lg-right">
+                                    Legenda loren ipsum dolor Legenda loren ipsum dolor
+                                </figcaption>
+                            </figure>
                             <div className="row">
-                                <div className="col-lg-3"></div>
+                                <div className="col-lg-3 d-flex align-items-end text-lg-right pr-lg-0 order-last order-lg-first">
+                                   <figcaption> Legenda loren ipsum dolor Legenda loren ipsum dolor</figcaption>
+                                </div>
                                 <div className="col-lg-9">
-                                    video é yt?
+                                    <div className="img-brush brush-line-top-left">
+                                        <iframe
+                                            width="100%"
+                                            height="190"
+                                            src="https://www.youtube.com/embed/k39oVsZqyDQ"
+                                            frameborder="0"
+                                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                                            allowfullscreen></iframe>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div className="col-lg-6 pt-lg-5">
-                            <div class="markup">
+                            <div class="markup pt-lg-5">
                                 <h3>
                                     Uma vida de muitas realizações
                                 </h3>
@@ -58,7 +73,7 @@ const Historia = (props) => {
                     </div>
                 </div>
 
-                <LinhaTempo />
+                <LinhaTempo/>
             </main>
         </section>
     )

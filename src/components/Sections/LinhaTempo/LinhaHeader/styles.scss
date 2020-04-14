@@ -2,7 +2,11 @@
 
 .LinhaHeader {
     background: #00354D;
-    padding: 50px 0 30px;
+    padding: 50px 30px;
+
+    @media screen and (max-width: $bp-MD){
+        padding: 25px 20px;
+    }
 
     &__title {
         font-size: 35px;
@@ -11,6 +15,10 @@
         text-transform: uppercase;
         text-align: center;
         margin-bottom: 60px;
+
+        @media screen and (max-width: $bp-MD){
+            margin-bottom: 45px;
+        }
     }
 
     &__list {
@@ -19,6 +27,11 @@
         justify-content: space-between;
         width: 100%;
         border-top: 1px solid rgba(255, 255, 255, 0.589);
+
+        @media screen and (max-width: $bp-LG){
+            padding-bottom: 30px;
+        }
+
 
         .overlay-line {
             position: absolute;
@@ -43,20 +56,12 @@
         &[data-current="1"] {
             .overlay-line {
                 width: 33%;
-
-                @media screen and (max-width: $bp-LG){
-                    width: 30%;
-                }
             }
         }
         
         &[data-current="2"] {
             .overlay-line {
                 width: 66%;
-
-                @media screen and (max-width: $bp-LG){
-                    width: 63%;
-                }
             }
         }
 
@@ -68,7 +73,7 @@
 
         button {
             position: relative;
-            font-size: 19px;
+            font-size: 20px;
             color: #fff;
             background: none;
             border: none;
@@ -77,13 +82,24 @@
             margin-top: -13px;
             letter-spacing: 0.4px;
             transition: all 0.8s;
-            
-            &:nth-child(2) {
-                margin-left: -3% !important;
+            width: 10px;
+
+            span{
+                position: absolute;
+                transform: translateX(-50%);
+
+                @media screen and (min-width: $bp-LG){
+                    white-space: nowrap;
+
+                }
             }
 
-            &:nth-child(5) {
-                margin-right: -5% !important;
+            @media screen and (max-width: $bp-MD){
+               font-size: 16px;
+            }
+
+            @media screen and (max-width: $bp-MD){
+                margin-top: -10px;
             }
 
             &[data-active="true"] {
@@ -101,13 +117,18 @@
                 top: 0;
                 left: 50%;
                 transform: translateX(-50%);
-                width: 25px;
-                height: 25px;
+                width: 27px;
+                height: 27px;
                 background-color: #00354D;
                 border-radius: 50%;
                 border: 1px solid rgb(255, 255, 255);
                 transition-delay: 0.5s;
                 transition: all 0.4s;
+
+                @media screen and (max-width: $bp-MD){
+                    width: 19px;
+                    height: 19px;
+                }
             }
         }
     }

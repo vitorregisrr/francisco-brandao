@@ -41,7 +41,7 @@ const MeioAmbiente = (props) => {
                             </div>
                         </div>
                         <div className="col-lg-6 pt-lg-5">
-                            <div class="markup pt-lg-5">
+                            <div class="markup">
                                 <h3>
                                     Título introdução
                                 </h3>

@@ -187,13 +187,13 @@ button {
         &:after {
             content: '';
             position: absolute;
-            left: -6%;
-            top: -20%;
+            left: -7%;
+            top: -26%;
             background-image: url('../../images/shapes/brush-blue-spiral.png');
             background-size: contain;
             background-repeat: no-repeat;
-            width: 125%;
-            height: 125%;
+            width: 128%;
+            height: 128%;
             z-index: -1;
         }
     }

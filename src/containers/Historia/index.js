@@ -9,7 +9,7 @@ const Historia = (props) => {
         <section className="Historia page-interna">
             <PageBanner title={`História`} background={false}/>
             <main class="pt-3 pb-5 pt-lg-5 my-3 my-lg-5">
-                <div className="container">
+                <div className="container pt-5 mt-lg-4">
                     <div className="row">
                         <div className="col-lg-6 d-flex justify-content-between flex-column pb-lg-4">
                             <figure className="my-4 my-lg-0" >
@@ -20,7 +20,7 @@ const Historia = (props) => {
                                     Legenda loren ipsum dolor Legenda loren ipsum dolor
                                 </figcaption>
                             </figure>
-                            <div className="row">
+                            <div className="row mt-3 mt-lg-0">
                                 <div className="col-lg-3 d-flex align-items-end text-lg-right pr-lg-0 order-last order-lg-first">
                                    <figcaption> Legenda loren ipsum dolor Legenda loren ipsum dolor</figcaption>
                                 </div>
@@ -39,7 +39,7 @@ const Historia = (props) => {
                         </div>
                         <div className="col-lg-6 pt-lg-5">
                             <div class="markup">
-                                <h3>
+                                <h3 className="mt-5 mt-lg-0">
                                     Uma vida de muitas realizações
                                 </h3>
                                 <p>

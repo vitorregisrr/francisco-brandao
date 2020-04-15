@@ -87,8 +87,8 @@ const MeioAmbiente = (props) => {
                                 Legenda loren ipsum dolor Legscacsenda loren ipsum dolor
                             </figcaption>
                         </figure>
-                        <h4>
-                            Plnejamento e construção
+                        <h4 className="mt-lg-5">
+                            Planejamento e construção
                         </h4>
                         <p>
                             Toda a filosofia de organização e planejamento que implementada na empresa ao
@@ -130,7 +130,7 @@ const MeioAmbiente = (props) => {
                     </div>
                 </div>
 
-                <div className="container">
+                <div className="container my-3 my-lg-5">
                     <figure>
                         <div className="img-brush">
                             <img src={require('../../assets/images/thumbs/meioambiente-3.png')} alt=""/>
@@ -161,7 +161,7 @@ const MeioAmbiente = (props) => {
                             currais, as cocheiras e os pastos para diversas criações.
                         </p>
 
-                        <blockquote>
+                        <blockquote class="lg">
                             “Gosto de bicho solto, de ver os bichos bem tratados, bem alimentados, bem
                             cuidados. Hoje, com as construções todas prontas e muitas plantas e árvores já
                             crescidas, o sítio é uma morada confortável para uma enorme variedade de animais

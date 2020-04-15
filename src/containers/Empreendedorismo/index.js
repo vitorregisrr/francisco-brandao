@@ -8,10 +8,10 @@ const Empreendedorismo = (props) => {
         <section className="Empreendedorismo page-interna pb-4 mb-2 mb-lg-5">
             <PageBanner title={`Empreendedorismo`} background={false}/>
             <main class="pt-3 pb-5 pt-lg-5 my-3 my-lg-5">
-                <div className="container">
+                <div className="container pt-lg-5">
                     <div className="row">
                         <div className="col-lg-6 d-flex justify-content-between flex-column pb-lg-4">
-                            <figure>
+                            <figure className="my-4 my-lg-0">
                                 <div className="img-brush brush-orange">
                                     <img src={require('../../assets/images/thumbs/empreendedorismo-1.png')} alt=""/>
                                 </div>
@@ -33,7 +33,7 @@ const Empreendedorismo = (props) => {
                             </div>
                         </div>
                         <div className="col-lg-6 pt-lg-5">
-                            <div class="markup pt-lg-5">
+                            <div class="markup pt-4 pt-lg-1">
                                 <h3>
                                     Título introdução
                                 </h3>

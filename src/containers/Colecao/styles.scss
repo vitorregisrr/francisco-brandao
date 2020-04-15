@@ -1,1 +1,10 @@
 @import 'assets/scss/variables/__all.scss';
+
+.Colecao{
+    .PageBanner__title{
+        @media screen and (max-width: $bp-MD){
+            font-size: 47px;
+            margin-bottom: -18px;
+        }
+    }
+}

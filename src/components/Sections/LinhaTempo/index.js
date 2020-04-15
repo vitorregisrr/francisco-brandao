@@ -37,23 +37,21 @@ const LinhaTempo = () => {
                     o curso de Economia, mas não passou, e acabou ingressando na faculdade de
                     Direito na PUC.</p>
 
-                <figure>
-                    <div className="img-brush brush-line-top-left">
+                <figure className="pt-4">
+                    <div className="img-brush brush-line brush-line-top-left-2">
                         <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
                     </div>
                     <figcaption>
-                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
-                        bastidores do turismo”, 26/8/1971.
+                        No colo de sua mãe, ainda bebê.
                     </figcaption>
                 </figure>
 
-                <figure>
-                    <div className="img-brush brush-line-bottom-right-sm">
+                <figure className="pt-3">
+                    <div className="img-brush brush-line brush-line-bottom-right">
                         <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
                     </div>
                     <figcaption>
-                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
-                        bastidores do turismo”, 26/8/1971.
+                        Legenda loren ipsum dolor avedm med loren ipsum
                     </figcaption>
                 </figure>
             </div>
@@ -86,24 +84,18 @@ const LinhaTempo = () => {
                     o curso de Economia, mas não passou, e acabou ingressando na faculdade de
                     Direito na PUC.</p>
 
-                <figure>
-                    <div className="img-brush brush-line-top-left">
+                <figure className="pt-lg-5 mt-lg-3">
+                    <div className="img-brush brush-line brush-line-top-left-2">
                         <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
                     </div>
-                    <figcaption>
-                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
-                        bastidores do turismo”, 26/8/1971.
-                    </figcaption>
+                    <figcaption></figcaption>
                 </figure>
 
-                <figure>
-                    <div className="img-brush brush-line-bottom-right-sm">
+                <figure className="pb-lg-5 mb-lg-5">
+                    <div className="img-brush brush-line brush-line-bottom-right">
                         <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
                     </div>
-                    <figcaption>
-                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
-                        bastidores do turismo”, 26/8/1971.
-                    </figcaption>
+                    <figcaption></figcaption>
                 </figure>
 
                 <p>
@@ -137,13 +129,12 @@ const LinhaTempo = () => {
                     em Campinas, onde também estudavam seus primos Marcos, Guilherme e Maurício.
                 </p>
 
-                <figure>
-                    <div className="img-brush brush-line-bottom-right-sm-2">
+                <figure className="pb-lg-5 mb-lg-4">
+                    <div className="img-brush brush-line brush-line-bottom-right-2">
                         <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
                     </div>
                     <figcaption>
-                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
-                        bastidores do turismo”, 26/8/1971.
+                        Lorem ipsum
                     </figcaption>
                 </figure>
 
@@ -177,12 +168,11 @@ const LinhaTempo = () => {
                     laboriosam quasi harum, tempore eveniet quis itaque dolores hic voluptatum.</p>
 
                 <figure>
-                    <div className="img-brush brush-line-bottom-right-sm">
+                    <div className="img-brush">
                         <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
                     </div>
                     <figcaption>
-                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
-                        bastidores do turismo”, 26/8/1971.
+                        Lorem ipsum
                     </figcaption>
                 </figure>
 
@@ -284,12 +274,11 @@ const LinhaTempo = () => {
                 </p>
 
                 <figure>
-                    <div className="img-brush brush-line-bottom-right-md">
+                    <div className="img-brush brush-line brush-line-bottom-right-3">
                         <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
                     </div>
                     <figcaption>
-                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
-                        bastidores do turismo”, 26/8/1971.
+                        lorem ipsum
                     </figcaption>
                 </figure>
 
@@ -341,12 +330,11 @@ const LinhaTempo = () => {
                     companheiros constantes nessas viagens.</p>
 
                 <figure>
-                    <div className="img-brush brush-line-bottom-right-lg">
+                    <div className="img-brush brush-line brush-line-bottom-right-4">
                         <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
                     </div>
                     <figcaption>
-                        No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
-                        bastidores do turismo”, 26/8/1971.
+                        Lorem ipsum
                     </figcaption>
                 </figure>
             </div>
@@ -382,23 +370,21 @@ const LinhaTempo = () => {
                 <div className="row">
                     <div className="col-lg-6">
                         <figure>
-                            <div className="img-brush brush-line-bottom-left">
-                                <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                            <div className="img-brush brush-line brush-line-bottom-left">
+                                <img src={require('../../../assets/images/thumbs/historia-3.png')} alt=""/>
                             </div>
                             <figcaption class="text-lg-right">
-                                No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
-                                bastidores do turismo”, 26/8/1971.
+                                Lorem ipsum
                             </figcaption>
                         </figure>
                     </div>
                     <div className="col-lg-6">
                         <figure>
                             <div className="img-brush">
-                                <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
+                                <img src={require('../../../assets/images/thumbs/historia-3.png')} alt=""/>
                             </div>
                             <figcaption>
-                                No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
-                                bastidores do turismo”, 26/8/1971.
+                                Lorem ipsum
                             </figcaption>
                         </figure>
                     </div>
@@ -426,7 +412,31 @@ const LinhaTempo = () => {
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum ipsum
                     recusandae animi consequuntur porro, similique labore tempora ullam quae
                     laborum?</p>
-                    
+
+                <h4>O Frade</h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus reiciendis
+                    fuga impedit aliquid quae esse facilis consectetur rem. Quo praesentium id
+                    necessitatibus provident nemo optio nisi ullam atque sed unde blanditiis
+                    corrupti exercitationem sit ea molestias et, similique, hic dolore!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus reiciendis
+                    fuga impedit aliquid quae esse facilis consectetur rem. Quo praesentium id
+                    necessitatibus provident nemo optio nisi ullam atque sed unde blanditiis
+                    corrupti exercitationem sit ea molestias et, similique, hic dolore!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus reiciendis
+                    fuga impedit aliquid quae esse facilis consectetur rem. Quo praesentium id
+                    necessitatibus provident nemo optio nisi ullam atque sed unde blanditiis
+                    corrupti exercitationem sit ea molestias et, similique, hic dolore!</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus reiciendis
+                    fuga impedit aliquid quae esse facilis consectetur rem. Quo praesentium id
+                    necessitatibus provident nemo optio nisi ullam atque sed unde blanditiis
+                    corrupti exercitationem sit ea molestias et, similique, hic dolore!</p>
+                <blockquote>“Virei ao mesmo tempo um produtor de eventos e um corretor
+                    imobiliário. E lá vinha campeonato de gamão, de bridge, de windsurfe, regatas de
+                    vela… Inventei tudo o que podia.”</blockquote>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+                    molestiae tempora pariatur unde. Perspiciatis officiis autem nostrum numquam
+                    veniam ratione esse ipsam magnam repudiandae dignissimos, necessitatibus non,
+                    earum quo ea!</p>
                 <h4>Promoshow</h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore iste alias
                     facere dicta aperiam temporibus quia, molestias, fugiat eius reprehenderit,
@@ -441,7 +451,7 @@ const LinhaTempo = () => {
                     <div className="img-brush">
                         <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
                     </div>
-                    <figcaption class="text-lg-right">
+                    <figcaption>
                         No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
                         bastidores do turismo”, 26/8/1971.
                     </figcaption>
@@ -452,10 +462,10 @@ const LinhaTempo = () => {
                     numquam voluptatum enim veniam fugit porro quibusdam magnam, necessitatibus
                     provident nulla optio quis dolores quisquam ad a sed illo? Magni.</p>
                 <figure>
-                    <div className="img-brush brush-line-bottom-right-tall">
+                    <div className="img-brush brush-line brush-line-bottom-right-tall">
                         <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
                     </div>
-                    <figcaption class="text-lg-right">
+                    <figcaption>
                         No meu terceiro emprego, com o Fernando Hermanny na Lugitur. O GLOBO, “Nos
                         bastidores do turismo”, 26/8/1971.
                     </figcaption>
@@ -497,7 +507,7 @@ const LinhaTempo = () => {
                 </p>
 
                 <figure>
-                    <div className="img-brush brush-line-bottom-right-tall">
+                    <div className="img-brush brush-line brush-line-bottom-right-tall">
                         <img src={require('../../../assets/images/thumbs/historia-2.png')} alt=""/>
                     </div>
                     <figcaption>

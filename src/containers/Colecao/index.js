@@ -24,7 +24,9 @@ const Colecao = (props) => {
                     </p>
 
                     <p className="mt-5 pt-lg-5">
-                        Ao todo, são <b>mais de 300 obras de artes</b> que você pode ver abaixo.
+                        Ao todo, são
+                        <b>mais de 300 obras de artes</b>
+                        que você pode ver abaixo.
                     </p>
                 </div>
 
@@ -42,7 +44,7 @@ const Colecao = (props) => {
                         Ivald Granato e Rubens Gershman, entre outros.
                     </p>
 
-                    <figure className="py-5 mb-3">
+                    <figure className="py-1 py-lg-5 mb-3">
                         <img src={require('../../assets/images/thumbs/colecao-2.png')} alt=""/>
                         <figcaption>
                             Legenda loren ipsum dolor
@@ -52,13 +54,13 @@ const Colecao = (props) => {
                     </figure>
                 </div>
 
-                <div className="container container-large mb-4">
+                <div className="container container-large mb-0 mb-lg-4">
                     <div className="row">
                         <div className="col-lg-7">
                             <figure>
-                                <img
-                                    src={require('../../assets/images/thumbs/colecao-3.png')}
-                                    alt=""/>
+                                <div className="img-brush brush-line brush-line-bottom-left-2">
+                                    <img src={require('../../assets/images/thumbs/colecao-3.png')} alt=""/>
+                                </div>
                                 <figcaption className="text-right arte">
                                     Nome da obra, 2012
                                     <span>Nome do autor</span>
@@ -67,9 +69,9 @@ const Colecao = (props) => {
                         </div>
                         <div className="col-lg-5">
                             <figure>
-                                <img
-                                    src={require('../../assets/images/thumbs/colecao-4.png')}
-                                    alt=""/>
+                                <div className="img-brush brush-line brush-line-top-right-2">
+                                    <img src={require('../../assets/images/thumbs/colecao-4.png')} alt=""/>
+                                </div>
                                 <figcaption className="arte">
                                     Nome da obra, 2012
                                     <span>Nome do autor</span>
@@ -91,9 +93,9 @@ const Colecao = (props) => {
                     </p>
 
                     <figure className="mb-5">
-                        <img
-                            src={require('../../assets/images/thumbs/colecao-5.png')}
-                            alt=""/>
+                        <div className="img-brush brush-line brush-line-bottom-right-5">
+                            <img src={require('../../assets/images/thumbs/colecao-5.png')} alt=""/>
+                        </div>
                         <figcaption className="arte">
                             Nome da obra, 2012
                             <span>Nome do autor</span>

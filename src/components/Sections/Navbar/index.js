@@ -51,7 +51,7 @@ const Navbar = ({location}) => {
             setUnderlineStyling({
                 opacity: 1,
                 left: item.offsetLeft,
-                top: item.offsetTop + 20,
+                top: item.offsetTop + 17,
                 width: item.offsetWidth
             })
         }, 100)

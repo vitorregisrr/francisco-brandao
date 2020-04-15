@@ -12,7 +12,7 @@ const Historia = (props) => {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 d-flex justify-content-between flex-column pb-lg-4">
-                            <figure>
+                            <figure className="my-4 my-lg-0" >
                                 <div className="img-brush brush-blue">
                                     <img src={require('../../assets/images/thumbs/historia-1.png')} alt=""/>
                                 </div>
@@ -25,10 +25,10 @@ const Historia = (props) => {
                                    <figcaption> Legenda loren ipsum dolor Legenda loren ipsum dolor</figcaption>
                                 </div>
                                 <div className="col-lg-9">
-                                    <div className="img-brush brush-line-top-left">
+                                    <div className="img-brush brush-line brush-line-top-left">
                                         <iframe
                                             width="100%"
-                                            height="190"
+                                            height="230"
                                             src="https://www.youtube.com/embed/k39oVsZqyDQ"
                                             frameborder="0"
                                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -38,7 +38,7 @@ const Historia = (props) => {
                             </div>
                         </div>
                         <div className="col-lg-6 pt-lg-5">
-                            <div class="markup pt-lg-5">
+                            <div class="markup">
                                 <h3>
                                     Uma vida de muitas realizações
                                 </h3>

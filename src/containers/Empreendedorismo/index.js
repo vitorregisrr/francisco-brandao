@@ -5,7 +5,7 @@ import PageBanner from 'components/Sections/PageBanner';
 
 const Empreendedorismo = (props) => {
     return (
-        <section className="Historia page-interna">
+        <section className="Empreendedorismo page-interna pb-4 mb-2 mb-lg-5">
             <PageBanner title={`Empreendedorismo`} background={false}/>
             <main class="pt-3 pb-5 pt-lg-5 my-3 my-lg-5">
                 <div className="container">
@@ -26,7 +26,7 @@ const Empreendedorismo = (props) => {
                                         Legenda loren ipsum dolor Legenda loren ipsum dolor</figcaption>
                                 </div>
                                 <div className="col-lg-9">
-                                    <div className="img-brush brush-line-top-left">
+                                    <div className="img-brush">
                                         <img src={require('../../assets/images/thumbs/empreendedorismo-2.png')} alt=""/>
                                     </div>
                                 </div>

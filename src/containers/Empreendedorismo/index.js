@@ -8,7 +8,7 @@ const Empreendedorismo = (props) => {
         <section className="Empreendedorismo page-interna pb-4 mb-2 mb-lg-5">
             <PageBanner title={`Empreendedorismo`} background={false}/>
             <main class="pt-3 pb-5 pt-lg-5 my-3 my-lg-5">
-                <div className="container pt-lg-5">
+                <div className="container pt-4 pt-lg-5">
                     <div className="row">
                         <div className="col-lg-6 d-flex justify-content-between flex-column pb-lg-4">
                             <figure className="my-4 my-lg-0">
@@ -19,7 +19,7 @@ const Empreendedorismo = (props) => {
                                     Legenda loren ipsum dolor Legenda loren ipsum dolor
                                 </figcaption>
                             </figure>
-                            <div className="row pb-lg-4">
+                            <div className="row pb-lg-4 pt-4 pt-lg-0">
                                 <div
                                     className="col-lg-3 d-flex align-items-end text-lg-right pr-lg-0 order-last order-lg-first">
                                     <figcaption>

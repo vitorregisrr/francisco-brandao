@@ -10,7 +10,7 @@ const Colecao = (props) => {
             <PageBanner title={`Hipismo`} background={false}/>
 
             <main class="pt-3 pb-5 pt-lg-5 my-3 my-lg-5">
-                <div className="container">
+                <div className="container pt-4 pt-lg-0">
                     <div className="row">
                         <div className="col-lg-6 d-flex justify-content-between flex-column pb-lg-4">
                             <figure>
@@ -21,7 +21,7 @@ const Colecao = (props) => {
                                     Legenda loren ipsum dolor Legenda loren ipsum dolor
                                 </figcaption>
                             </figure>
-                            <div className="row pb-lg-4">
+                            <div className="row pb-lg-4 pt-4 pt-lg-0">
                                 <div
                                     className="col-lg-3 d-flex align-items-end text-lg-right pr-lg-0 order-last order-lg-first">
                                     <figcaption>
@@ -35,7 +35,7 @@ const Colecao = (props) => {
                             </div>
                         </div>
                         <div className="col-lg-6 pt-lg-5">
-                            <div class="markup pt-lg-5">
+                            <div class="markup pt-5">
                                 <h3>
                                     Título introdução
                                 </h3>

@@ -9,7 +9,7 @@ const MeioAmbiente = (props) => {
         <section className="MeioAmbiente page-interna pb-5 mb-2 mb-lg-5">
             <PageBanner title={`Meio Ambiente`} background={false}/>
             <main class="pt-3 pb-5 pt-lg-5 my-3 my-lg-5">
-                <div className="container pt-lg-5">
+                <div className="container pt-4 pt-lg-5">
                     <div className="row">
                         <div className="col-lg-6 d-flex justify-content-between flex-column pb-lg-4">
                             <figure className="my-4 my-lg-0">
@@ -22,7 +22,7 @@ const MeioAmbiente = (props) => {
                                         width: '73%'
                                     }}/>
                                 </div>
-                                <figcaption className="text-lg-right">
+                                <figcaption className="text-center text-lg-right">
                                     Legenda loren ipsum dolor Legenda loren ipsum dolor
                                 </figcaption>
                             </figure>

@@ -5,7 +5,7 @@ import {getStorage, setStorage} from 'util/storage';
 import {HomeSlider} from '../../components/Sections'
 import Preloader from 'components/UI/Preloader'
 
-const Home = (props) => {
+const Home = () => {
     const [isFetching, setIsFetching] = useState(true);
     const [homeData, setHomeData] = useState(false);
     const [loadingPercentage, setLoadingPercentage] = useState();

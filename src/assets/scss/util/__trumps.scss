@@ -70,7 +70,7 @@ button {
     font-size: 18px;
     line-height: 1.4;
     border-left: 40px solid #831313;
-    padding-left: 22px;
+    padding-left: 32px;
     font-weight: 500;
     color: #831313;
     letter-spacing: 0.7;
@@ -103,6 +103,10 @@ button {
     }
 
     .markup {
+
+        a{
+            color: #831313 !important;
+        }
 
         h3 {
             color: #831313;

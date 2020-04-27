@@ -25,7 +25,7 @@ const Home = () => {
           return setHomeData(JSON.parse(getStorage('home-data')))
       }
 
-      axios.get('', config)
+      axios.get('/home', config)
       .then(response => {
           setHomeData(response.data);
           setStorage('home-data', JSON.stringify(response.data));
@@ -34,12 +34,12 @@ const Home = () => {
       .finally(() => {
           setIsFetching(false);
       })
-    } ,[])
+    } ,[]);
 
     return (
         <React.Fragment>
             <Preloader loadProgress={loadingPercentage} show={isFetching}/>
-            {homeData.page ? <HomeSlider data={homeData.page}></HomeSlider> : null}
+            {homeData ? <HomeSlider data={homeData}></HomeSlider> : null}
         </React.Fragment>
     )
 }

@@ -1,34 +1,51 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import './styles.scss'
 
-const GallerySlider = ({item, brush}) => {
+const GallerySlider = (props) => {
     const [currIndex,
         setCurrIndex] = useState(0);
+    const [sliderData, setSliderData] = useState([]);
 
-    const items = [0,0,0,0, 0]
+    useEffect(() => {
+        let newData = [];
+        
+        [1,2,3,4,5,6,7,8,9,10].map( i => {
+            if(props.data[`slider_foto${i}`]){
+                newData.push({
+                    imagem: props.data[`slider_foto${i}`],
+                    legenda: props.data[`slider_legenda_foto${i}`]
+                })
+            }
+        })
+
+        setSliderData(newData)
+    },[props.data])
 
     return (
-        <section className="GallerySlider" data-brush={brush}>
-            <img
-                // src={items[currIndex].image}
-                // alt={items[currIndex].desc}
-                src={require('../../../assets/images/thumbs/empreendedorismo-1.png')}
-                alt={'Chiquinho Brandão com Serginho, Gabriel, Giovani e Xavier, tratadores da equipe Santo Antônio, nas cocheiras do Paddock.'}
-                className="GallerySlider__img"/>
-            <footer className="GallerySlider__footer">
-                {/* <div className="GallerySlider__desc">{items[currIndex].image}</div> */}
-                <div className="GallerySlider__desc">Chiquinho Brandão com Serginho, Gabriel, Giovani e Xavier, tratadores da equipe Santo Antônio, nas cocheiras do Paddock.</div>
-                <nav className="GallerySlider__controls">
-                    {items.map((_, i) => (
-                        <button
-                            className="GallerySlider__control"
-                            data-active={currIndex == i}
-                            onClick={() => setCurrIndex(i)}></button>
-                    ))};
-                </nav>
-            </footer>
-        </section>
+        <React.Fragment>
+            {sliderData[currIndex]
+                ? <section className="GallerySlider" data-brush={props.brush}>
+                        <img
+                            src={sliderData[currIndex].imagem}
+                            alt={sliderData[currIndex].legenda}
+                            className="GallerySlider__img"/>
+                        <footer className="GallerySlider__footer">
+                            <div className="GallerySlider__desc">{sliderData[currIndex].legenda}</div>
+                            <nav className="GallerySlider__controls">
+                                {sliderData.map((_, i) => (
+                                    <button
+                                        className="GallerySlider__control"
+                                        data-active={currIndex == i}
+                                        onClick={() => setCurrIndex(i)}></button>
+                                ))}
+                            </nav>
+                        </footer>
+                    </section>
+
+                : null
+            }
+        </React.Fragment>
     )
 }
 

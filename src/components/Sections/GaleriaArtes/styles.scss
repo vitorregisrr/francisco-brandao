@@ -39,4 +39,27 @@
             font-size: 14px;
         }
     }
+
+    .pagination{
+        display: flex;
+        justify-content: space-between;
+        color: #484848;
+
+        .disabled{
+            opacity: 1;
+        }
+        
+        a{
+            color: #484848 !important;
+            font-weight: 400;
+        }
+
+        .first, .last{
+            display: none;
+        }
+
+        .prev{
+            
+        }
+    }
 }

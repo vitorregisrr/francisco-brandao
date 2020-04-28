@@ -13,20 +13,19 @@ const Hipismo = (props) => {
     useEffect( () =>{
         if(getStorage('hipismo-data')){
             setIsFetching(false);
-            console.log(JSON.parse(getStorage('hipismo-data')))
-            return setData(JSON.parse(getStorage('hipismo-data')))
+            setData(JSON.parse(getStorage('hipismo-data')));
+        }else{
+            axios.get('/hipismo')
+            .then(response => {
+                setData(response.data);
+                setStorage('hipismo-data', JSON.stringify(response.data));
+            })
+            .catch(err => console.log(err))
+            .finally(() => {
+                setIsFetching(false);
+            })
         }
-        
-        axios.get('/hipismo')
-        .then(response => {
-            setData(response.data);
-            setStorage('hipismo-data', JSON.stringify(response.data));
-        })
-        .catch(err => console.log(err))
-        .finally(() => {
-            setIsFetching(false);
-        })
-      } ,[]);
+      }, []);
 
     return (
         <section className="Hipismo page-interna pb-5 mb-2 mb-lg-5">
@@ -94,7 +93,7 @@ const Hipismo = (props) => {
                         <div dangerouslySetInnerHTML={{__html: data.bloco_texto4}}></div>
                         
                         <div className="mt-5 pt-lg-5">
-                            <GallerySlider data={data.slider} brush="top"/>
+                            <GallerySlider isFetching={isFetching} data={data} brush="top"/>
                         </div>
                     </div>
                 </div>

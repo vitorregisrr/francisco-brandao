@@ -140,7 +140,7 @@ const MeioAmbiente = (props) => {
 
                       <div dangerouslySetInnerHTML={{__html: data.bloco_texto2}}></div>
 
-                        <GallerySlider data={data.slider} brush="bottom"/>
+                        <GallerySlider data={data} brush="bottom"/>
                     </div>
                 </div>
             </main>

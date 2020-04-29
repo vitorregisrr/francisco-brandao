@@ -16,7 +16,7 @@ const Empreendedorismo = (props) => {
             return setData(JSON.parse(getStorage('empreendedorismo-data')))
         }
         
-        axios.get('/empreendedorismo')
+        axios.get('/pages/empreendedorismo')
         .then(response => {
             setData(response.data);
             setStorage('empreendedorismo-data', JSON.stringify(response.data));

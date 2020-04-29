@@ -25,7 +25,7 @@ const Home = () => {
           return setHomeData(JSON.parse(getStorage('home-data')))
       }
 
-      axios.get('/home', config)
+      axios.get('/pages/home', config)
       .then(response => {
           setHomeData(response.data);
           setStorage('home-data', JSON.stringify(response.data));

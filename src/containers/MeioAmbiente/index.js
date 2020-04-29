@@ -21,7 +21,7 @@ const MeioAmbiente = (props) => {
         }
 
         axios
-            .get('/meio-ambiente')
+            .get('/pages/meio-ambiente')
             .then(response => {
                 setData(response.data);
                 setStorage('meioa-data', JSON.stringify(response.data));

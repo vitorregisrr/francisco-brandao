@@ -16,7 +16,7 @@ const Historia = (props) => {
             return setHistoriaData(JSON.parse(getStorage('historia-data')))
         }
   
-        axios.get('/historia')
+        axios.get('/pages/historia')
         .then(response => {
             setHistoriaData(response.data);
             console.log(response.data)

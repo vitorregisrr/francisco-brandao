@@ -16,7 +16,7 @@ const Hipismo = (props) => {
             console.log(JSON.parse(getStorage('hipismo-data')))
             setData(JSON.parse(getStorage('hipismo-data')));
         }else{
-            axios.get('/hipismo')
+            axios.get('/pages/hipismo')
             .then(response => {
                 setData(response.data);
                 setStorage('hipismo-data', JSON.stringify(response.data));

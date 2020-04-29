@@ -20,7 +20,7 @@ const Colecao = (props) => {
         }
 
         axios
-            .get('/colecao-de-arte')
+            .get('/pages/colecao-de-arte')
             .then(response => {
                 setData(response.data);
                 setStorage('colecao-data', JSON.stringify(response.data));

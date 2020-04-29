@@ -13,6 +13,7 @@ const Hipismo = (props) => {
     useEffect( () =>{
         if(getStorage('hipismo-data')){
             setIsFetching(false);
+            console.log(JSON.parse(getStorage('hipismo-data')))
             setData(JSON.parse(getStorage('hipismo-data')));
         }else{
             axios.get('/hipismo')
@@ -52,7 +53,7 @@ const Hipismo = (props) => {
                                 </div>
                                 <div className="col-lg-9">
                                     <div className="img-brush">
-                                        <img src={data.legenda_foto2} alt={data.legenda_foto2}/>
+                                        <img src={data.foto2} alt={data.legenda_foto2}/>
                                     </div>
                                 </div>
                             </div>

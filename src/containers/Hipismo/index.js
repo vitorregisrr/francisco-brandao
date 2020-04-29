@@ -59,7 +59,7 @@ const Hipismo = (props) => {
                             </div>
                         </div>
                         <div className="col-lg-6 pt-lg-5">
-                            <div class="markup pt-5">
+                            <div class="markup pt-lg-5">
                                 <h3>
                                     {data.titulo}
                                 </h3>

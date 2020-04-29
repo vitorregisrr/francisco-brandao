@@ -29,15 +29,15 @@ const GaleriaArtes = () => {
     useEffect(() => {
         if (getStorage('colecoes  -data')) {
             setIsFetching(false);
-            console.log(JSON.parse(getStorage('colecoes  -data')))
-            return setData(JSON.parse(getStorage('colecoes  -data')))
+            console.log(JSON.parse(getStorage('colecoes-data')))
+            return setData(JSON.parse(getStorage('colecoes-data')))
         }
 
         axios
             .get('/colecoes')
             .then(response => {
                 setData(response.data);
-                setStorage('colecoes  -data', JSON.stringify(response.data));
+                setStorage('colecoes-data', JSON.stringify(response.data));
             })
             .catch(err => console.log(err))
             . finally(() => {
@@ -49,7 +49,9 @@ const GaleriaArtes = () => {
         setShowGaleriaModal(true)
     }
 
-    const changePage = () => {}
+    const changePage = () => {
+        setPaginate(0)
+    }
 
     return (
         <section className="GaleriaArtes mb-5 pb-lg-5">
@@ -84,17 +86,16 @@ const GaleriaArtes = () => {
                 </Masonry>
 
                 <Pagination
-                    pageCount={6}
-                    pageRangeDisplayed={4}
+                    pageCount={18}
+                    pageRangeDisplayed={1}
                     containerClassName="pagination"
-                    breakClassName="links"
                     nextLabel="Próximo"
                     previousLabel="Anterior"
                     itemClassFirst='first'
                     itemClassLast='last'
                     itemClassPrev="prev"
                     itemClassNext="next"
-                    onChange={() => changePage}/>
+                    onPageChange={() => changePage}/>
             </div>
         </section>
     )

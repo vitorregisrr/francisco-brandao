@@ -22,6 +22,7 @@ const Home = () => {
     useEffect( () =>{
       if(getStorage('home-data')){
           setIsFetching(false);
+          console.log(JSON.parse(getStorage('home-data')))
           return setHomeData(JSON.parse(getStorage('home-data')))
       }
 

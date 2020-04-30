@@ -42,6 +42,7 @@ const Navbar = ({location}) => {
         const item = document.querySelector(`.Navbar__item[data-key="${index}"]`);
         setCurrIndex(index);
 
+       if(item){
         if (!toggle) {
             toggleMenu();
         }
@@ -55,6 +56,7 @@ const Navbar = ({location}) => {
                 width: item.offsetWidth
             })
         }, 100)
+       }
     }
 
     useEffect(() => {

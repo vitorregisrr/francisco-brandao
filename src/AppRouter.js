@@ -9,6 +9,7 @@ import Historia from 'containers/Historia'
 import Empreendedorismo from 'containers/Empreendedorismo'
 import Hipismo from 'containers/Hipismo'
 import Colecao from 'containers/Colecao'
+import Error404 from 'containers/Error/404'
 import MeioAmbiente from 'containers/MeioAmbiente'
 
 const AppRouter = ({location}) => {
@@ -47,6 +48,12 @@ const AppRouter = ({location}) => {
             name: 'Meio Ambiente',
             Component: MeioAmbiente,
             exact: true
+        },
+        , {
+            path: '/',
+            name: 'Erro 404',
+            Component: Error404,
+            exact: false
         }
     ];
     
@@ -54,7 +61,7 @@ const AppRouter = ({location}) => {
         <PageTransition timeout={800}>
             <Switch location={location}>
                 {routes.map(({path, Component, name, exact}) => (
-                    <Route key={name} exact path={path}>
+                    <Route key={name} exact={exact} path={path}>
                         <div className="page transition-item">
                             <Helmet>
                                 <title>Chico Brandão • {name}</title>

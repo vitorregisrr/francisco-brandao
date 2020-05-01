@@ -13,6 +13,7 @@ const MainSlider = ({slickRef, setCurrentIndex, currIndex, hasOverlay, isFirst, 
     const [isLGScreen, setIsLGScreen] = useState(window.innerWidth < 992);
     // Varíavel de controle se a ultima mudança foi pra frente ou pra trás
     const [isNext, setIsNext] = useState(false);
+    const IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
     // Configuração do slider
     const slickSettings = {
@@ -118,7 +119,7 @@ const MainSlider = ({slickRef, setCurrentIndex, currIndex, hasOverlay, isFirst, 
                 </Slick>
 
                 {/* Navegação Mobile */}
-                <div className={`MainSlider__dots ${isDesactived ? 'desactived' : ''}`} onClick={desactiveDots}>
+                <div className={`MainSlider__dots ${isDesactived ? 'desactived' : ''}`} style={{marginBottom: IOS ? 30 : 0}}onClick={desactiveDots}>
                     {[0,1,2,3,4,5,].map(i => (
                         <button title={`Ir para item ${i}`} key={i} className={currIndex === i ? 'active' : ''} onClick={() => slickRef.current.slickGoTo(i)}></button>
                     ))}

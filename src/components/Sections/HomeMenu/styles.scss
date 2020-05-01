@@ -33,7 +33,7 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
         width: 125px;
         height: 80px;
         transition: $transition;
-        
+
         @media screen and (max-width: $bp-LG){
             z-index: 5;
             display: block;
@@ -59,6 +59,10 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
             transform: translateX(-240%);
             transition: $transition;
 
+            &.ios{
+                margin-left: 20px;
+            }
+            
             // Click overlay
             &:after{
                 content: '';

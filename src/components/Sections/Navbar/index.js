@@ -12,7 +12,6 @@ const Navbar = ({location}) => {
         setCurrIndex] = useState(location.pathname.split('/').pop());
     const [isToggled,
         setIsToggled] = useState(false);
-
     const IOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
 
     const toggleMenu = () => {
@@ -72,9 +71,9 @@ const Navbar = ({location}) => {
                 ? 'toggled'
                 : ''}`}>
                 <button
-                    className={isToggled
+                    className={`${isToggled
                     ? 'active'
-                    : ''}
+                    : ''} ${IOS ? 'ios' : ''}`}
                     onClick={() => toggleMenu()}>
                     <div></div>
                     <div></div>

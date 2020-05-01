@@ -41,15 +41,16 @@ const Historia = (props) => {
                                     <div className="img-brush brush-blue">
                                         <img src={data.foto1} alt={data.legenda_foto1}/>
                                     </div>
-                                
                                 ): null}
-                                <figcaption className="text-lg-right">
-                                {data.legenda_foto1}
-                                </figcaption>
+                                <figcaption className="text-lg-right" dangerouslySetInnerHTML={{
+                                    __html: data.legenda_foto1
+                                }}></figcaption>
                             </figure>
                             <div className="row mt-3 mt-lg-0">
                                 <div className="col-lg-3 d-flex align-items-end text-lg-right pr-lg-0 order-last order-lg-first">
-                                   <figcaption>{data.legenda_video1}</figcaption>
+                                <figcaption dangerouslySetInnerHTML={{
+                                    __html: data.legenda_video1
+                                }}></figcaption>
                                 </div>
                                 <div className="col-lg-9">
                                     <div className="img-brush brush-line brush-line-top-left">

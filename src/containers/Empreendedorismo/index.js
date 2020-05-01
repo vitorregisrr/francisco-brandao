@@ -45,16 +45,16 @@ const Empreendedorismo = (props) => {
                                         </div>
                                     )
                                     : null}
-                                <figcaption className="text-lg-right">
-                                    {data.legenda_foto1}
-                                </figcaption>
+                                <figcaption className="text-lg-right" dangerouslySetInnerHTML={{
+                                __html: data.legenda_foto1
+                            }}></figcaption>
                             </figure>
                             <div className="row pb-lg-4 pt-4 pt-lg-0">
                                 <div
                                     className="col-lg-3 d-flex align-items-end text-lg-right pr-lg-0 order-last order-lg-first">
-                                    <figcaption>
-                                        {data.legenda_foto2}
-                                    </figcaption>
+                                     <figcaption dangerouslySetInnerHTML={{
+                                __html: data.legenda_foto2
+                            }}></figcaption>
                                 </div>
                                 <div className="col-lg-9">
                                     <div className="img-brush">
@@ -118,9 +118,9 @@ const Empreendedorismo = (props) => {
                             <div className="img-brush">
                                 <img src={data.foto3} alt={data.legenda_foto3}/>
                             </div>
-                            <figcaption>
-                                {data.legenda_foto3}
-                            </figcaption>
+                            <figcaption dangerouslySetInnerHTML={{
+                                __html: data.legenda_foto3
+                            }}></figcaption>
                         </figure>
 
                         <div
@@ -149,9 +149,9 @@ const Empreendedorismo = (props) => {
                             <div className="img-brush">
                                 <img src={data.foto4} alt={data.legenda_foto4}/>
                             </div>
-                            <figcaption>
-                                {data.legenda_foto4}
-                            </figcaption>
+                            <figcaption dangerouslySetInnerHTML={{
+                                __html: data.legenda_foto4
+                            }}></figcaption>
                         </figure>
                     </div>
                 </div>

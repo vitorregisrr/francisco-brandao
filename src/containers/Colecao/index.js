@@ -73,9 +73,9 @@ const Colecao = (props) => {
                     }}></div>
                     <figure className="pb-1 pb-lg-0 pt-3 mb-lg-4">
                         <img src={data.foto2} alt={data.legenda_foto2}/>
-                        <figcaption>
-                            {data.legenda_foto2}
-                        </figcaption>
+                        <figcaption dangerouslySetInnerHTML={{
+                                __html: data.legenda_foto2
+                            }}></figcaption>
                     </figure>
                 </div>
 

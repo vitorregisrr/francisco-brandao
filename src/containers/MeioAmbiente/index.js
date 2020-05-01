@@ -50,9 +50,9 @@ const MeioAmbiente = (props) => {
                                         width: '73%'
                                     }}/>
                                 </div>) : null}
-                                <figcaption className="text-center text-lg-right">
-                                  {data.legenda_foto1}
-                                </figcaption>
+                                <figcaption className="text-center text-lg-right" dangerouslySetInnerHTML={{
+                                    __html: data.legenda_foto1
+                                }}></figcaption>
                             </figure>
                             <div className="row pb-lg-4">
                                 <div
@@ -62,9 +62,9 @@ const MeioAmbiente = (props) => {
                                         <div className="img-brush">
                                             <img src={data.foto2} alt={data.legenda_foto2}/>
                                         </div>
-                                        <figcaption className="text-lg-right">
-                                          {data.legenda_foto2}
-                                        </figcaption>
+                                        <figcaption className="text-lg-right" dangerouslySetInnerHTML={{
+                                            __html: data.legenda_foto2
+                                        }}></figcaption>
                                     </figure>
                                 </div>
                             </div>
@@ -91,9 +91,9 @@ const MeioAmbiente = (props) => {
                             <div className="img-brush">
                                 <img src={data.foto2} alt={data.legenda_foto2}/>
                             </div>
-                            <figcaption>
-                                {data.legenda_foto2}
-                            </figcaption>
+                            <figcaption dangerouslySetInnerHTML={{
+                                    __html: data.legenda_foto2
+                                }}></figcaption>
                         </figure>
                         <h4 className="mt-lg-5">
                             Planejamento e construção
@@ -104,9 +104,9 @@ const MeioAmbiente = (props) => {
                             <div className="img-brush brush-line brush-line-bottom-right-7">
                                 <img src={data.foto3} alt={data.legenda_foto3}/>
                             </div>
-                            <figcaption>
-                                {data.legenda_foto3}
-                            </figcaption>
+                            <figcaption c dangerouslySetInnerHTML={{
+                                    __html: data.legenda_foto3
+                                }}></figcaption>
                         </figure>
                     </div>
                 </div>
@@ -116,9 +116,9 @@ const MeioAmbiente = (props) => {
                         <div className="img-brush">
                             <img src={data.foto4} alt={data.legenda_foto4}/>
                         </div>
-                        <figcaption>
-                                {data.legenda_foto4}
-                        </figcaption>
+                        <figcaption dangerouslySetInnerHTML={{
+                            __html: data.legenda_foto4
+                        }}></figcaption>
                     </figure>
                 </div>
 
@@ -134,9 +134,9 @@ const MeioAmbiente = (props) => {
                                 <img src={data.foto5} alt={data.legenda_foto5}/>
                             </div>
 
-                            <figcaption>
-                                {data.legenda_foto5}
-                            </figcaption>
+                            <figcaption dangerouslySetInnerHTML={{
+                                __html: data.legenda_foto5
+                            }}></figcaption>
                         </figure>
 
                       <div dangerouslySetInnerHTML={{__html: data.bloco_texto2}}></div>

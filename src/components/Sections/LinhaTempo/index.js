@@ -23,18 +23,14 @@ const LinhaTempo = ({data}) => {
                     <div className="img-brush brush-line brush-line-top-left-2">
                         <img src={data.timeline1_foto1} alt={data.timeline1_legenda_foto1}/>
                     </div>
-                    <figcaption>
-                    {data.timeline1_legenda_foto1}
-                    </figcaption>
+                    <figcaption dangerouslySetInnerHTML={{__html: data.timeline1_legenda_foto1}}></figcaption>
                 </figure>
 
                 <figure className="pt-3">
                     <div className="img-brush brush-line brush-line-bottom-right">
                         <img src={data.timeline1_foto2} alt={data.timeline1_legenda_foto2}/>
                     </div>
-                    <figcaption>
-                    {data.timeline1_legenda_foto2}
-                    </figcaption>
+                    <figcaption dangerouslySetInnerHTML={{__html: data.timeline1_legenda_foto2}}></figcaption>
                 </figure>
             </div>
         </div>
@@ -53,18 +49,14 @@ const LinhaTempo = ({data}) => {
                     <div className="img-brush brush-line brush-line-top-left-2">
                         <img src={data.timeline2_foto1} alt={data.timeline2_legenda_foto1}/>
                     </div>
-                    <figcaption>
-                        {data.timeline2_legenda_foto1}
-                    </figcaption>
+                    <figcaption dangerouslySetInnerHTML={{__html: data.timeline2_legenda_foto1}}></figcaption>
                 </figure>
 
                 <figure className="pb-lg-5 mb-lg-5">
                     <div className="img-brush brush-line brush-line-bottom-right">
                        <img src={data.timeline2_foto2} alt={data.timeline2_legenda_foto2}/>
                     </div>
-                    <figcaption>
-                        {data.timeline2_legenda_foto2}
-                    </figcaption>
+                    <figcaption dangerouslySetInnerHTML={{__html: data.timeline2_legenda_foto2}}></figcaption>
                 </figure>
 
                 <div dangerouslySetInnerHTML={{__html: data.timeline2_bloco_texto2}}></div>
@@ -77,9 +69,7 @@ const LinhaTempo = ({data}) => {
                     <div className="img-brush brush-line brush-line-bottom-right-2">
                         <img src={data.timeline2_foto3} alt={data.timeline2_legenda_foto3}/>
                     </div>
-                    <figcaption>
-                        {data.timeline2_legenda_foto3}
-                    </figcaption>
+                    <figcaption dangerouslySetInnerHTML={{__html: data.timeline2_legenda_foto3}}></figcaption>
                 </figure>
 
                  <div dangerouslySetInnerHTML={{__html: data.timeline2_bloco_texto4}}></div>
@@ -94,9 +84,7 @@ const LinhaTempo = ({data}) => {
                     <div className="img-brush">
                         <img src={data.timeline2_foto4} alt={data.timeline2_legenda_foto4}/>
                     </div>
-                    <figcaption>
-                        {data.timeline2_legenda_foto4}
-                    </figcaption>
+                    <figcaption dangerouslySetInnerHTML={{__html: data.timeline2_legenda_foto4}}></figcaption>
                 </figure>
 
             </div>
@@ -132,9 +120,7 @@ const LinhaTempo = ({data}) => {
 
                 <figure>
                     <img src={data.timeline3_foto1} alt={data.timeline3_legenda_foto1}/>
-                    <figcaption>
-                    {data.timeline3_legenda_foto1}
-                    </figcaption>
+                    <figcaption dangerouslySetInnerHTML={{__html: data.timeline3_legenda_foto1}}></figcaption>
                 </figure>
 
                 <div dangerouslySetInnerHTML={{__html: data.timeline3_bloco_texto5}}></div>
@@ -143,9 +129,7 @@ const LinhaTempo = ({data}) => {
                     <div className="img-brush brush-line brush-line-bottom-right-3">
                         <img src={data.timeline3_foto2} alt={data.timeline3_legenda_foto2}/>
                     </div>
-                    <figcaption>
-                    {data.timeline3_legenda_foto2}
-                    </figcaption>
+                    <figcaption dangerouslySetInnerHTML={{__html: data.timeline3_legenda_foto2}}></figcaption>
                 </figure>
 
                 <h4>{data.timeline4_titulo4}</h4>
@@ -158,9 +142,7 @@ const LinhaTempo = ({data}) => {
 
                 <figure>
                     <img src={data.timeline3_foto3} alt={data.timeline3_legenda_foto3}/>
-                    <figcaption>
-                        {data.timeline3_legenda_foto3}
-                    </figcaption>
+                    <figcaption dangerouslySetInnerHTML={{__html: data.timeline3_legenda_foto3}}></figcaption>
                 </figure>
 
                 <div dangerouslySetInnerHTML={{__html: data.timeline3_bloco_texto8}}></div>
@@ -169,9 +151,7 @@ const LinhaTempo = ({data}) => {
                     <div className="img-brush brush-line brush-line-bottom-right-4">
                         <img src={data.timeline3_foto4} alt={data.timeline3_legenda_foto4}/>
                     </div>
-                    <figcaption>
-                        {data.timeline3_legenda_foto4}
-                    </figcaption>
+                    <figcaption dangerouslySetInnerHTML={{__html: data.timeline3_legenda_foto4}}></figcaption>
                 </figure>
             </div>
 
@@ -196,19 +176,16 @@ const LinhaTempo = ({data}) => {
                             <div className="img-brush brush-line brush-line-bottom-left">
                                 <img src={data.timeline4_foto1} alt={data.timeline4_legenda_foto1} height="460" style={{objectFit: 'cover'}}/>
                             </div>
-                            <figcaption class="text-lg-right">
-                                {data.timeline4_legenda_foto1}
+                            <figcaption class="text-lg-right" dangerouslySetInnerHTML={{__html: data.timeline4_legenda_foto1}}>
                             </figcaption>
                         </figure>
                     </div>
                     <div className="col-lg-6">
                         <figure>
                             <div className="img-brush">
-                                <img src={data.timeline4_foto2} alt={data.timeline4_legenda_foto2}  height="460" style={{objectFit: 'cover'}}/>
+                                <img src={data.timeline4_foto2} alt={data.timeline4_legenda_foto2}  height="460" />
                             </div>
-                            <figcaption>
-                            {data.timeline4_legenda_foto2}
-                            </figcaption>
+                            <figcaption dangerouslySetInnerHTML={{__html: data.timeline4_legenda_foto2}}> </figcaption>
                         </figure>
                     </div>
                 </div>
@@ -235,9 +212,7 @@ const LinhaTempo = ({data}) => {
                     <div className="img-brush">
                         <img src={data.timeline4_foto3} alt={data.timeline4_legenda_foto3}/>
                     </div>
-                    <figcaption>
-                        {data.timeline4_legenda_foto3}
-                    </figcaption>
+                    <figcaption dangerouslySetInnerHTML={{__html: data.timeline4_legenda_foto3}}></figcaption>
                 </figure>
 
                 <h4>{data.timeline4_titulo4}</h4>
@@ -248,9 +223,7 @@ const LinhaTempo = ({data}) => {
                     <div className="img-brush brush-line brush-line-bottom-right-tall">
                         <img src={data.timeline4_foto4} alt={data.timeline4_legenda_foto4}/>
                     </div>
-                    <figcaption>
-                      {data.timeline4_legenda_foto4}
-                    </figcaption>
+                    <figcaption class="text-lg-right" dangerouslySetInnerHTML={{__html: data.timeline4_legenda_foto4}}></figcaption>
                 </figure>
 
                 <div dangerouslySetInnerHTML={{__html: data.timeline4_bloco_texto7}}></div>
@@ -263,9 +236,7 @@ const LinhaTempo = ({data}) => {
                     <div className="img-brush brush-line brush-line-bottom-right-tall">
                         <img src={data.timeline4_foto5} alt={data.timeline4_legenda_foto5}/>
                     </div>
-                    <figcaption>
-                        {data.timeline4_legenda_foto5}
-                    </figcaption>
+                    <figcaption dangerouslySetInnerHTML={{__html: data.timeline4_legenda_foto5}}></figcaption>
                 </figure>
             </div>
         </div>

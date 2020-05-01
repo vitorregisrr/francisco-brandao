@@ -1,40 +1,40 @@
 import axios from 'axios.instance'
-import Pagination from "react-paginate"
 import React, {useState, useEffect} from 'react'
 import Masonry from 'react-masonry-css'
 import {getStorage, setStorage} from 'util/storage'
 
 import GaleriaFiltros from './GaleriaFiltros'
+import Pagination from './GaleriaPagination'
 import GaleriaModal from './GaleriaModal'
 
 import './styles.scss';
 
 const GaleriaArtes = () => {
     const [filtros,
-        setFiltros] = useState({nomeArtista: '', nomeObra: '', tipoObra: '', de: '', até: ''});
+        setFiltros] = useState({nomeArtista: false, nomeObra: false, tipoObra: false, dataDe: false, dataAte: false});
     const [showGaleriaModal,
         setShowGaleriaModal] = useState(false);
-    const [currentItem,
-        setCurrentItem] = useState(0);
+    const [currentID,
+        setCurrentID] = useState(1);
     const [isFetching,
         setIsFetching] = useState(true);
     const [data,
-        setData] = useState(false);
+        setData] = useState([]);
     const [paginate,
-        setPaginate] = useState(false);
+        setPaginate] = useState(1);
     const [currItems,
         setCurrItems] = useState([]);
-
+    const [pageItems, setPageItems] = useState([]);
+    
 
     useEffect(() => {
-        if (getStorage('colecoes  -data')) {
+        if (getStorage('colecoes-data')) {
             setIsFetching(false);
-            console.log(JSON.parse(getStorage('colecoes-data')))
-            return setData(JSON.parse(getStorage('colecoes-data')))
+            return setData(JSON.parse(getStorage('colecoes-data')));
         }
 
         axios
-            .get('/colecoes')
+            .get('/colecoes/1')
             .then(response => {
                 setData(response.data);
                 setStorage('colecoes-data', JSON.stringify(response.data));
@@ -45,24 +45,54 @@ const GaleriaArtes = () => {
             })
     }, []);
 
-    const activeGaleria = (index) => {
-        setShowGaleriaModal(true)
+    useEffect(() => {
+        setPaginate(1);
+        const filtered = data.filter(i => {
+            const teste = (filtros.nomeObra
+                ? i.file_desc2 == filtros.nomeObra
+                : true) && (filtros.nomeArtista
+                ? i.file_artista == filtros.nomeArtista
+                : true) && (filtros.tipoObra
+                ? i.file_tipo == filtros.tipoObra
+                : true) && (filtros.dataDe
+                ? new Date(i.created_at) > new Date(filtros.dataDe)
+                : true) && (filtros.dataAte
+                ? new Date(i.created_at) < new Date(filtros.dataAte)
+                : true);
+            return teste;
+        });
+
+        console.log(filtered)
+        setCurrItems(filtered);
+    }, [filtros, data]);
+
+    useEffect( () => {
+        setPageItems(paginateArray(currItems, 1, paginate))
+    },[paginate, data, currItems])
+
+    const activeGaleria = (id) => {
+        setCurrentID(id);
+        setShowGaleriaModal(true);
     }
 
-    const changePage = () => {
-        setPaginate(0)
+    const changePage = (i) => {
+        setPaginate(i)
+    };
+
+    const paginateArray = (array, page_size, page_number) => {
+        return array.slice((page_number - 1) * page_size, page_number * page_size);
     }
 
     return (
         <section className="GaleriaArtes mb-5 pb-lg-5">
             <GaleriaModal
-                current={currentItem}
+                currentItem={currentID}
                 data={data}
-                close={() => setShowGaleriaModal(false)}
+                closeModal={() => setShowGaleriaModal(false)}
                 visible={showGaleriaModal}
-                items={false}/>
+                items={data}/>
 
-            <GaleriaFiltros setFiltros={setFiltros}/>
+            <GaleriaFiltros setParentFiltros={setFiltros} data={data}/>
 
             <div className="container">
                 <Masonry
@@ -73,29 +103,16 @@ const GaleriaArtes = () => {
                 }}
                     columnClassName="my-masonry-grid_column">
 
-                    {currItems.map(i => (
-                        <article className="GaleriaArtes__item">
-                            <img
-                                className="GaleriaArtes__item-img"
-                                src={i.img}
-                                alt={i.legenda} />
-                            <h5 className="GaleriaArtes__item-nome">{i.nome}</h5>
-                            <span className="GaleriaArtes__item-author">{i.autor}</span>
+                    {pageItems.map(i => (
+                        <article className="GaleriaArtes__item" onClick={() => activeGaleria(i.id)}>
+                            <img className="GaleriaArtes__item-img" src={i.file} alt={i.file_desc2}/>
+                            <h5 className="GaleriaArtes__item-nome">{i.file_desc2}</h5>
+                            <span className="GaleriaArtes__item-author">{i.file_artista}</span>
                         </article>
                     ))}
                 </Masonry>
 
-                <Pagination
-                    pageCount={18}
-                    pageRangeDisplayed={1}
-                    containerClassName="pagination"
-                    nextLabel="Próximo"
-                    previousLabel="Anterior"
-                    itemClassFirst='first'
-                    itemClassLast='last'
-                    itemClassPrev="prev"
-                    itemClassNext="next"
-                    onPageChange={() => changePage}/>
+                <Pagination changePage={changePage} totalItems={currItems.length / 1} currPage={paginate - 1}/>
             </div>
         </section>
     )

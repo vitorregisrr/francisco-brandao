@@ -40,7 +40,8 @@ const MeioAmbiente = (props) => {
                     <div className="row">
                         <div className="col-lg-6 d-flex justify-content-between flex-column pb-lg-4">
                             <figure className="my-4 my-lg-0">
-                                <div
+                               {data.foto1 ? 
+                                (<div
                                     className="img-brush brush-blue-spiral d-flex justify-content-center justify-content-lg-end">
                                     <img
                                         src={data.foto1}
@@ -48,7 +49,7 @@ const MeioAmbiente = (props) => {
                                         style={{
                                         width: '73%'
                                     }}/>
-                                </div>
+                                </div>) : null}
                                 <figcaption className="text-center text-lg-right">
                                   {data.legenda_foto1}
                                 </figcaption>

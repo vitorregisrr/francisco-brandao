@@ -36,9 +36,13 @@ const Historia = (props) => {
                     <div className="row">
                         <div className="col-lg-6 d-flex justify-content-between flex-column pb-lg-4">
                             <figure className="my-4 my-lg-0" >
-                                <div className="img-brush brush-blue">
-                                    <img src={historiaData.foto1} alt={historiaData.legenda_foto1}/>
-                                </div>
+                                {historiaData.foto1 ? 
+                                (
+                                    <div className="img-brush brush-blue">
+                                        <img src={historiaData.foto1} alt={historiaData.legenda_foto1}/>
+                                    </div>
+                                
+                                ): null}
                                 <figcaption className="text-lg-right">
                                 {historiaData.legenda_foto1}
                                 </figcaption>

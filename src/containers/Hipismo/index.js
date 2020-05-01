@@ -37,9 +37,12 @@ const Hipismo = (props) => {
                     <div className="row">
                         <div className="col-lg-6 d-flex justify-content-between flex-column pb-lg-4">
                             <figure>
-                                <div className="img-brush brush-blue-3">
-                                    <img src={data.foto1} alt={data.legenda_foto1}/>
-                                </div>
+                                {data.foto1 ? 
+                                (
+                                    <div className="img-brush brush-blue-3">
+                                        <img src={data.foto1} alt={data.legenda_foto1}/>
+                                    </div>
+                                ): null}
                                 <figcaption className="text-lg-right">
                                 {data.legenda_foto1}
                                 </figcaption>

@@ -37,17 +37,28 @@ const Colecao = (props) => {
 
             <main class="py-5 my-3 my-lg-5">
                 <div className="container-interna">
-                    <div className="img-brush brush-yellow">
-                        <img src={data.foto1} alt={data.legenda_foto1}/>
-                    </div>
-
+                    {data.foto1
+                        ? (
+                            <div className="img-brush brush-yellow">
+                                <img src={data.foto1} alt={data.legenda_foto1}/>
+                            </div>
+                        )
+                        : null}
                     <div className="markup">
                         <div className="pl-lg-3">
-                            <blockquote class="pl-4" ddangerouslySetInnerHTML={{__html: data.citacao}}></blockquote>
+                            <blockquote
+                                class="pl-4"
+                                dangerouslySetInnerHTML={{
+                                __html: data.citacao
+                            }}></blockquote>
                         </div>
                     </div>
 
-                    <div className="mt-5 pt-lg-5" dangerouslySetInnerHTML={{__html: data.bloco_texto1}}></div>
+                    <div
+                        className="mt-5 pt-lg-3"
+                        dangerouslySetInnerHTML={{
+                        __html: data.bloco_texto1
+                    }}></div>
                 </div>
 
                 <GaleriaArtes/>
@@ -56,11 +67,14 @@ const Colecao = (props) => {
                     <h3 className="title-brush-red">
                         {data.titulo}
                     </h3>
-                    <div dangerouslySetInnerHTML={{__html: data.bloco_texto2}}></div>
+                    <div
+                        dangerouslySetInnerHTML={{
+                        __html: data.bloco_texto2
+                    }}></div>
                     <figure className="pb-1 pb-lg-0 pt-3 mb-lg-1">
                         <img src={data.foto2} alt={data.legenda_foto2}/>
                         <figcaption>
-                          {data.legenda_foto2}
+                            {data.legenda_foto2}
                         </figcaption>
                     </figure>
                 </div>
@@ -91,11 +105,15 @@ const Colecao = (props) => {
                 </div>
 
                 <div className="container-interna pb-4">
-                    <div className="mb-lg-5" dangerouslySetInnerHTML={{__html: data.bloco_texto3}}></div>
+                    <div
+                        className="mb-lg-5"
+                        dangerouslySetInnerHTML={{
+                        __html: data.bloco_texto3
+                    }}></div>
 
                     <figure className="mb-5">
                         <div className="img-brush brush-line brush-line-bottom-right-5">
-                            <img src={data.foto5} alt={data.legenda_foto5} />
+                            <img src={data.foto5} alt={data.legenda_foto5}/>
                         </div>
                         <figcaption className="arte">
                             {data.legenda_foto5}

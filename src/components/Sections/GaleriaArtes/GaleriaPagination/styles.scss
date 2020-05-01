@@ -1,0 +1,73 @@
+@import 'assets/scss/variables/__all.scss';
+
+.pagination {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: #484848;
+    border-top: 1px solid rgb(214, 214, 214);
+    border-bottom: 1px solid rgb(214, 214, 214);
+    margin-top: 100px;
+
+    @media screen and (max-width: $bp-LG){
+        margin-top: 40px;
+    }
+
+    .disabled {
+        opacity: 1;
+    }
+
+    a {
+        color: #484848 !important;
+        font-weight: 400;
+    }
+
+    .first,
+    .last {
+        display: none;
+    }
+
+    .previous {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+    }
+
+    .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+    }
+
+    li:not(.previous):not(.next){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-left: 1px solid rgb(214, 214, 214);
+        border-right: 1px solid rgb(214, 214, 214);
+        padding:  12px 15px;
+        font-size: 19px;
+        transition: all 0.4s;
+        border-bottom: 3px solid rgba(255, 255, 255, 0);
+        
+        &:hover{
+            border-bottom: 3px solid rgba(75, 3, 3, 0.331);
+        }
+
+        &.selected{
+            border-bottom: 3px solid $color-primary;
+        }
+    }
+
+    a{
+        text-decoration: none;
+
+        &:focus, &:active{
+            border: none;
+            box-shadow: none;
+            outline: none;
+        }
+    }
+}

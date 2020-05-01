@@ -1,10 +1,13 @@
 import React from 'react'
+import {Element} from 'react-scroll'
 
 import styles from './styles.scss'
 
 const LinhaHeader = ({current, setCurrent}) => {
     return (
-        <header className="LinhaHeader">
+        
+        <Element name="linhatempo-header">
+            <header className="LinhaHeader">
             <div className="container">
                 <div className="LinhaHeader__title">
                     Trajetória
@@ -34,6 +37,7 @@ const LinhaHeader = ({current, setCurrent}) => {
                 </div>
             </div>
         </header>
+        </Element>
     )
 }
 

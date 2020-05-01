@@ -4,7 +4,7 @@ import './styles.scss'
 
 const PageBanner = ({title, background}) => {
     return(
-        <header className="PageBanner" style={{backgroundImage: background}}>
+        <header className="PageBanner" style={{backgroundImage: `url(${background})`}}>
             <h2 className="PageBanner__title">{title}</h2>
         </header>
     )

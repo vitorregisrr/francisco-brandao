@@ -12,19 +12,19 @@ const LinhaBottom = ({current, setCurrent}) => {
     }else if(current === 2){
         nextName = 'Vida Adulta'
     }else if(current === 3){
-        nextName = 'Origens'
+        nextName = false
     }
 
     const onClickBtn = () => {
         setCurrent(current === 3 ? 0 : current + 1)
-        scroll.scrollTo('LinhaTempo');
+        scroll.scrollTo('linhatempo-header');
     }
 
     return(
        <footer className="LinhaBottom">
-           <button className="LinhaBottom__btn" onClick={onClickBtn}>
+           {nextName ? <button className="LinhaBottom__btn" onClick={onClickBtn}>
                {nextName}
-           </button>
+           </button> : null}
        </footer>
     )
 }

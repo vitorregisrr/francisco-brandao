@@ -30,7 +30,7 @@ const Hipismo = (props) => {
 
     return (
         <section className="Hipismo page-interna pb-5 mb-2 mb-lg-5">
-            <PageBanner title={`Hipismo`} background={false}/>
+            <PageBanner title={`Hipismo`} background={require('../../assets/images/backgrounds/header-hipismo.png')}/>
 
             <main class="pt-3 pb-5 pt-lg-5 my-3 my-lg-5">
                 <div className="container pt-4 pt-lg-0">

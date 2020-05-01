@@ -24,8 +24,8 @@ const GaleriaArtes = () => {
         setPaginate] = useState(1);
     const [currItems,
         setCurrItems] = useState([]);
-    const [pageItems, setPageItems] = useState([]);
-    
+    const [pageItems,
+        setPageItems] = useState([]);
 
     useEffect(() => {
         if (getStorage('colecoes-data')) {
@@ -61,14 +61,12 @@ const GaleriaArtes = () => {
                 : true);
             return teste;
         });
-
-        console.log(filtered)
         setCurrItems(filtered);
     }, [filtros, data]);
 
-    useEffect( () => {
+    useEffect(() => {
         setPageItems(paginateArray(currItems, 18, paginate))
-    },[paginate, data, currItems])
+    }, [paginate, data, currItems])
 
     const activeGaleria = (id) => {
         setCurrentID(id);
@@ -95,24 +93,43 @@ const GaleriaArtes = () => {
             <GaleriaFiltros setParentFiltros={setFiltros} data={data}/>
 
             <div className="container">
-                <Masonry
-                    className="GaleriaArtes__list"
-                    breakpointCols={{
-                    default: 4,
-                    992: 2
-                }}
-                    columnClassName="my-masonry-grid_column">
+                {pageItems.length > 0
+                    ? (
+                        <Masonry
+                            className="GaleriaArtes__list"
+                            breakpointCols={{
+                            default: 4,
+                            992: 2
+                        }}
+                            columnClassName="my-masonry-grid_column">
+                            {pageItems.map(i => (
+                                <article className="GaleriaArtes__item" onClick={() => activeGaleria(i.id)}>
+                                    <img className="GaleriaArtes__item-img" src={i.file} alt={i.file_desc2}/>
+                                    <h5 className="GaleriaArtes__item-nome">{i.file_desc2}</h5>
+                                    <span className="GaleriaArtes__item-author">{i.file_artista}</span>
+                                </article>
+                            ))}
+                        </Masonry>
+                    )
+                    : (
+                        <div>
+                            <h2
+                                class="text-center color-primary text-uppercase mb-2">Oops!</h2>
+                            <h4
+                                class="text-center color-primary text-uppercase mt-0"
+                                style={{
+                                fontWeight: 400
+                            }}>Os filtros selecionados não tiveram um resultado.</h4>
+                            <hr/>
+                        </div>
+                    )}
 
-                    {pageItems.map(i => (
-                        <article className="GaleriaArtes__item" onClick={() => activeGaleria(i.id)}>
-                            <img className="GaleriaArtes__item-img" src={i.file} alt={i.file_desc2}/>
-                            <h5 className="GaleriaArtes__item-nome">{i.file_desc2}</h5>
-                            <span className="GaleriaArtes__item-author">{i.file_artista}</span>
-                        </article>
-                    ))}
-                </Masonry>
-
-                <Pagination changePage={changePage} totalItems={currItems.length / 18} currPage={paginate - 1}/>
+                {pageItems.length > 0
+                    ? <Pagination
+                            changePage={changePage}
+                            totalItems={currItems.length / 18}
+                            currPage={paginate - 1}/>
+                    : null}
             </div>
         </section>
     )

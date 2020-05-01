@@ -92,6 +92,7 @@ const HomeMenu = ({moveSlider, isFirst, setHasOverlay, slickRef}) => {
                     className={isToggled
                     ? 'active'
                     : ''}
+                    style={{marginLeft: IOS ? 20 : 0}}
                     onClick={() => toggleMenu(!isToggled)}>
                     <div></div>
                     <div></div>

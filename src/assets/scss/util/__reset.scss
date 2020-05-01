@@ -34,3 +34,8 @@ button:focus{
 .position-relative{
     position: relative;
 }
+
+input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+    -webkit-appearance: none;
+}

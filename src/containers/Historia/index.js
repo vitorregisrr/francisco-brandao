@@ -30,7 +30,7 @@ const Historia = (props) => {
 
     return (
         <section className="Historia page-interna">
-            <PageBanner title={`História`} background={false}/>
+            <PageBanner title={`História`} background={require('../../assets/images/backgrounds/header-historia.png')}/>
             <main className="pt-3 pb-5 pt-lg-5 my-3 my-lg-5">
                 <div className="container pt-5 mt-lg-4">
                     <div className="row">
@@ -49,14 +49,14 @@ const Historia = (props) => {
                             </figure>
                             <div className="row mt-3 mt-lg-0">
                                 <div className="col-lg-3 d-flex align-items-end text-lg-right pr-lg-0 order-last order-lg-first">
-                                   <figcaption>{historiaData.legenda_foto2}</figcaption>
+                                   <figcaption>{historiaData.legenda_video1}</figcaption>
                                 </div>
                                 <div className="col-lg-9">
                                     <div className="img-brush brush-line brush-line-top-left">
                                         <iframe
                                             width="100%"
                                             height="230"
-                                            src={historiaData.legenda_foto2}
+                                            src={historiaData.video1}
                                             frameborder="0"
                                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>

@@ -33,7 +33,7 @@ const Colecao = (props) => {
 
     return (
         <section className="Colecao page-interna">
-            <PageBanner title={`Coleção de Arte`} background={false}/>
+            <PageBanner title={`Coleção de Arte`} background={require('../../assets/images/backgrounds/header-colecao.png')}/>
 
             <main class="py-5 my-3 my-lg-5">
                 <div className="container-interna">

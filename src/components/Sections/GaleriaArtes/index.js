@@ -67,7 +67,7 @@ const GaleriaArtes = () => {
     }, [filtros, data]);
 
     useEffect( () => {
-        setPageItems(paginateArray(currItems, 1, paginate))
+        setPageItems(paginateArray(currItems, 18, paginate))
     },[paginate, data, currItems])
 
     const activeGaleria = (id) => {
@@ -112,7 +112,7 @@ const GaleriaArtes = () => {
                     ))}
                 </Masonry>
 
-                <Pagination changePage={changePage} totalItems={currItems.length / 1} currPage={paginate - 1}/>
+                <Pagination changePage={changePage} totalItems={currItems.length / 18} currPage={paginate - 1}/>
             </div>
         </section>
     )

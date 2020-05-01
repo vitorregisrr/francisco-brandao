@@ -71,7 +71,7 @@ const Colecao = (props) => {
                         dangerouslySetInnerHTML={{
                         __html: data.bloco_texto2
                     }}></div>
-                    <figure className="pb-1 pb-lg-0 pt-3 mb-lg-1">
+                    <figure className="pb-1 pb-lg-0 pt-3 mb-lg-4">
                         <img src={data.foto2} alt={data.legenda_foto2}/>
                         <figcaption>
                             {data.legenda_foto2}

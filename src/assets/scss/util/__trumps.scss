@@ -476,7 +476,11 @@ button {
 
 .container-large {
     @media screen and (min-width: $bp-XL) {
-        max-width: 1300px !important;
+        max-width: 1270px !important;
+    }
+
+    @media screen and (max-width: 1380px){
+        max-width: 1230px !important;
     }
 }
 

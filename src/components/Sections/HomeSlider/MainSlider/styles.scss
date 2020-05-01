@@ -263,6 +263,12 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
             bottom: 40px;
         }
 
+        &.ios{
+            @media screen and (min-height: 700px){
+                margin-bottom: 50px;
+            }
+        }
+
         button {
             display: block;
             width: 5px;

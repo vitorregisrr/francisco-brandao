@@ -119,7 +119,7 @@ const MainSlider = ({slickRef, setCurrentIndex, currIndex, hasOverlay, isFirst, 
                 </Slick>
 
                 {/* Navegação Mobile */}
-                <div className={`MainSlider__dots ${isDesactived ? 'desactived' : ''}`} style={{marginBottom: IOS ? 30 : 0}}onClick={desactiveDots}>
+                <div className={`MainSlider__dots ${isDesactived ? 'desactived' : ''} ${IOS ? 'ios' : ''}`} onClick={desactiveDots}>
                     {[0,1,2,3,4,5,].map(i => (
                         <button title={`Ir para item ${i}`} key={i} className={currIndex === i ? 'active' : ''} onClick={() => slickRef.current.slickGoTo(i)}></button>
                     ))}

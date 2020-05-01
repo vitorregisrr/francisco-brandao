@@ -8,17 +8,17 @@ import LinhaTempo from 'components/Sections/LinhaTempo'
 
 const Historia = (props) => {
     const [isFetching, setIsFetching] = useState(true);
-    const [historiaData, setHistoriaData] = useState(false);
+    const [data, setData] = useState(false);
 
     useEffect( () =>{
         if(getStorage('historia-data')){
             setIsFetching(false);
-            return setHistoriaData(JSON.parse(getStorage('historia-data')))
+            return setData(JSON.parse(getStorage('historia-data')))
         }
   
         axios.get('/pages/historia')
         .then(response => {
-            setHistoriaData(response.data);
+            setData(response.data);
             console.log(response.data)
             setStorage('historia-data', JSON.stringify(response.data));
         })
@@ -30,33 +30,33 @@ const Historia = (props) => {
 
     return (
         <section className="Historia page-interna">
-            <PageBanner title={`História`} background={require('../../assets/images/backgrounds/header-historia.png')}/>
+            <PageBanner title={`História`} background={data.banner_image || require('../../assets/images/backgrounds/header-historia.png')}/>
             <main className="pt-3 pb-5 pt-lg-5 my-3 my-lg-5">
                 <div className="container pt-5 mt-lg-4">
                     <div className="row">
                         <div className="col-lg-6 d-flex justify-content-between flex-column pb-lg-4">
                             <figure className="my-4 my-lg-0" >
-                                {historiaData.foto1 ? 
+                                {data.foto1 ? 
                                 (
                                     <div className="img-brush brush-blue">
-                                        <img src={historiaData.foto1} alt={historiaData.legenda_foto1}/>
+                                        <img src={data.foto1} alt={data.legenda_foto1}/>
                                     </div>
                                 
                                 ): null}
                                 <figcaption className="text-lg-right">
-                                {historiaData.legenda_foto1}
+                                {data.legenda_foto1}
                                 </figcaption>
                             </figure>
                             <div className="row mt-3 mt-lg-0">
                                 <div className="col-lg-3 d-flex align-items-end text-lg-right pr-lg-0 order-last order-lg-first">
-                                   <figcaption>{historiaData.legenda_video1}</figcaption>
+                                   <figcaption>{data.legenda_video1}</figcaption>
                                 </div>
                                 <div className="col-lg-9">
                                     <div className="img-brush brush-line brush-line-top-left">
                                         <iframe
                                             width="100%"
                                             height="230"
-                                            src={historiaData.video1}
+                                            src={data.video1}
                                             frameborder="0"
                                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
@@ -67,25 +67,25 @@ const Historia = (props) => {
                         <div className="col-lg-6 pt-lg-5">
                             <div className="markup">
                                 <h3 className="mt-5 mt-lg-0">
-                                    {historiaData.titulo}
+                                    {data.titulo}
                                 </h3>
                                 <p>
                                     <b>
-                                        {historiaData.subtitulo}
+                                        {data.subtitulo}
                                     </b>
                                 </p>
-                                <div dangerouslySetInnerHTML={{__html: historiaData.bloco_texto1}}>
+                                <div dangerouslySetInnerHTML={{__html: data.bloco_texto1}}>
                                 </div>
-                                <div dangerouslySetInnerHTML={{__html: historiaData.bloco_texto2}}>
+                                <div dangerouslySetInnerHTML={{__html: data.bloco_texto2}}>
                                 </div>
-                                <div dangerouslySetInnerHTML={{__html: historiaData.bloco_texto3}}>
+                                <div dangerouslySetInnerHTML={{__html: data.bloco_texto3}}>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <LinhaTempo data={historiaData}/>
+                <LinhaTempo data={data}/>
             </main>
         </section>
     )

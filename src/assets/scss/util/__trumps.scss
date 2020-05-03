@@ -155,10 +155,10 @@ button {
         }
     }
 
-    figcaption {
+    figcaption, figcaption p {
         margin-top: 15px;
         font-weight: bold;
-        font-size: 12px;
+        font-size: 12px !important;
         color: #484848;
 
         &.arte {

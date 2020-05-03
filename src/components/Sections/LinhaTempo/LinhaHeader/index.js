@@ -5,7 +5,6 @@ import styles from './styles.scss'
 
 const LinhaHeader = ({current, setCurrent}) => {
     return (
-        
         <Element name="linhatempo-header">
             <header className="LinhaHeader">
             <div className="container">

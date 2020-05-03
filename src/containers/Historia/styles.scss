@@ -1,6 +1,8 @@
 @import 'assets/scss/variables/__all.scss';
 
 .Historia{
+    overflow: hidden;
+    
     .PageBanner__title{
         @media screen and (max-width: $bp-MD){
             font-size: 57px;

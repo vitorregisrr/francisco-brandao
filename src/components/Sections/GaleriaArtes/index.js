@@ -85,10 +85,9 @@ const GaleriaArtes = () => {
         <section className="GaleriaArtes mb-5 pb-lg-5">
             <GaleriaModal
                 currentItem={currentID}
-                data={data}
                 closeModal={() => setShowGaleriaModal(false)}
                 visible={showGaleriaModal}
-                items={data}/>
+                items={currItems}/>
 
             <GaleriaFiltros setParentFiltros={setFiltros} data={data}/>
 

@@ -176,8 +176,7 @@ const LinhaTempo = ({data}) => {
                             <div className="img-brush brush-line brush-line-bottom-left">
                                 <img src={data.timeline4_foto1} alt={data.timeline4_legenda_foto1} height="460" style={{objectFit: 'cover'}}/>
                             </div>
-                            <figcaption class="text-lg-right" dangerouslySetInnerHTML={{__html: data.timeline4_legenda_foto1}}>
-                            </figcaption>
+                            <figcaption class="text-lg-right" dangerouslySetInnerHTML={{__html: data.timeline4_legenda_foto1}}></figcaption>
                         </figure>
                     </div>
                     <div className="col-lg-6">
@@ -185,7 +184,7 @@ const LinhaTempo = ({data}) => {
                             <div className="img-brush">
                                 <img src={data.timeline4_foto2} alt={data.timeline4_legenda_foto2}  height="460" />
                             </div>
-                            <figcaption dangerouslySetInnerHTML={{__html: data.timeline4_legenda_foto2}}> </figcaption>
+                            <figcaption dangerouslySetInnerHTML={{__html: data.timeline4_legenda_foto2}}></figcaption>
                         </figure>
                     </div>
                 </div>

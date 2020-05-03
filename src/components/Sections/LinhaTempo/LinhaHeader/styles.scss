@@ -1,9 +1,12 @@
 @import 'assets/scss/variables/__all.scss';
 
 .LinhaHeader {
+    position: relative;
     background: #00354D;
     padding: 80px 0 90px 0;
     width: 100vw;
+    min-width: 100vw;
+    z-index: 7;
 
     @media screen and (max-width: $bp-MD){
         padding: 35px 20px;

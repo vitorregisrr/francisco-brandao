@@ -12,14 +12,20 @@ const GaleriaFiltros = ({data, setParentFiltros}) => {
     if(data){
         listArtistas = data.map( i => i.file_artista).filter(function(elem, index, self) {
             return index === self.indexOf(elem);
+        }).filter(function(str) {
+            return /\S/.test(str) && str !== null;
         });
 
         listNomes = data.map( i => i.file_desc2).filter(function(elem, index, self) {
             return index === self.indexOf(elem);
+        }).filter(function(str) {
+            return /\S/.test(str) && str !== null;
         });
 
         listTipos = data.map( i => i.file_tipo).filter(function(elem, index, self) {
             return index === self.indexOf(elem);
+        }).filter(function(str) {
+            return /\S/.test(str) && str !== null;
         });
     }
 

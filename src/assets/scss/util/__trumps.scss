@@ -162,12 +162,12 @@ button {
         color: #484848;
 
         &.arte {
-            font-size: 17px;
+            font-size: 17px !important;
             color: #484848;
 
             span {
                 display: block;
-                font-size: 13px;
+                font-size: 13px !important;
                 font-weight: 300;
             }
         }

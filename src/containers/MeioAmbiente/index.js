@@ -139,7 +139,7 @@ const MeioAmbiente = (props) => {
                             }}></figcaption>
                         </figure>
 
-                      <div dangerouslySetInnerHTML={{__html: data.bloco_texto2}}></div>
+                      <div dangerouslySetInnerHTML={{__html: data.bloco_texto5}}></div>
 
                         <GallerySlider data={data} brush="bottom"/>
                     </div>

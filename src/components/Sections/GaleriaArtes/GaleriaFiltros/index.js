@@ -53,6 +53,7 @@ const GaleriaFiltros = ({data, setParentFiltros}) => {
                             <label htmlFor="nome-artista">Nome do Artista</label>
                             <select name="nome-artista" id="nome-artista" onChange={(e) => updateFiltros('nomeArtista', e.target.value) }>
                                 <option selected disabled>Selecione</option>
+                                <option value="">Todos</option>
                                 {listArtistas.map( i => (
                                     <option value={i}>
                                         {i}
@@ -66,6 +67,7 @@ const GaleriaFiltros = ({data, setParentFiltros}) => {
                             <label htmlFor="nome-obra">Nome da Obra</label>
                             <select name="nome-obra" id="nome-obra" onChange={(e) => updateFiltros('nomeObra', e.target.value) }>
                                 <option selected disabled>Selecione</option>
+                                <option value="">Todos</option>
                                 {listNomes.map( i => (
                                     <option value={i}>
                                         {i}
@@ -79,6 +81,7 @@ const GaleriaFiltros = ({data, setParentFiltros}) => {
                             <label htmlFor="tipo-obra">Tipo da Obra</label>
                             <select name="tipo-obra" id="tipo-obra" onChange={(e) => updateFiltros('tipoObra', e.target.value) }>
                             <option selected disabled>Selecione</option>
+                            <option value="">Todos</option>
                                 {listTipos.map( i => (
                                     <option value={i}>
                                         {i}

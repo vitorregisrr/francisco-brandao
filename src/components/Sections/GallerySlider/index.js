@@ -31,7 +31,7 @@ const GallerySlider = (props) => {
                             alt={sliderData[currIndex].legenda}
                             className="GallerySlider__img"/>
                         <footer className="GallerySlider__footer">
-                            <div className="GallerySlider__desc">{sliderData[currIndex].legenda}</div>
+                            <div className="GallerySlider__desc" dangerouslySetInnerHTML={{__html: sliderData[currIndex].legenda}}></div>
                             <nav className="GallerySlider__controls">
                                 {sliderData.map((_, i) => (
                                     <button

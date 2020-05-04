@@ -75,16 +75,21 @@
         }
     }
 
-    &__desc {
-        font-size: 11px;
+    &__desc, &__desc p {
+        font-size: 11px !important;
         font-weight: bold;
         color: #fff;
         max-width: 340px;
+
         @media screen and (max-width: $bp-MD) {
             margin-bottom: 20px;
             text-align: center;
-            font-size: 12px;
+            font-size: 12px !important;
         }
+    }
+
+    &__desc p{
+        margin: 0 !important;
     }
 
     &__controls {

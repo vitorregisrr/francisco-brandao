@@ -89,10 +89,10 @@ const MeioAmbiente = (props) => {
 
                         <figure>
                             <div className="img-brush">
-                                <img src={data.foto2} alt={data.legenda_foto2}/>
+                                <img src={data.foto3} alt={data.legenda_foto3}/>
                             </div>
                             <figcaption dangerouslySetInnerHTML={{
-                                    __html: data.legenda_foto2
+                                    __html: data.legenda_foto3
                                 }}></figcaption>
                         </figure>
                         <h4 className="mt-lg-5">
@@ -102,10 +102,10 @@ const MeioAmbiente = (props) => {
 
                         <figure>
                             <div className="img-brush brush-line brush-line-bottom-right-7">
-                                <img src={data.foto3} alt={data.legenda_foto3}/>
+                                <img src={data.foto4} alt={data.legenda_foto4}/>
                             </div>
                             <figcaption c dangerouslySetInnerHTML={{
-                                    __html: data.legenda_foto3
+                                    __html: data.legenda_foto4
                                 }}></figcaption>
                         </figure>
                     </div>
@@ -114,10 +114,10 @@ const MeioAmbiente = (props) => {
                 <div className="container my-3 my-lg-5">
                     <figure>
                         <div className="img-brush">
-                            <img src={data.foto4} alt={data.legenda_foto4}/>
+                            <img src={data.foto5} alt={data.legenda_foto5}/>
                         </div>
                         <figcaption dangerouslySetInnerHTML={{
-                            __html: data.legenda_foto4
+                            __html: data.legenda_foto5
                         }}></figcaption>
                     </figure>
                 </div>
@@ -131,11 +131,11 @@ const MeioAmbiente = (props) => {
 
                         <figure>
                             <div className="img-brush">
-                                <img src={data.foto5} alt={data.legenda_foto5}/>
+                                <img src={data.foto6} alt={data.legenda_foto6}/>
                             </div>
 
                             <figcaption dangerouslySetInnerHTML={{
-                                __html: data.legenda_foto5
+                                __html: data.legenda_foto6
                             }}></figcaption>
                         </figure>
 

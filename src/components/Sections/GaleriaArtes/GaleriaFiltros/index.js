@@ -14,6 +14,10 @@ const GaleriaFiltros = ({data, setParentFiltros}) => {
             return index === self.indexOf(elem);
         }).filter(function(str) {
             return /\S/.test(str) && str !== null;
+        }).sort(function(a, b){
+            if(a < b) { return -1; }
+            if(a > b) { return 1; }
+            return 0;
         });
 
         listNomes = data.map( i => i.file_desc2).filter(function(elem, index, self) {
@@ -48,7 +52,7 @@ const GaleriaFiltros = ({data, setParentFiltros}) => {
                 </h1>
 
                 <div className="row">
-                    <div className="col-lg-2 mb-3 mb-lg-0 col-12 pr-lg-0">
+                    <div className="col-lg-3 mb-3 mb-lg-0 col-12 pr-lg-0">
                         <div className="form-control">
                             <label htmlFor="nome-artista">Nome do Artista</label>
                             <select name="nome-artista" id="nome-artista" onChange={(e) => updateFiltros('nomeArtista', e.target.value) }>
@@ -62,7 +66,7 @@ const GaleriaFiltros = ({data, setParentFiltros}) => {
                             </select>
                         </div>
                     </div>
-                    <div className="col-lg-2 mb-3 mb-lg-0 col-6 pr-lg-0">
+                    <div className="col-lg-3 mb-3 mb-lg-0 col-6 pr-lg-0">
                         <div className="form-control">
                             <label htmlFor="nome-obra">Nome da Obra</label>
                             <select name="nome-obra" id="nome-obra" onChange={(e) => updateFiltros('nomeObra', e.target.value) }>
@@ -76,7 +80,7 @@ const GaleriaFiltros = ({data, setParentFiltros}) => {
                             </select>
                         </div>
                     </div>
-                    <div className="col-lg-2 mb-3 mb-lg-0 col-6 pr-lg-0">
+                    {/* <div className="col-lg-2 mb-3 mb-lg-0 col-6 pr-lg-0">
                         <div className="form-control">
                             <label htmlFor="tipo-obra">Tipo da Obra</label>
                             <select name="tipo-obra" id="tipo-obra" onChange={(e) => updateFiltros('tipoObra', e.target.value) }>
@@ -113,8 +117,8 @@ const GaleriaFiltros = ({data, setParentFiltros}) => {
                                 <input type="date" onChange={(e) => updateFiltros('dataAte', e.target.value) }/>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-lg-2 mb-3 mb-lg-0 col-12">
+                    </div> */}
+                    <div className="col-lg-3 mb-3 mb-lg-0 col-12">
                         <div className="form-control">
                             <label
                                 htmlFor=""

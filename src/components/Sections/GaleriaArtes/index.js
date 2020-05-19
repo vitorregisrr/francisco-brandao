@@ -61,7 +61,11 @@ const GaleriaArtes = () => {
                 : true);
             return teste;
         });
-        setCurrItems(filtered);
+        setCurrItems(filtered.sort(function(a, b){
+            if(a.file_artista < b.file_artista) { return -1; }
+            if(a.file_artista > b.file_artista) { return 1; }
+            return 0;
+        }));
     }, [filtros, data]);
 
     useEffect(() => {

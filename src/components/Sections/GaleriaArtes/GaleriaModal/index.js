@@ -46,11 +46,11 @@ const GaleriaModal = ({currentItem, items, closeModal, visible}) => {
                                     <h5 className="GaleriaModal__item-autor">{i.file_artista}</h5>
 
                                     {/* Apenas se houver descrição */}
-                                    {i.file_desc2
+                                    {/* (i.file_desc2
                                         ? <React.Fragment><hr className="GaleriaModal__item-line"/>
                                                 <p className="GaleriaModal__item-desc">{i.file_desc2}</p>
                                             </React.Fragment>
-                                        : null}
+                                    : null */}
                                 </article>
                             ))}
                         </Slick>

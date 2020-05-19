@@ -35,8 +35,15 @@ const Colecao = (props) => {
         <section className="Colecao page-interna">
             <PageBanner title={`Coleção de Arte`} background={data.banner_image || require('../../assets/images/backgrounds/header-colecao.png')}/>
 
-            <main class="py-5 my-3 my-lg-5">
+            <main class="py-5 mb-3 mb-lg-5 mt-1">
                 <div className="container-interna">
+                    <div className="mb-3">
+                        <div
+                            className="mb-5 pb-lg-5"
+                            dangerouslySetInnerHTML={{
+                            __html: data.bloco_texto4
+                        }}></div>
+                        </div>
                     {data.foto1
                         ? (
                             <div className="img-brush brush-yellow">

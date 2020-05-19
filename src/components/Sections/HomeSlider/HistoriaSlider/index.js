@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import ReactTextTransition from "react-text-transition"
 
 import './style.scss'
@@ -6,8 +6,9 @@ import './style.scss'
 const HistoriaSlider = ({data}) => {
     const [currIndex, setCurrIndex] = useState(0);
     const [historiaBg, setHistoriaBg] = useState('assets/images/home/slider-0.png');
+    const [isAutomatic, setIsAutomatic] = useState(true);
 
-    const updateState = index => {
+    const updateState = (index, automatic) => {
         switch (index) {
             case 0:
                 setCurrIndex(0);
@@ -24,7 +25,22 @@ const HistoriaSlider = ({data}) => {
                 setHistoriaBg('assets/images/home/slider-2.png');
             break
         }
+
+        if(!automatic){
+            setIsAutomatic(false);
+        }
     }
+
+    useEffect(() => {
+        const interval = setInterval( () => {
+            if(isAutomatic){
+                updateState(currIndex === 2 ? 0 : currIndex+1, true)
+            }
+        }, 4000);
+          return () => clearInterval(interval);
+    }, [currIndex]);
+
+    
 
     return (
         <section className="MainSlider__item" key="historia-slider">

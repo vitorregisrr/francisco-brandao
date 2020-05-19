@@ -103,7 +103,7 @@ const MainSlider = ({slickRef, setCurrentIndex, currIndex, hasOverlay, isFirst, 
                         <div
                             className={`MainSlider__item-bg ${i.key}`}
                             style={{backgroundImage: `url('${i.background}')`}}></div>
-                        <div className="MainSlider__item-caption">
+                        <Link className="MainSlider__item-caption" to={i.link}>
                             <h1 className="MainSlider__item-title">
                                 <span>.  </span>
                                 <span>{i.title}</span>
@@ -113,7 +113,7 @@ const MainSlider = ({slickRef, setCurrentIndex, currIndex, hasOverlay, isFirst, 
                                 {i.subtitle}
                             </h2>
                             <Link className="MainSlider__item-arrow" to={i.link}/>
-                        </div>
+                        </Link>
                     </section>
                 ))}
                 </Slick>

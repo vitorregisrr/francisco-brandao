@@ -52,7 +52,7 @@ const LinhaTempo = ({data}) => {
                     <figcaption dangerouslySetInnerHTML={{__html: data.timeline2_legenda_foto1}}></figcaption>
                 </figure>
 
-                <figure className="pb-lg-5 mb-lg-5">
+                <figure className="">
                     <div className="img-brush brush-line brush-line-bottom-right">
                        <img src={data.timeline2_foto2} alt={data.timeline2_legenda_foto2}/>
                     </div>
@@ -65,7 +65,7 @@ const LinhaTempo = ({data}) => {
 
                 <div dangerouslySetInnerHTML={{__html: data.timeline2_bloco_texto3}}></div>
 
-                <figure className="pb-lg-5 mb-lg-4">
+                <figure className="">
                     <div className="img-brush brush-line brush-line-bottom-right-2">
                         <img src={data.timeline2_foto3} alt={data.timeline2_legenda_foto3}/>
                     </div>

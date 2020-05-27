@@ -6,6 +6,8 @@ import './style.scss'
 const HistoriaSlider = ({data}) => {
     const [currIndex, setCurrIndex] = useState(0);
     const [historiaBg, setHistoriaBg] = useState('assets/images/home/slider-0.png');
+    // Variavel para testar breakpoint menor que 992px
+    const [isMDScreen, setIsMDScreen] = useState(window.innerWidth < 778);
     const [isAutomatic, setIsAutomatic] = useState(true);
 
     const updateState = (index, automatic) => {
@@ -45,9 +47,9 @@ const HistoriaSlider = ({data}) => {
     return (
         <section className="MainSlider__item" key="historia-slider">
             
-            <div className={`MainSlider__item-bg historia-slider item-0 ${currIndex === 0 ? 'active' : ''}`}  style={{backgroundImage: `url(${data.backgrounds[0]})`}}></div>
-            <div className={`MainSlider__item-bg historia-slider item-1 ${currIndex === 1 ? 'active' : ''}`}  style={{backgroundImage: `url(${data.backgrounds[1]})`}}></div>
-            <div className={`MainSlider__item-bg historia-slider item-2 ${currIndex === 2 ? 'active' : ''}`}  style={{backgroundImage: `url(${data.backgrounds[2]})`}}></div>
+            <div className={`MainSlider__item-bg historia-slider item-0 ${currIndex === 0 ? 'active' : ''}`}  style={{backgroundImage: `url(${isMDScreen ? data.backgrounds[0] : data.backgroundsMob[0]})`}}></div>
+            <div className={`MainSlider__item-bg historia-slider item-1 ${currIndex === 1 ? 'active' : ''}`}  style={{backgroundImage: `url(${isMDScreen ? data.backgrounds[1] : data.backgroundsMob[1]})`}}></div>
+            <div className={`MainSlider__item-bg historia-slider item-2 ${currIndex === 2 ? 'active' : ''}`}  style={{backgroundImage: `url(${isMDScreen ? data.backgrounds[2] : data.backgroundsMob[2]})`}}></div>
 
             <div className="HistoriaSlider">
                 <div className="HistoriaSlider__caption wow fadeInUp">

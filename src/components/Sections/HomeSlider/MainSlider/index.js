@@ -73,6 +73,7 @@ const MainSlider = ({slickRef, setCurrentIndex, currIndex, hasOverlay, isFirst, 
     const historiaData = {
         nomes: [data.titulo, data.titulo2, data.titulo3],
         backgrounds: [`data:image/png;base64,${data.foto1}`, `data:image/png;base64,${data.foto2}`, `data:image/png;base64,${data.foto3}`],
+        backgroundsMob: [`data:image/png;base64,${data.foto1_mobile}`, `data:image/png;base64,${data.foto2_mobile}`, `data:image/png;base64,${data.foto3_mobile}`],
         sobrenome: data.titulo4,
         descricao: data.chamada,
     }

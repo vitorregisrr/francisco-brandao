@@ -209,14 +209,18 @@ button {
         &:after {
             content: '';
             position: absolute;
-            left: -7%;
-            top: -26%;
+            left: -14%;
+            bottom: -42%;
             background-image: url('../../images/shapes/brush-blue-spiral.png');
             background-size: contain;
             background-repeat: no-repeat;
-            width: 128%;
-            height: 128%;
+            width: 108%;
+            height: 108%;
             z-index: -1;
+
+            @media screen and (max-width: $bp-MD){
+                left: -27%;
+            }
         }
     }
 

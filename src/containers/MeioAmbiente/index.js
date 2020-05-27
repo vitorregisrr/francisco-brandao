@@ -57,7 +57,7 @@ const MeioAmbiente = (props) => {
                             <div className="row pb-lg-4">
                                 <div
                                     className="col-lg-3 d-flex align-items-end text-lg-right pr-lg-0 order-last order-lg-first"></div>
-                                <div className="col-lg-9">
+                                <div className="col-lg-12">
                                     <figure>
                                         <div className="img-brush">
                                             <img src={data.foto2} alt={data.legenda_foto2}/>
@@ -69,8 +69,8 @@ const MeioAmbiente = (props) => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-6 pt-lg-5">
-                            <div class="markup">
+                        <div className="col-lg-6 pt-lg-5 mt-lg-5">
+                            <div class="markup pt-lg-5">
                                 <h3>
                                    {data.titulo}
                                 </h3>

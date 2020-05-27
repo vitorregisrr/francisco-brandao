@@ -132,7 +132,7 @@ const LinhaTempo = ({data}) => {
                     <figcaption dangerouslySetInnerHTML={{__html: data.timeline3_legenda_foto2}}></figcaption>
                 </figure>
 
-                <h4>{data.timeline4_titulo4}</h4>
+                <h4>{data.timeline3_titulo4}</h4>
 
                 <div dangerouslySetInnerHTML={{__html: data.timeline3_bloco_texto6}}></div>
 

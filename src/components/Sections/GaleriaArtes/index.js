@@ -2,6 +2,7 @@ import axios from 'axios.instance'
 import React, {useState, useEffect} from 'react'
 import Masonry from 'react-masonry-css'
 import {getStorage, setStorage} from 'util/storage'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import GaleriaFiltros from './GaleriaFiltros'
 import Pagination from './GaleriaPagination'
@@ -78,7 +79,7 @@ const GaleriaArtes = () => {
     }, [filtros, data]);
 
     useEffect(() => {
-        setPageItems(paginateArray(currItems, 22, paginate))
+        setPageItems(paginateArray(currItems, 53, paginate))
     }, [paginate, data, currItems])
 
     const activeGaleria = (id) => {
@@ -116,7 +117,7 @@ const GaleriaArtes = () => {
                             columnClassName="my-masonry-grid_column">
                             {pageItems.map(i => (
                                 <article className="GaleriaArtes__item" onClick={() => activeGaleria(i.id)}>
-                                    <img className="GaleriaArtes__item-img" src={i.file} alt={i.file_desc2}/>
+                                    <LazyLoadImage className="GaleriaArtes__item-img lazy" src={i.file} alt={i.file_desc2}/>
                                     <h5 className="GaleriaArtes__item-nome">{i.file_desc2}</h5>
                                     <span className="GaleriaArtes__item-author">{i.file_artista}</span>
                                 </article>

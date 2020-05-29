@@ -15,7 +15,9 @@ const Home = () => {
             const total = progressEvent.srcElement.getResponseHeader('Real-Content-Length')
             let percentCompleted = Math.round((progressEvent.loaded * 100) / total)
             percentCompleted = percentCompleted === 100 ? 99 : percentCompleted;
-            setLoadingPercentage(percentCompleted)
+            setTimeout( () =>{
+                setLoadingPercentage(percentCompleted)
+            } ,400);
         }
     }
 

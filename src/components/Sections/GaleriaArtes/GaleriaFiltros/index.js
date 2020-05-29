@@ -66,7 +66,7 @@ const GaleriaFiltros = ({data, setParentFiltros}) => {
                             </select>
                         </div>
                     </div>
-                    <div className="col-lg-3 mb-3 mb-lg-0 col-6 pr-lg-0">
+                    {/* <div className="col-lg-3 mb-3 mb-lg-0 col-6 pr-lg-0">
                         <div className="form-control">
                             <label htmlFor="nome-obra">Nome da Obra</label>
                             <select name="nome-obra" id="nome-obra" onChange={(e) => updateFiltros('nomeObra', e.target.value) }>
@@ -79,7 +79,7 @@ const GaleriaFiltros = ({data, setParentFiltros}) => {
                                 ))}
                             </select>
                         </div>
-                    </div>
+                    </div> */}
                     {/* <div className="col-lg-2 mb-3 mb-lg-0 col-6 pr-lg-0">
                         <div className="form-control">
                             <label htmlFor="tipo-obra">Tipo da Obra</label>

@@ -47,7 +47,7 @@ const GaleriaArtes = () => {
 
     useEffect(() => {
         setPaginate(1);
-        const filtered = data.filter(i => {
+        let filtered = data.filter(i => {
             const teste = (filtros.nomeObra
                 ? i.file_desc2 == filtros.nomeObra
                 : true) && (filtros.nomeArtista
@@ -61,15 +61,24 @@ const GaleriaArtes = () => {
                 : true);
             return teste;
         });
-        setCurrItems(filtered.sort(function(a, b){
-            if(a.file_artista < b.file_artista) { return -1; }
-            if(a.file_artista > b.file_artista) { return 1; }
-            return 0;
-        }));
+        setCurrItems(
+            filtered.sort(function(a, b){
+                if(a.file_artista < b.file_artista) { return -1; }
+                if(a.file_artista > b.file_artista) { return 1; }
+                return 0;
+            }).sort(x => x.destaque ? -1 : 1)
+            .sort(function(a, b){
+                if(a.ordem){
+                    if(a.ordem < b.ordem) { return -1; }
+                    if(a.ordem > b.ordem) { return 1; }
+                }
+                return 0;
+            })
+        );
     }, [filtros, data]);
 
     useEffect(() => {
-        setPageItems(paginateArray(currItems, 18, paginate))
+        setPageItems(paginateArray(currItems, 22, paginate))
     }, [paginate, data, currItems])
 
     const activeGaleria = (id) => {

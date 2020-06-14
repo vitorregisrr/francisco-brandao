@@ -13,7 +13,7 @@
 
     &__brand{
         font-family: 'Geo Sans';
-        margin: 0 0 15px 0;
+        margin: 0;
         font-weight: 300;
         text-transform: uppercase;
         font-size: 27px;
@@ -31,6 +31,31 @@
 
         @media screen and (max-width: $bp-MD){
             font-size: 12px;
+        }
+    }
+
+    hr{
+        width: 330px;
+        border: none;
+        background-color: #fff;
+        height: 0.5px;
+        opacity: .6;
+        margin: 23px 0;
+
+        @media screen and (max-width: $bp-LG){
+            width: 280px;
+        }
+    }
+
+    &__email{
+        font-size: 15px;
+        opacity: 1;
+        font-weight: lighter;
+        margin-top: 9px;
+        margin-bottom: 0;
+
+        @media screen and (max-width: $bp-MD){
+            font-size: 14px;
         }
     }
 }

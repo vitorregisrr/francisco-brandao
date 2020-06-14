@@ -194,8 +194,8 @@ button {
         &:after {
             content: '';
             position: absolute;
-            left: -17%;
-            top: -36%;
+            left: -22%;
+            top: -30%;
             background-image: url('../../images/shapes/brush-blue.png');
             background-size: contain;
             background-repeat: no-repeat;
@@ -228,13 +228,13 @@ button {
         &:after {
             content: '';
             position: absolute;
-            left: -30%;
-            top: -26%;
+            left: -35%;
+            top: -35%;
             background-image: url('../../images/shapes/brush-blue-3.png');
             background-size: contain;
             background-repeat: no-repeat;
-            width: 160%;
-            height: 160%;
+            width: 175%;
+            height: 175%;
             z-index: -1;
 
             @media screen and (max-width: $bp-LG){
@@ -249,8 +249,8 @@ button {
         &:after {
             content: '';
             position: absolute;
-            left: -31%;
-            top: -17%;
+            left: -26%;
+            top: -9%;
             background-image: url('../../images/shapes/brush-orange.png');
             background-size: contain;
             background-repeat: no-repeat;
@@ -264,8 +264,8 @@ button {
         &:after {
             content: '';
             position: absolute;
-            left: 14%;
-            top: -25%;
+            left: 12%;
+            top: -28%;
             background-image: url('../../images/shapes/brush-yellow.png');
             background-size: contain;
             background-repeat: no-repeat;

@@ -22,8 +22,8 @@ const App = () => {
                 <meta name="keywords" content=""/>
                 <meta NAME="Googlebot" CONTENT="index,follow"/>
                 <meta NAME="robots" CONTENT="index,follow"/>
-                <meta NAME="Identifier-URL" CONTENT="http://www."/>
-                <meta NAME="url" CONTENT="http://www."/>
+                <meta NAME="Identifier-URL" CONTENT="http://www.chiquinhobrandao.com.br"/>
+                <meta NAME="url" CONTENT="http://www.chiquinhobrandao.com.br"/>
                 <meta NAME="Language" CONTENT="PT-BR"/>
                 <meta NAME="content-language" CONTENT="pt-br"/>
                 <meta NAME="distribution" CONTENT="Global"/>
@@ -34,8 +34,8 @@ const App = () => {
 
                 <meta property="og:title" content="Title"/>
                 <meta property="og:description" content=""/>
-                <meta property="og:image" content="http://www."/>
-                <meta property="og:url" content="http://www."/>
+                <meta property="og:image" content="http://www.chiquinhobrandao.com.br"/>
+                <meta property="og:url" content="http://www.chiquinhobrandao.com.br"/>
                 <meta property="og:type" content="website"/>
                 <meta name="twitter:card" content="summary_large_image"/>
                 <meta property="og:site_name" content="dom.com.br"/>

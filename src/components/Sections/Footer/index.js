@@ -7,7 +7,7 @@ const Footer = (props) => {
         <footer className="Footer wow fadeInUp">
            <h3 className="Footer__brand">Chico Brandão</h3>
            <a target="_blank" href="mailto:contato@chiquinhobrandao.com.br" className="Footer__email">
-           <u>Contato</u>
+           Contato
            </a>
            <hr/>
            <p className="Footer__copy">

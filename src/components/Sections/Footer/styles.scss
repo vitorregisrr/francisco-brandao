@@ -53,6 +53,8 @@
         font-weight: lighter;
         margin-top: 9px;
         margin-bottom: 0;
+        text-decoration: none;
+        color: #fff !important;
 
         @media screen and (max-width: $bp-MD){
             font-size: 14px;

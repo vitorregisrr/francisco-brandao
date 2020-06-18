@@ -117,7 +117,7 @@ const GaleriaArtes = () => {
                             columnClassName="my-masonry-grid_column">
                             {pageItems.map(i => (
                                 <article className="GaleriaArtes__item" onClick={() => activeGaleria(i.id)}>
-                                    <LazyLoadImage className="GaleriaArtes__item-img lazy" src={i.file} alt={i.file_desc2}/>
+                                    <img className="GaleriaArtes__item-img lazy" src={i.file} alt={i.file_desc2}/>
                                     <h5 className="GaleriaArtes__item-nome">{i.file_desc2}</h5>
                                     <span className="GaleriaArtes__item-author">{i.file_artista}</span>
                                 </article>

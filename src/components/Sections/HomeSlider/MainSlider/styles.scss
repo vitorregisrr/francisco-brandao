@@ -83,6 +83,12 @@ $transition: all 1.4s cubic-bezier(.81,.42,.33,1);
                     opacity: 1;
                 }
             }
+
+            &.item-2{
+                @media screen and (max-width: $bp-MD){
+                    background-position: 59% center;
+                }
+            }
         }
 
         &-caption{

@@ -118,7 +118,6 @@ const GaleriaArtes = () => {
                             {pageItems.map(i => (
                                 <article className="GaleriaArtes__item" onClick={() => activeGaleria(i.id)}>
                                     <img className="GaleriaArtes__item-img lazy" src={i.file} alt={i.file_desc2}/>
-                                    <h5 className="GaleriaArtes__item-nome">{i.file_desc2}</h5>
                                     <span className="GaleriaArtes__item-author">{i.file_artista}</span>
                                 </article>
                             ))}

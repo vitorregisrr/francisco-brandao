@@ -101,7 +101,7 @@ const GaleriaArtes = () => {
                 currentItem={currentID}
                 closeModal={() => setShowGaleriaModal(false)}
                 visible={showGaleriaModal}
-                items={currItems}/>
+                items={pageItems}/>
 
             <GaleriaFiltros setParentFiltros={setFiltros} data={data}/>
 

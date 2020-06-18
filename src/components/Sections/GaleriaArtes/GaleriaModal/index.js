@@ -18,9 +18,7 @@ const GaleriaModal = ({currentItem, items, closeModal, visible}) => {
     }
     const slickRef = useRef(false);
 
-    useEffect(() => {
-       
-    }, [currentItem])
+    useEffect(() => {}, [currentItem])
 
     return (
         <aside className="GaleriaModal" data-visible={visible}>
@@ -29,7 +27,22 @@ const GaleriaModal = ({currentItem, items, closeModal, visible}) => {
                 className="GaleriaModal__close"
                 title="Fechar modal"></button>
             <div className="GaleriaModal__content">
-               
+                <Slick ref={slickRef} {...slickSettings}>
+                    {items.map(i => (
+                        <article className="GaleriaModal__item" data-id={i.id}>
+                            <img className="GaleriaModal__item-img" src={i.file}/>
+                            <h4 className="GaleriaModal__item-nome">{i.file_desc}</h4>
+                            <h5 className="GaleriaModal__item-autor">{i.file_artista}</h5>
+
+                            {/* Apenas se houver descrição */}
+                            {/* (i.file_desc2
+                                        ? <React.Fragment><hr className="GaleriaModal__item-line"/>
+                                                <p className="GaleriaModal__item-desc">{i.file_desc2}</p>
+                                            </React.Fragment>
+                                    : null */}
+                        </article>
+                    ))}
+                </Slick>
             </div>
         </aside>
     )

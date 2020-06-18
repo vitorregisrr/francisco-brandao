@@ -140,7 +140,7 @@ const GaleriaArtes = () => {
                 {pageItems.length > 0
                     ? <Pagination
                             changePage={changePage}
-                            totalItems={currItems.length / 18}
+                            totalItems={currItems.length / 53}
                             currPage={paginate - 1}/>
                     : null}
             </div>

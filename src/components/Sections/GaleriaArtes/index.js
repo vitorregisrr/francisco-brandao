@@ -118,7 +118,7 @@ const GaleriaArtes = () => {
                             {pageItems.map(i => (
                                 <article className="GaleriaArtes__item" onClick={() => activeGaleria(i.id)}>
                                     <img className="GaleriaArtes__item-img lazy" src={i.file} alt={i.file_desc2}/>
-                                    <span className="GaleriaArtes__item-author">{i.file_artista}</span>
+                                    <span className="GaleriaArtes__item-author pt-2">{i.file_artista}</span>
                                 </article>
                             ))}
                         </Masonry>

@@ -64,7 +64,7 @@ const AppRouter = ({location}) => {
                     <Route key={name} exact={exact} path={path}>
                         <div className="page transition-item">
                             <Helmet>
-                                <title>Chico Brandão • {name}</title>
+                                <title>Chiquinho Brandão • {name}</title>
                             </Helmet>
                             <Component/>
                         </div>

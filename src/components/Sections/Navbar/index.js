@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import {NavLink, withRouter} from 'react-router-dom'
 
 import './styles.scss';
@@ -37,7 +37,7 @@ const Navbar = ({location}) => {
         }
     ];
 
-    const moveMenu = (index, toggle) => {
+    const moveMenu = useCallback((index, toggle) => {
         const item = document.querySelector(`.Navbar__item[data-key="${index}"]`);
         setCurrIndex(index);
 
@@ -56,13 +56,13 @@ const Navbar = ({location}) => {
             })
         }, 100)
        }
-    }
+    })
 
     useEffect(() => {
         moveMenu(currIndex, true);
 
         setTimeout(() => setShouldTransition(true), 400)
-    }, []);
+    }, [currIndex, moveMenu]);
 
     return (
         <React.Fragment>
@@ -98,7 +98,7 @@ const Navbar = ({location}) => {
 
                         <div className="Navbar__brand">
                             <NavLink to="/">
-                                Chico Brandão
+                                Chiquinho Brandão
                             </NavLink>
                         </div>
                         <div className="Navbar__links">

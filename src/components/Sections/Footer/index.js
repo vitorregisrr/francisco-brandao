@@ -5,7 +5,7 @@ import './styles.scss';
 const Footer = (props) => {
     return (
         <footer className="Footer wow fadeInUp">
-           <h3 className="Footer__brand">Chico Brandão</h3>
+           <h3 className="Footer__brand">Chiquinho Brandão</h3>
            <a target="_blank" href="mailto:contato@chiquinhobrandao.com.br" className="Footer__email">
            Contato
            </a>

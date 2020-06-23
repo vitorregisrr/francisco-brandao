@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "engines": {
     "npm": "6.4.1",
-    "node": "10.15"
+    "node": "^12.x"
   },
   "private": true,
   "dependencies": {
@@ -60,7 +60,6 @@
     "react-input-mask": "^2.0.4",
     "react-js-pagination": "^3.0.3",
     "react-lazy-load-image-component": "^1.5.0-beta.0",
-    "react-loadbar": "^0.1.2",
     "react-masonry-css": "^1.0.14",
     "react-paginate": "^6.3.2",
     "react-router-dom": "^5.1.2",

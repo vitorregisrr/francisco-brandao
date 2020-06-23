@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import { LoadBar } from 'react-loadbar'
+import LoadBar from '../LoadBar';
 
 import './styles.scss'
 import brandGIF from '../../../assets/images/ico/loader.gif';

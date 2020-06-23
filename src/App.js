@@ -13,7 +13,7 @@ const App = () => {
     return (
         <BrowserRouter basename="/">
             <Helmet>
-                <title>Chico Brandão</title>
+                <title>Chiquinho Brandão</title>
                 <meta
                     name="description"
                     content="Conheça a trajetória de Francisco Soares Brandão, sócio-fundador da FSB, maior empresa de comunicação corporativa da América Latina."/>

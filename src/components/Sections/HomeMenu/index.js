@@ -115,7 +115,7 @@ const HomeMenu = ({moveSlider, isFirst, setHasOverlay, slickRef}) => {
 
                     <hr className="HomeMenu__underline" style={underlineStyling}/>
                     <button className="HomeMenu__item home" onClick={(e) => moveMenu(-1)}>
-                        Chico Brandão
+                        Chiquinho Brandão
                     </button>
                     {menuItems.map((i, index) => (
                         <button

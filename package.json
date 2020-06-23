@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "engines": {
     "npm": "6.4.1",
-    "node": "10.15"
+    "node": "^12.x"
   },
   "private": true,
   "dependencies": {

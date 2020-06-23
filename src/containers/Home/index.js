@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useMemo} from 'react'
 import axios from 'axios.instance'
 import {getStorage, setStorage} from 'util/storage';
 
@@ -10,16 +10,15 @@ const Home = () => {
     const [homeData, setHomeData] = useState(false);
     const [loadingPercentage, setLoadingPercentage] = useState();
 
-    const config = {
+    const config = useMemo(() => ({
         onDownloadProgress: progressEvent => {
-            const total = progressEvent.srcElement.getResponseHeader('Real-Content-Length')
-            let percentCompleted = Math.round((progressEvent.loaded * 100) / total)
+            const usualUploadSize = 6136058;
+            const total = progressEvent.srcElement.getResponseHeader('Real-Content-Length') || usualUploadSize;
+            let percentCompleted = Math.round((progressEvent.loaded * 100) / total);
             percentCompleted = percentCompleted === 100 ? 99 : percentCompleted;
-            setTimeout( () =>{
-                setLoadingPercentage(percentCompleted)
-            } ,400);
+            setLoadingPercentage(percentCompleted);
         }
-    }
+    }), []);
 
     useEffect( () =>{
       if(getStorage('home-data')){
@@ -37,7 +36,7 @@ const Home = () => {
       .finally(() => {
           setIsFetching(false);
       })
-    } ,[]);
+    } ,[config]);
 
     return (
         <React.Fragment>

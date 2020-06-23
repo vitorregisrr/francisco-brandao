@@ -113,7 +113,7 @@ const MainSlider = ({slickRef, setCurrentIndex, currIndex, hasOverlay, isFirst, 
                             <h2 className="MainSlider__item-subtitle">
                                 {i.subtitle}
                             </h2>
-                            <Link className="MainSlider__item-arrow" to={i.link}/>
+                            <div className="MainSlider__item-arrow"/>
                         </Link>
                     </section>
                 ))}

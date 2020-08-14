@@ -1,5 +1,6 @@
 import axios from 'axios.instance'
 import React, {useState, useEffect} from 'react';
+import {Helmet} from "react-helmet"
 import {getStorage, setStorage} from 'util/storage';
 
 import './styles.scss';
@@ -30,6 +31,14 @@ const Hipismo = (props) => {
 
     return (
         <section className="Hipismo page-interna pb-5 mb-2 mb-lg-5">
+            {data ? 
+                <Helmet>
+                    <meta name="keywords" content={data.keywords}/>
+                    <meta name="description" content={data.description}/>
+                    <title>{data.metatitle}</title>
+                </Helmet> 
+            : null}
+
             <PageBanner title={`Hipismo`} background={data.banner_image || require('../../assets/images/backgrounds/header-hipismo.png')}/>
 
             <main class="pt-3 pb-5 pt-lg-5 my-3 my-lg-5">

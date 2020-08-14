@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {getStorage, setStorage} from 'util/storage'
 import axios from 'axios.instance'
+import {Helmet} from "react-helmet"
 
 import './styles.scss'
 import PageBanner from 'components/Sections/PageBanner'
@@ -13,6 +14,7 @@ const Colecao = (props) => {
         setData] = useState(false);
 
     useEffect(() => {
+        console.log()
         if (getStorage('colecao-data')) {
             setIsFetching(false);
             console.log(JSON.parse(getStorage('colecao-data')))
@@ -33,6 +35,14 @@ const Colecao = (props) => {
 
     return (
         <section className="Colecao page-interna">
+            {data ? 
+                <Helmet>
+                    <meta name="keywords" content={data.keywords}/>
+                    <meta name="description" content={data.description}/>
+                    <title>{data.metatitle}</title>
+                </Helmet> 
+            : null}
+
             <PageBanner title={`Coleção de Arte`} background={data.banner_image || require('../../assets/images/backgrounds/header-colecao.png')}/>
 
             <main class="py-5 mb-3 mb-lg-5 mt-1">

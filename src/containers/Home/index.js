@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useMemo} from 'react'
 import axios from 'axios.instance'
+import {Helmet} from "react-helmet"
 import {getStorage, setStorage} from 'util/storage';
 
 import {HomeSlider} from '../../components/Sections'
@@ -40,6 +41,13 @@ const Home = () => {
 
     return (
         <React.Fragment>
+             {homeData ? 
+                <Helmet>
+                    <meta name="keywords" content={homeData.keywords}/>
+                    <meta name="description" content={homeData.description}/>
+                    <title>{homeData.metatitle}</title>
+                </Helmet> 
+            : null}
             <Preloader loadProgress={loadingPercentage} show={isFetching}/>
             {homeData ? <HomeSlider data={homeData}></HomeSlider> : null}
         </React.Fragment>

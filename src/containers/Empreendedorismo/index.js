@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {getStorage, setStorage} from 'util/storage';
+import {Helmet} from "react-helmet"
 import axios from 'axios.instance'
 
 import './styles.scss';
@@ -32,6 +33,14 @@ const Empreendedorismo = (props) => {
 
     return (
         <section className="Empreendedorismo page-interna pb-4 mb-2 mb-lg-5">
+            {data ? 
+                <Helmet>
+                    <meta name="keywords" content={data.keywords}/>
+                    <meta name="description" content={data.description}/>
+                    <title>{data.metatitle}</title>
+                </Helmet> 
+            : null}
+
             <PageBanner title={`Empreendedorismo`} background={data.banner_image || require('../../assets/images/backgrounds/header-empreendedorismo.png')}/>
             <main className="pt-3 pb-5 pt-lg-5 my-3 my-lg-5">
                 <div className="container pt-4 pt-lg-5">
